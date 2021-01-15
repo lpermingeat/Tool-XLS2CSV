@@ -1,19 +1,20 @@
 {
-  "name": "IDEO",
+  "name": "ideo",
   "version": "1.0.0",
   "description": "Interface Digitale Excel Online",
   "main": "app.js",
   "scripts": {
-  "start": "node app.js"
-},
+    "start": "node app.js"
+  },
   "repository": {
-  "type": "git",
-  "url": ""
-},
-  "author": "",
+    "type": "git",
+    "url": ""
+  },
+  "author": "BYes",
   "license": "ISC",
-  "bugs": {
-  "url": ""
-},
-  "homepage": ""
+  "homepage": "",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  },
+  "devDependencies": {}
 }
