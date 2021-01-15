@@ -1,0 +1,101 @@
+{
+  "Name": "Contrat Simple",
+  "Description": "Ce fichier est la description d'import pour un contrat PPP",
+  "Url": "http://XXXXX.com",
+  "Version": "0.0.1",
+  "Onglets": [{
+      "Titre": "Site PPP",
+      "Colonnes": [{
+          "Nom": "Prénom",
+          "TypeContraint": "Format",
+          "Constraints": {
+            "presence": true,
+            "length": {
+              "minimum": 3,
+              "maximum": 10,
+              "message": "Erreur Nom"
+            }
+          }
+        },
+        {
+          "Nom": "Nom de famille",
+          "TypeContraint": "Format",
+          "Constraints": {
+            "presence": true,
+            "length": {
+              "minimum": 5,
+              "message": "Erreur Famille"
+            }
+          }
+        },
+        {
+          "Nom": "Email",
+          "TypeContraint": "Format",
+          "Constraints": {
+            "presence": true,
+            "email": {
+              "message": "Email invalid"
+            }
+          }
+        },
+        {
+          "Nom": "Téléphone",
+          "TypeContraint": "Format",
+          "Constraints": {
+            "presence": true,
+            "length": {
+              "is": 10,
+              "message": "Erreur mauvais numéro de téléphone"
+            }
+          }
+        },
+        {
+          "Nom": "DateDebut",
+          "TypeContraint": "Format",
+          "Constraints": {
+            "presence": true,
+            "datetime": {
+              "dateOnly": true,
+              "message": "Erreur format de date"
+            }
+          }
+        },
+        {
+          "Nom": "Titre",
+          "TypeContraint": "Format",
+          "Constraints": {
+            "presence": true,
+            "inclusion" : {
+              "within": ["CIO","Director of Information Systems","Director of IT"],
+            "message" : "^We're currently out of %{value}"
+          }
+          }
+        }
+      ]
+    },
+    {
+      "Titre": "Bâtiment Site PPP",
+      "Colonnes": [{
+        "Nom": "Colonne 1",
+        "TypeContraint": "Format",
+        "Constraints": {}
+      }]
+    },
+    {
+      "Titre": "Espace Site PPP",
+      "Colonnes": [{
+        "Nom": "Colonne 1",
+        "TypeContraint": "Format",
+        "Constraints": {}
+      }]
+    },
+    {
+      "Titre": "Equipement Site PPP",
+      "Colonnes": [{
+        "Nom": "Colonne 1",
+        "TypeContraint": "Format",
+        "Constraints": {}
+      }]
+    }
+  ]
+}

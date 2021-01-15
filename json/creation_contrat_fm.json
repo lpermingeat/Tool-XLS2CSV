@@ -1,0 +1,166 @@
+{
+	"Name": "Contrat Simple",
+	"Description": "Ensemble d'interface pour la création d'un nouveau contrat FM avec son référentiel (Site/Batiment/Espace/Equipement) et ses utilisateurs associés",
+	"Version": "0.0.1",
+	"ApiUrl": "http://XXXXX.com",
+	"Onglets": [
+		{
+			"Titre": "Contrat",
+			"Description": "Donnée du contrat FM",
+			"ApiDBName": "",
+			"Colonnes": [
+				{
+					"Nom": "ID",
+					"ApiName": "",
+					"Aide": "ATTENTION : cet ID doit être unique avec 4 lettres"
+				}
+			]
+		},
+		{
+			"Titre": "Site",
+			"Description": "Donnée des différents sites du contrat qui va permettre d'y affecter des personnes. ATTENTION: Un contrat doit avoir au moins un site",
+			"Colonnes": [
+				{
+					"Nom": "ID",
+					"ApiName": "",
+					"Aide": "Identifiant automatique: Ne rien remplir",
+					"Formule": "=Contrat[ID]& \"_SIT_\"& LIGNE()"
+				},
+				{
+					"Nom": "Nom site",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				}
+			]
+		},
+		{
+			"Titre": "Batiment",
+			"Description": "Onglet Batiment",
+			"Colonnes": [
+				{
+					"Nom": "ID",
+					"ApiName": "",
+					"Aide": "Identifiant automatique: Ne rien remplir",
+					"Formule": "=Contrat[ID]& \"_BTM_\"&LIGNE()",
+					"Validation": [
+						[
+							"bUnique"
+						],
+						[
+							"bNotNull"
+						]
+					]
+				},
+				{
+					"Nom": "CODE",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "NOM",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "NOM SITE",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "REGION EXPRIMM",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "AGENCE EXPRIMM",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "SECTEUR EXPRIMM",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "ADRESSE",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "CODE POSTAL",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "PAYS",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "TELEPHONE STANDARD",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "HORAIRES OUVERTURE",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				},
+				{
+					"Nom": "DATE CREATION",
+					"ApiName": "",
+					"Aide": "Texte d'aide",
+					"Validation": [
+						[
+							"dateInPast"
+						]
+					]
+				},
+				{
+					"Nom": "Liste erreur",
+					"Aide": "Texte d'aide",
+					"Formule": "allFormuleValidation"
+				}
+			]
+		},
+		{
+			"Titre": "Espace",
+			"Description": "Onglet Espace",
+			"Colonnes": [
+				{
+					"Nom": "Colonne 1",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				}
+			]
+		},
+		{
+			"Titre": "Equipement",
+			"Description": "Onglet Equipement",
+			"Colonnes": [
+				{
+					"Nom": "Colonne 1",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				}
+			]
+		},
+		{
+			"Titre": "Personne",
+			"Description": "Onglet Personne",
+			"Colonnes": [
+				{
+					"Nom": "Colonne 1",
+					"ApiName": "",
+					"Aide": "Texte d'aide"
+				}
+			]
+		},
+		{
+			"Titre": "ObjRef",
+			"visible": "false",
+			"Description": "Onglet Objet",
+			"URLJSONData": "./json/data/DataSample.json"
+		}
+	]
+}

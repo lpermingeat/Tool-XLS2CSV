@@ -1,0 +1,11 @@
+Prénom;Nom de famille;Email;Téléphone;Titre;Compagnie;Adresse ;Ville;Etat / Province;Code postal;Pays;Industrie;Propriétaire;Évaluation;Devise;Statut
+Body;Babcock;Babcock@AWComputing.com;(415) 835-1665;Director of Information Systems;AW Computing;2821 Pickett Road;Durham;NC;27721;USA;Manufacturing;Matt Wilson;Froid;USD;Open
+Bill;Bahneman;Bahneman@AWComputing.com;(415) 835-1660;CIO;AW Computing;400 W. Main Street #604;RTP;NC;27716;USA;Transportation;Phil Smith;Tiède;USD;Open
+Adrian;Benavides;Benavides@123Warehousing.com;(415) 835-1656;Director of IT;123 Warehousing;1775 11th;San Francisco;CA;94106;USA;Biotechnology;Anna Bressan;Chaud;USD;Open
+Carla;Borgonovo;;(415) 835-1658;Director of Information Systems;ZiffCorp;82 T.W. Alexander Drive;Durham;NC;27718;USA;Biotechnology;Anna Bressan;Froid;USD;Open
+Ann;Bowles;Bowles@AcmeCorp.com;(415) 242-9230;Director of Information Systems;Acme Corp;80 T.W. Alexander Drive;RTP;NC;27709;USA;Manufacturing;Matt Wilson;Froid;USD;Open
+B;Bradley;Bradley@Mr.Sparkle.com;(415) 835-1659;Director of IT;Mr. Sparkle;79 T.W. Alexander Drive;Durham;NC;27715;USA;Biotechnology;Anna Bressan;Froid;USD;Open
+Al;Broumand;Broumand@SmithandCo.com;(415) 835-1658;Director of Information Systems;Smith and Co.;2530 Berryessa Rd. # 524;San Francisco;Calif;94108;USA;Biotechnology;Anna Bressan;Froid;USD;Open
+David;Campbell;Campbell@Virtucon.com;(415) 835-1661;Director of Information Systems;Virtucon;2035 Gateway Place;Walnut Creek;CA;94601;USA;Biotechnology;Anna Bressan;Chaud;USD;Open
+Dan;Casey;Casey@ThriftBank.com;(415) 835-1655;Director of Information Systems;Thrift Bank;1776 11th;SF;CA;94104;USA;Recreation;Phil Smith;Chaud;USD;Open
+

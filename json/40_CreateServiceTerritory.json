@@ -1,0 +1,13 @@
+{
+	"Name": "Contrat Simple",
+	"Description": "Ce fichier est la description d'import pour un contrat FM",
+	"Version": "0.0.1",
+	"ApiUrl": "http://XXXXX.com",
+	"Onglets": [
+		{
+			"Titre": "ListeValeurs",
+			"Description": "Onglet des valeurs possibles",
+			"URLCSVData": "https://kalioste.com/excel2sf/csv/ListeValeurs.csv"
+		}
+	]
+}

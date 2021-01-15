@@ -1,0 +1,795 @@
+{
+	"Name": "Contrat Simple",
+	"Description": "Ce fichier est la description d'import pour un contrat FM",
+	"Version": "0.0.1",
+	"ApiUrl": "http://XXXXX.com",
+	"Onglets": [
+		{
+			"Titre": "Compte",
+			"Description": "Onglet Compte",
+			"ApiDBName": "Account",
+			"Colonnes": [
+				{
+					"Nom": "Numero_du_compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(40)</i>",
+					"ApiName": "AccountNumber",
+					"Validation": "Text(40)",
+					"Formule": "=\"TF1_\"&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Source du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "AccountSource",
+					"Validation": "Picklist",
+					"List": "A,B,C,D,E"
+				},
+				{
+					"Nom": "Chiffre d'affaires annuel",
+					"Aide": "<br><i>&nbsp; &nbsp;Currency(18,0)</i>",
+					"ApiName": "AnnualRevenue",
+					"Validation": "Lookup(Contrat,ID du compte)",
+					"List": ""
+				},
+				{
+					"Nom": "Adresse de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Address</i>",
+					"ApiName": "BillingAddress",
+					"Validation": "Address",
+					"List": ""
+				},
+				{
+					"Nom": "Ville de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(40)</i>",
+					"ApiName": "BillingCity",
+					"Validation": "Text(40)",
+					"List": ""
+				},
+				{
+					"Nom": "Pays de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "BillingCountry",
+					"Validation": "Text(80)",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Code de Pays de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "BillingCountryCode",
+					"Validation": "Picklist",
+					"List": "test1,test2"
+				},
+				{
+					"Nom": "Billing Geocode Accuracy",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "BillingGeocodeAccuracy",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Latitude de l'adresse de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Number(3,15)</i>",
+					"ApiName": "BillingLatitude",
+					"Validation": "Number(3,15)",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Longitude de l'adresse de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Number(3,15)</i>",
+					"ApiName": "BillingLongitude",
+					"Validation": "Number(3,15)",
+					"List": ""
+				},
+				{
+					"Nom": "Code postal de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(20)</i>",
+					"ApiName": "BillingPostalCode",
+					"Validation": "Text(20)",
+					"List": ""
+				},
+				{
+					"Nom": "Région/Province de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "BillingState",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Code de région/province de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "BillingStateCode",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Rue de facturation",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "BillingStreet",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "ID de connexion reçue",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(PartnerNetworkConnection)</i>",
+					"ApiName": "ConnectionReceivedId",
+					"Validation": "Lookup(PartnerNetworkConnection)",
+					"List": ""
+				},
+				{
+					"Nom": "ID de connexion envoyée",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(PartnerNetworkConnection)</i>",
+					"ApiName": "ConnectionSentId",
+					"Validation": "Lookup(PartnerNetworkConnection)",
+					"List": ""
+				},
+				{
+					"Nom": "ID créé par",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(User) (Unique)</i>",
+					"ApiName": "CreatedById",
+					"Validation": "Lookup(User) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Date de création",
+					"Aide": "<br><i>&nbsp; &nbsp;Datetime (Unique)</i>",
+					"ApiName": "CreatedDate",
+					"Validation": "Datetime (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Devise du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "CurrencyIsoCode",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Description du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(32000)</i>",
+					"ApiName": "Description",
+					"Validation": "Text(32000)",
+					"List": ""
+				},
+				{
+					"Nom": "N° de télécopie du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Phone</i>",
+					"ApiName": "Fax",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "ID du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "Id",
+					"Validation": "Id (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Secteur d'activité",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "Industry",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Compte du portail Client",
+					"Aide": "<br><i>&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "IsCustomerPortal",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Supprimé",
+					"Aide": "<br><i>&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "IsDeleted",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Clé Data.com",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(20)</i>",
+					"ApiName": "Jigsaw",
+					"Validation": "Text(20)",
+					"List": ""
+				},
+				{
+					"Nom": "Jigsaw Company ID",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(20)</i>",
+					"ApiName": "JigsawCompanyId",
+					"Validation": "Text(20)",
+					"List": ""
+				},
+				{
+					"Nom": "Dernière activité",
+					"Aide": "<br><i>&nbsp; &nbsp;Date</i>",
+					"ApiName": "LastActivityDate",
+					"Validation": "Date",
+					"List": ""
+				},
+				{
+					"Nom": "Dernière modification par ID",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(User) (Unique)</i>",
+					"ApiName": "LastModifiedById",
+					"Validation": "Lookup(User) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Date de dernière modification",
+					"Aide": "<br><i>&nbsp; &nbsp;Datetime (Unique)</i>",
+					"ApiName": "LastModifiedDate",
+					"Validation": "Datetime (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Dernière date référencée",
+					"Aide": "<br><i>&nbsp; &nbsp;Datetime</i>",
+					"ApiName": "LastReferencedDate",
+					"Validation": "Datetime",
+					"List": ""
+				},
+				{
+					"Nom": "Date de dernier affichage",
+					"Aide": "<br><i>&nbsp; &nbsp;Datetime</i>",
+					"ApiName": "LastViewedDate",
+					"Validation": "Datetime",
+					"List": ""
+				},
+				{
+					"Nom": "ID d'enregistrement principal",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "MasterRecordId",
+					"Validation": "Lookup(Account)",
+					"List": ""
+				},
+				{
+					"Nom": "Nom du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "Name",
+					"Validation": "Text(255) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Employés",
+					"Aide": "<br><i>&nbsp; &nbsp;Number(0,0)</i>",
+					"ApiName": "NumberOfEmployees",
+					"Validation": "Number(0,0)",
+					"List": ""
+				},
+				{
+					"Nom": "ID d'heure de fonctionnement",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(OperatingHours)</i>",
+					"ApiName": "OperatingHoursId",
+					"Validation": "Lookup(OperatingHours)",
+					"List": ""
+				},
+				{
+					"Nom": "Référent du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(User) (Unique)</i>",
+					"ApiName": "OwnerId",
+					"Validation": "Lookup(User) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Forme juridique",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "Ownership",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Compte parent",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "ParentId",
+					"Validation": "Lookup(Account)",
+					"List": ""
+				},
+				{
+					"Nom": "N° de téléphone du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Phone</i>",
+					"ApiName": "Phone",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "URL de la photo",
+					"Aide": "<br><i>&nbsp; &nbsp;Url</i>",
+					"ApiName": "PhotoUrl",
+					"Validation": "Url",
+					"List": ""
+				},
+				{
+					"Nom": "Cote du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "Rating",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "ID du type d'enregistrement",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(RecordType)</i>",
+					"ApiName": "RecordTypeId",
+					"Validation": "Lookup(RecordType)",
+					"List": ""
+				},
+				{
+					"Nom": "Adresse",
+					"Aide": "<br><i>&nbsp; &nbsp;Address</i>",
+					"ApiName": "ShippingAddress",
+					"Validation": "Address",
+					"List": ""
+				},
+				{
+					"Nom": "Ville",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(40)</i>",
+					"ApiName": "ShippingCity",
+					"Validation": "Text(40)",
+					"List": ""
+				},
+				{
+					"Nom": "Pays",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "ShippingCountry",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Code de pays d'expédition",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "ShippingCountryCode",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Shipping Geocode Accuracy",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "ShippingGeocodeAccuracy",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Latitude de l'adresse d'expédition",
+					"Aide": "<br><i>&nbsp; &nbsp;Number(3,15)</i>",
+					"ApiName": "ShippingLatitude",
+					"Validation": "Number(3,15)",
+					"List": ""
+				},
+				{
+					"Nom": "Longitude de l'adresse d'expédition",
+					"Aide": "<br><i>&nbsp; &nbsp;Number(3,15)</i>",
+					"ApiName": "ShippingLongitude",
+					"Validation": "Number(3,15)",
+					"List": ""
+				},
+				{
+					"Nom": "Code postal",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(20)</i>",
+					"ApiName": "ShippingPostalCode",
+					"Validation": "Text(20)",
+					"List": ""
+				},
+				{
+					"Nom": "Région/Province",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "ShippingState",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Code de région/province",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "ShippingStateCode",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Rue",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "ShippingStreet",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Code SIC",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(20)</i>",
+					"ApiName": "Sic",
+					"Validation": "Text(20)",
+					"List": ""
+				},
+				{
+					"Nom": "Description SIC",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "SicDesc",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Site du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "Site",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Horodateur des modifications du système",
+					"Aide": "<br><i>&nbsp; &nbsp;Datetime (Unique)</i>",
+					"ApiName": "SystemModstamp",
+					"Validation": "Datetime (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Symbole",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(20)</i>",
+					"ApiName": "TickerSymbol",
+					"Validation": "Text(20)",
+					"List": ""
+				},
+				{
+					"Nom": "Type du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "Type",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Site Web",
+					"Aide": "<br><i>&nbsp; &nbsp;Url</i>",
+					"ApiName": "Website",
+					"Validation": "Url",
+					"List": ""
+				},
+				{
+					"Nom": "Activité du compte",
+					"Aide": "Interface Eloqua = Table  Account  & Field  Account Sector <br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "accountActivity__c",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Besoin du Compte",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(Need__c)</i>",
+					"ApiName": "AccountNeed__c",
+					"Validation": "Lookup(Need__c)",
+					"List": ""
+				},
+				{
+					"Nom": "Ancien ID",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(255)(External ID)</i>",
+					"ApiName": "AncienID__c",
+					"Validation": "Text(255)(External ID)",
+					"List": ""
+				},
+				{
+					"Nom": "Manager BYes",
+					"Aide": "Manager BYes<br><i>&nbsp; &nbsp;Lookup(User)</i>",
+					"ApiName": "BYESFM_ManagerBYes__c",
+					"Validation": "Lookup(User)",
+					"List": ""
+				},
+				{
+					"Nom": "Manager Client",
+					"Aide": "Manager Client<br><i>&nbsp; &nbsp;Lookup(User)</i>",
+					"ApiName": "BYESFM_ManagerClient__c",
+					"Validation": "Lookup(User)",
+					"List": ""
+				},
+				{
+					"Nom": "Data Quality Description",
+					"Aide": "<br><i>&nbsp; &nbsp;Formula(string)</i>",
+					"ApiName": "Data_Quality_Description__c",
+					"Validation": "Formula(string)",
+					"List": ""
+				},
+				{
+					"Nom": "Data Quality Score",
+					"Aide": "<br><i>&nbsp; &nbsp;Formula(double)</i>",
+					"ApiName": "Data_Quality_Score__c",
+					"Validation": "Formula(double)",
+					"List": ""
+				},
+				{
+					"Nom": "Cloturé",
+					"Aide": "<br><i>&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "disable__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "DUNS",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(9)</i>",
+					"ApiName": "duns__c",
+					"Validation": "Text(9)",
+					"List": ""
+				},
+				{
+					"Nom": "Explore",
+					"Aide": "<br><i>&nbsp; &nbsp;Formula(string)</i>",
+					"ApiName": "Explore__c",
+					"Validation": "Formula(string)",
+					"List": ""
+				},
+				{
+					"Nom": "Main Contract",
+					"Aide": "@Origine : BYES FM<br>@RecordType : Site<br>@Master : Salesforce<br>@Description :This field represent the main contrat attached to a site at a given time.<br>@RG : N/A<br>@Profile : All Byes and portal Users<br>@InterfaceExterne : N/A<br>@Domaine : FSL/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;Lookup(ServiceContract)</i>",
+					"ApiName": "FM_MainContract__c",
+					"Validation": "Lookup(ServiceContract)",
+					"List": ""
+				},
+				{
+					"Nom": "Equipe de maintenance",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(FM_MaintenanceTeam__c)</i>",
+					"ApiName": "FM_MaintenanceTeam__c",
+					"Validation": "Lookup(FM_MaintenanceTeam__c)",
+					"List": ""
+				},
+				{
+					"Nom": "Lien",
+					"Aide": "<br><i>&nbsp; &nbsp;Formula(string)</i>",
+					"ApiName": "Lien__c",
+					"Validation": "Formula(string)",
+					"List": ""
+				},
+				{
+					"Nom": "LinkedIn",
+					"Aide": "<br><i>&nbsp; &nbsp;Url</i>",
+					"ApiName": "linkedInURL__c",
+					"Validation": "Url",
+					"List": ""
+				},
+				{
+					"Nom": "Logo",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(32768)</i>",
+					"ApiName": "Logo__c",
+					"Validation": "Text(32768)",
+					"List": ""
+				},
+				{
+					"Nom": "Nature",
+					"Aide": "Interface Eloqua = Table  Account  & Field  Category <br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "nature__c",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Nature juridique du client",
+					"Aide": "<br><i>&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "NatureJuridiqueClient__c",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Nombre total d'opportunités en cours",
+					"Aide": "<br><i>&nbsp; &nbsp;Number(18,0)</i>",
+					"ApiName": "OpportunityCounter__c",
+					"Validation": "Number(18,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Compte ultime",
+					"Aide": "<br><i>&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "principalAccount__c",
+					"Validation": "Lookup(Account)",
+					"List": ""
+				},
+				{
+					"Nom": "Raison sociale",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "RaisonSociale__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "SAP Account",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(255)(External ID)</i>",
+					"ApiName": "SAP_Account__c",
+					"Validation": "Text(255)(External ID)",
+					"List": ""
+				},
+				{
+					"Nom": "Code SAP",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(255)(External ID)</i>",
+					"ApiName": "SAPCode__c",
+					"Validation": "Text(255)(External ID)",
+					"List": ""
+				},
+				{
+					"Nom": "SIREN",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(9)</i>",
+					"ApiName": "SIREN__c",
+					"Validation": "Text(9)",
+					"List": ""
+				},
+				{
+					"Nom": "SIRET",
+					"Aide": "<br><i>&nbsp; &nbsp;Text(15)</i>",
+					"ApiName": "siret__c",
+					"Validation": "Text(15)",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Contrat",
+			"Description": "Objet Contrat",
+			"ApiDBName": "ServiceContract",
+			"Colonnes": [
+				{
+					"Nom": "ID du compte",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "AccountId",
+					"Validation": "Lookup(Account)",
+					"List": ""
+				},
+				{
+					"Nom": "Date d'activation",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Datetime</i>",
+					"ApiName": "ActivationDate",
+					"Validation": "Datetime",
+					"List": ""
+				},
+				{
+					"Nom": "Statut d'approbation",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "ApprovalStatus",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Facturation - Adresse",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Address</i>",
+					"ApiName": "BillingAddress",
+					"Validation": "Address",
+					"List": ""
+				},
+				{
+					"Nom": "Facturation - Ville",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(40)</i>",
+					"ApiName": "BillingCity",
+					"Validation": "Text(40)",
+					"List": ""
+				},
+				{
+					"Nom": "Facturation - Pays",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "BillingCountry",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Facturation - Code de pays",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "BillingCountryCode",
+					"Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "ID du contact",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Contact)</i>",
+					"ApiName": "ContactId",
+					"Validation": "Lookup(Contact)",
+					"List": ""
+				},
+				{
+					"Nom": "Numéro de contrat",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(30) (Unique)</i>",
+					"ApiName": "ContractNumber",
+					"Validation": "Text(30) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Description",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(32000)</i>",
+					"ApiName": "Description",
+					"Validation": "Text(32000)",
+					"List": ""
+				},
+				{
+					"Nom": "ID de contrat de service",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "Id",
+					"Validation": "Id (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Éléments de ligne",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(0,0)</i>",
+					"ApiName": "LineItemCount",
+					"Validation": "Number(0,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Nom du contrat",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "Name",
+					"Validation": "Text(255) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "ID du propriétaire",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Group,User) (Unique)</i>",
+					"ApiName": "OwnerId",
+					"Validation": "Lookup(Group,User) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Référence du contrat BYES",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_BYesContractReference__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Centre",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Multipicklist</i>",
+					"ApiName": "FM_Center__c",
+					"Validation": "Multipicklist",
+					"List": ""
+				},
+				{
+					"Nom": "Type de SLA",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description : This field will define which milestone we will apply on the case<br>@RG : Manually<br>@Profile : All users<br>@InterfaceExterne : N/A<br>@Domaine : `Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Entitlement)</i>",
+					"ApiName": "FM_EntitlmentProcess__c",
+					"Validation": "Lookup(Entitlement)",
+					"List": ""
+				},
+				{
+					"Nom": "Mise en place définitive-Astreinte (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to fix in a  on call  timing (in minute) By default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_OnCallFixingTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Délai d'intervention Astreinte (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to Intervene in an  on-call  timing (in minute) by default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_OnCallInterventionTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Mise en place provisoire-Astreinte (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to fix provisionally in a  on call  timing (in minute) By default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_OnCallProvisionalFixingTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Région",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Multipicklist</i>",
+					"ApiName": "FM_Region__c",
+					"Validation": "Multipicklist",
+					"List": ""
+				},
+				{
+					"Nom": "Critères des SLA",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description : This field will define the type of process to apply on the SLA (it can be a combinaion of many processes)<br>@RG : Manually<br>@Profile : All users<br>@InterfaceExterne : N/A<br>@Domaine : `Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Multipicklist</i>",
+					"ApiName": "FM_SLABases__c",
+					"Validation": "Multipicklist",
+					"List": ""
+				},
+				{
+					"Nom": "Mise en place définitive-Normal (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to fix a case (in minute) by default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_StandardFixingTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Délai d'intervention Normal (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to Intervene in a standard timing (in minute) by default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_StandardInterventionTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Mise en place provisoire-Normal (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to fix provisionally in a standard timing (in minute) By default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_StandardProvisionalFixingTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				}
+			]
+		}
+	]
+}

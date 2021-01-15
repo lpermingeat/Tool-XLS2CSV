@@ -1,0 +1,131 @@
+,
+		{
+			"Titre": "Ordre_Execution",
+			"Description": "Onglet WO",
+			"ApiDBName": "Ordre_WorkOrder",
+			"Colonnes": [
+				{
+					"Nom": "PLN_ID",
+					"Aide": "",
+					"ApiName": "FM_PlanonId__c",
+					"_Validation": "",
+					"List": ""
+				},
+				{
+					"Nom": "PLN_SITE",
+					"Aide": "",
+					"ApiName": "PLN_SITE",
+					"_Validation": "",
+					"List": ""
+				},
+				{
+					"Nom": "PLN_BATIMENT",
+					"Aide": "",
+					"ApiName": "PLN_BATIMENT",
+					"_Validation": "",
+					"List": ""
+				},
+				{
+					"Nom": "PLN_EQUIPEMENT",
+					"Aide": "",
+					"ApiName": "PLN_EQUIPEMENT",
+					"_Validation": "",
+					"List": ""
+				},
+				{
+					"Nom": "PLN_ESPACE",
+					"Aide": "",
+					"ApiName": "PLN_ESPACE",
+					"_Validation": "",
+					"List": ""
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"_Formule": "=Compte_Client[ID Externe]&\"_OE_\"&@[PLN_ID]",
+					"List": ""
+				},
+				{
+					"Nom": "Site Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "AccountId",
+					"_Validation": "Lookup(Compte_Client)",
+					"_Formule": "=RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0)",
+					"List": ""
+				},
+				{
+					"Nom": "Equipement Id",
+					"Aide": "",
+					"ApiName": "AssetId",
+					"_Validation": "",
+					"_Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Batiment Id",
+					"Aide": "",
+					"ApiName": "FM_LocationBuildingLevel__c",
+					"_Validation": "",
+					"_Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Espace Id",
+					"Aide": "",
+					"ApiName": "FM_LocationSpaceLevel__c",
+					"_Validation": "",
+					"_Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Objet",
+					"Aide": "",
+					"ApiName": "Subject",
+					"_Validation": "",
+					"_Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Contrat Id",
+					"Aide": "",
+					"ApiName": "ServiceContractId",
+					"_Validation": "",
+					"_Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Durée",
+					"Aide": "",
+					"ApiName": "Duration",
+					"_Validation": "",
+					"_Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Périodicité",
+					"Aide": "",
+					"ApiName": "FM_Periodicity__c",
+					"_Validation": "",
+					"_Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Date début",
+					"Aide": "",
+					"ApiName": "StartDate",
+					"Validation": "Date",
+					"_Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Date fin",
+					"Aide": "",
+					"ApiName": "EndDate",
+					"Validation": "Date",
+					"_Formule": "",
+					"List": ""
+				}
+			]
+		}

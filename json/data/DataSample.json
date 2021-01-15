@@ -1,0 +1,16 @@
+{
+	"Data": [
+		{
+			"DATE": "1/1/2017",
+			"MERCHANT": "The Phone Company",
+			"CATEGORY": "Communications",
+			"AMOUNT": "$120"
+		},
+		{
+			"DATE": "1/1/2017",
+			"MERCHANT": "Southridge Video",
+			"CATEGORY": "Entertainment",
+			"AMOUNT": "$40"
+		}
+	]
+}

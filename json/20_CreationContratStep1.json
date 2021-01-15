@@ -1,0 +1,1349 @@
+{
+	"Name": "Creation Nouveau Contrat étape 1",
+	"Description": "Ce fichier est la description d import pour un contrat FM",
+	"Version": "0.0.1",
+	"ApiUrl": "http://.com",
+	"Onglets": [
+		{
+			"Titre": "ListeValeurs",
+			"Description": "Onglet des valeurs possibles",
+			"URLCSVData": "https://kalioste.com/excel2sf/csv/ListeValeurs.csv"
+		},
+		{
+			"Titre": "Compte_Client",
+			"Description": "Onglet Compte",
+			"ApiDBName": "COMPTE_Account",
+			"Colonnes": [
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Text(14)",
+					"Mandatory": "True",
+					"_Formule": "=Compte_Client[SIRET]",
+					"List": ""
+				},
+				{
+					"Nom": "Prefix ID",
+					"Aide": "",
+					"Validation": "Text(28)",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "SIRET",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(15)</i>",
+					"ApiName": "siret__c",
+					"Validation": "Text(14)",
+					"Mandatory": "True",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Heure_Ouverture",
+			"Description": "Onglet Heure ouverture",
+			"ApiDBName": "BusinessHours",
+			"Colonnes": [
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_HO_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Nom d'heures d'ouverture",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80) (Unique)</i>",
+					"ApiName": "Name",
+					"Mandatory": "True",
+					"Validation": "Text(80) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Actif",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "IsActive",
+					"Formule": "=1",
+					"_Validation": "Checkbox (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Fuseau horaire",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist (Unique)</i>",
+					"ApiName": "TimeZoneSidKey",
+					"Mandatory": "True",
+					"_Validation": "Picklist (Unique)",
+					"Formule": "Europe/Paris",
+					"List": ""
+				},
+				{
+					"Nom": "Lundi, début",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "MondayStartTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Lundi, fin",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "MondayEndTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Mardi, début",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "TuesdayStartTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Mardi, fin",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "TuesdayEndTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Mercredi, début",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "WednesdayStartTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Mercredi, fin",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "WednesdayEndTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Jeudi, début",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "ThursdayStartTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Jeudi, fin",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "ThursdayEndTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Vendredi, début",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "FridayStartTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Vendredi, fin",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "FridayEndTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Samedi, début",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "SaturdayStartTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Samedi, fin",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "SaturdayEndTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Dimanche, début",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "SundayStartTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Dimanche, fin",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Time</i>",
+					"ApiName": "SundayEndTime",
+					"Validation": "Time",
+					"Mandatory": "True",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Autorisation",
+			"Description": "Onglet Autorisation",
+			"ApiDBName": "AUTHORISATION_Autorisation",
+			"Colonnes": [
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_AUT_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Nom",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "Name",
+					"Validation": "Text(255)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_AUT_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Heures Ouverture",
+					"Aide": "",
+					"ApiName": "BusinessHoursId",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Processus d'autorisation",
+					"Aide": "",
+					"ApiName": "SlaProcessId",
+					"Formule": "",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Contrat",
+			"Description": "Onglet Contrat",
+			"ApiDBName": "CONTRAT_ServiceContract",
+			"Colonnes": [
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_CNT_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Compte Id",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "AccountId",
+					"_Validation": "Lookup(Compte_Client)",
+					"Formule": "=Compte_Client[ID Externe]",
+					"List": ""
+				},
+				{
+					"Nom": "ID",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Contact)</i>",
+					"ApiName": "ContactId",
+					"_Validation": "Lookup(Contact)",
+					"List": ""
+				},
+				{
+					"Nom": "Numero",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(30) (Unique)</i>",
+					"ApiName": "ContractNumber",
+					"Validation": "Text(30) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Nom",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / 0_Parametrage exploitant / 7_SF_Export Matrice criticite-priorite / Code objet<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "Name",
+					"Validation": "Text(255) (Unique)",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "Description",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(32000)</i>",
+					"ApiName": "Description",
+					"Validation": "Text(32000)",
+					"List": ""
+				},
+				{
+					"Nom": "Date debut",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Date</i>",
+					"ApiName": "StartDate",
+					"Validation": "Date",
+					"List": ""
+				},
+				{
+					"Nom": "Date fin",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Date</i>",
+					"ApiName": "EndDate",
+					"Validation": "Date",
+					"List": ""
+				},
+				{
+					"Nom": "Statut",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "Status",
+					"_Validation": "Picklist",
+					"Formule": "Active",
+					"List": ""
+				},
+				{
+					"Nom": "Duree (mois)",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(0,0)</i>",
+					"ApiName": "Term",
+					"Validation": "Number(2,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Auto-Planifie?",
+					"Aide": "If this checkbox is checked, then all new service appointment created and linked to a correctif case, will be auto-scheduled by the system<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_AutoSchedule__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Reference BYES",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_BYesContractReference__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Centre",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Multipicklist</i>",
+					"ApiName": "FM_Center__c",
+					"Validation": "Picklist(Code_Centre)",
+					"_List": ""
+				},
+				{
+					"Nom": "Mise en place definitive-Astreinte (min)",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / 0_Parametrage exploitant / 7_SF_Export Matrice criticite-priorite / Delai sous astreinte<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_OnCallFixingTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Delai intervention Astreinte (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to Intervene in an  on-call  timing (in minute) by default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_OnCallInterventionTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Mise en place provisoire-Astreinte (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to fix provisionally in a  on call  timing (in minute) By default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_OnCallProvisionalFixingTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Region",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Multipicklist</i>",
+					"ApiName": "FM_Region__c",
+					"Validation": "Picklist(Code_Region)",
+					"_List": ""
+				},
+				{
+					"Nom": "Criteres des SLA",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description : This field will define the type of process to apply on the SLA (it can be a combinaion of many processes)<br>@RG : Manually<br>@Profile : All users<br>@InterfaceExterne : N/A<br>@Domaine : `Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Multipicklist</i>",
+					"ApiName": "FM_SLABases__c",
+					"Validation": "Picklist(Critere_SLA)",
+					"_List": "FM_SymptomReference__c,FM_LocationPriority__c,FM_Criticity__c,FM_AssetImportance__c,FM_VIP__c"
+				},
+				{
+					"Nom": "Type SLA",
+					"Aide": "",
+					"ApiName": "FM_EntitlmentProcess__c",
+					"_Validation": "",
+					"_List": "FM_SymptomReference__c,FM_LocationPriority__c,FM_Criticity__c,FM_AssetImportance__c,FM_VIP__c"
+				},
+				{
+					"Nom": "Mise en place definitive-Normal (min)",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / 0_Parametrage exploitant / 7_SF_Export Matrice criticite-priorite / Delai heures d'ouverture<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_StandardFixingTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Delai d'intervention Normal (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to Intervene in a standard timing (in minute) by default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_StandardInterventionTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Mise en place provisoire-Normal (min)",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description :This field define the Time to fix provisionally in a standard timing (in minute) By default<br>@RG : Manual<br>@Profile : All<br>@InterfaceExterne : N/A<br>@Domaine : Contract<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0)</i>",
+					"ApiName": "FM_StandardProvisionalFixingTimeDefault__c",
+					"Validation": "Number(10,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Type de Travail Standard",
+					"Aide": "LE work type standard attache au contrat et qui definira le nombre de minute<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(WorkType)</i>",
+					"ApiName": "FM_StandardWorkType__c",
+					"_Validation": "Lookup(WorkType)",
+					"Formule": "ContractWorkTypeSTD",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Site",
+			"Description": "Onglet Site",
+			"ApiDBName": "SITE_Account",
+			"Colonnes": [
+				{
+					"Nom": "Nom",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "Name",
+					"Mandatory": "True",
+					"Validation": "Text(255) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_SIT_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Type",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "RecordTypeId",
+					"Validation": "Text(40)",
+					"Formule": "Site",
+					"List": ""
+				},
+				{
+					"Nom": "Compte Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "ParentId",
+					"Validation": "Text(255) (Unique)",
+					"Formule": "=Compte_Client[ID Externe]",
+					"List": ""
+				},
+				{
+					"Nom": "Contrat Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "FM_MainContract__c",
+					"Validation": "Text(255) (Unique)",
+					"Formule": "=Contrat[ID Externe]",
+					"List": ""
+				},
+				{
+					"Nom": "Numero",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(40)</i>",
+					"ApiName": "AccountNumber",
+					"Validation": "Text(40)",
+					"List": ""
+				},
+				{
+					"Nom": "Description",
+					"Aide": "@Origine : FM<br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / HORAIRES OUVERTURE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(32000)</i>",
+					"ApiName": "Description",
+					"Validation": "Text(32000)",
+					"List": ""
+				},
+				{
+					"Nom": "Telephone",
+					"Aide": "@Origine : FM<br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / TELEPHONE STANDARD<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Phone</i>",
+					"ApiName": "Phone",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "Manager BYes",
+					"Aide": "Manager Byes<br>@Origine : FM<br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / RESPONSABLE SITE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(User)</i>",
+					"ApiName": "BYESFM_ManagerBYes__c",
+					"_Validation": "Lookup(User)",
+					"List": ""
+				},
+				{
+					"Nom": "Manager Client",
+					"Aide": "Manager Client<br>@Origine : FM<br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / DESTINATAIRE COPIE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(User)</i>",
+					"ApiName": "BYESFM_ManagerClient__c",
+					"_Validation": "Lookup(User)",
+					"List": ""
+				},
+				{
+					"Nom": "Centre",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Center__c",
+					"Validation": "Picklist(Code_Centre)",
+					"_List": ""
+				},
+				{
+					"Nom": "Equipe de maintenance",
+					"Aide": "@Origine : FM<br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / EQUIPE EXPLOITANT<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(FM_MaintenanceTeam__c)</i>",
+					"ApiName": "FM_MaintenanceTeam__c",
+					"_Validation": "Lookup(FM_MaintenanceTeam__c)",
+					"List": ""
+				},
+				{
+					"Nom": "Region",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Region__c",
+					"Validation": "Picklist(Code_Region)",
+					"_List": ""
+				},
+				{
+					"Nom": "Territoire principal",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_MainTerritory__c",
+					"Mandatory": "True",
+					"Validation": "Picklist(Territoire)",
+					"_List": ""
+				},
+				{
+					"Nom": "Site poste/Itinerance",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_SiteType__c",
+					"Validation": "Picklist(Poste_Itinerant)",
+					"_List": "Poste,Itinerance"
+				}
+			]
+		},
+		{
+			"Titre": "Parametre_Contrat",
+			"Description": "Onglet Parametre Contrat",
+			"ApiDBName": "PARAMETRE_FM_ContractParameter__c",
+			"Colonnes": [
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_CPR_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Nom",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "Name",
+					"Mandatory": "True",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Type",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(RecordType)</i>",
+					"ApiName": "RecordTypeId",
+					"Mandatory": "True",
+					"Validation": "Picklist(Parametre_Contrat_Type)",
+					"_List": ""
+				},
+				{
+					"Nom": "Affichage direct portail",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All record type<br>@Master : Salesforce<br>@Description : This field indicate if this parameter will be displayed directly on the home page of the portal<br>@RG : Manually filled<br>@Profile : All user should be able to read it<br>@InterfaceExterne : N/A<br>@Domaine : Portal/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_DisplayDirectlyInPortal__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "icone",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description : This field will represent the icon shown on the community portal. Possible values will be communicated in a separated file. The content of this field should match exactly the name of the icon<br>@RG : N/A<br>@Profile : All Byes and portal Users@InterfaceExterne : N/A<br>@Domaine : FSL/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Icon__c",
+					"_Validation": "Picklist(icone)",
+					"List": "basket,cold,hot,malefemale3,pen,seat,water"
+				},
+				{
+					"Nom": "Actif",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All record types<br>@Master : Salesforce<br>@Description : Indicate if a parameter is actif or not<br>@RG : Manually<br>@Profile : All profiles can read it<br>@InterfaceExterne : N/A<br>@Domaine : Portal/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_IsActive__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Tuile groupement",
+					"Aide": "@Origine : BYES FM<br>@RecordType : Symptome Record types<br>@Master : Salesforce<br>@Description : Change the behavior of the click on the corresponding tile, to display the remaining symptom<br>@RG : Manually<br>@Profile : All profiles should have access to the this information<br>@InterfaceExterne : N/A<br>@Domaine : Portal/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_IsGroupingTile__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Lien",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Url</i>",
+					"ApiName": "FM_Link__c",
+					"Validation": "Url",
+					"List": ""
+				},
+				{
+					"Nom": "Ordre",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All record types<br>@Master : Salesforce<br>@Description : This field will display the order of element displayed in the portal<br>@Profile : All user can read it. Just managers can edit it<br>@InterfaceExterne : N/A<br>@Domaine : Contrat/Portal Community<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(4)</i>",
+					"ApiName": "FM_Order__c",
+					"Validation": "Text(4)",
+					"List": ""
+				},
+				{
+					"Nom": "Symptome reference",
+					"Aide": "@Origine : BYES FM<br>@RecordType : Symptom<br>@Master : Salesforce<br>@Description : This field will indicate the reference symptom linked to this parameter<br>@RG : N/A<br>@Profile : All Byes and portal Users<br>@InterfaceExterne : N/A<br>@Domaine : Contrat/Correctif<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(FM_SymptomReference__c)</i>",
+					"ApiName": "FM_ReferenceSymptom__c",
+					"Validation": "Picklist(Symptome_Reference)",
+					"_List": "Chaud,Froid,Mal Tete,Panne,Référence,Symptôme,Trop chaud,Trop froid"
+				},
+				{
+					"Nom": "Contract Id",
+					"Aide": "@Origine : BYES FM<br>@RecordType : All<br>@Master : Salesforce<br>@Description : The Main contract having this symtom<br>@RG : N/A<br>@Profile : All Byes and portal Users<br>@InterfaceExterne : N/A<br>@Domaine : FSL/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Master-Detail(ServiceContract) (Unique)</i>",
+					"ApiName": "FM_ServiceContract__c",
+					"_Validation": "Master-Detail(ServiceContract) (Unique)",
+					"Formule": "=Contrat[ID Externe]",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Limite_Contrat",
+			"Description": "Onglet Limite Contrat",
+			"ApiDBName": "LIMITE_FM_ServiceLimitation__c",
+			"Colonnes": [
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_CLM_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Nom",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80) (Unique)</i>",
+					"ApiName": "Name",
+					"Mandatory": "True",
+					"Validation": "Text(80) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Type",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(RecordType)</i>",
+					"ApiName": "RecordTypeId",
+					"Mandatory": "True",
+					"Validation": "Picklist(Limite_Contrat_Type)",
+					"List": ""
+				},
+				{
+					"Nom": "Commentaires",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : Limite Contrat and Limite OT<br><br>@Master : Salesforce<br><br>@Description : Commentaire supplementaire sur la limitation du contrat<br><br>@RG : Remplissage Manuel<br><br>@Profile : Les utilisateur ByES<br><br>@InterfaceExterne : N/A<br><br>@Domaine : BYES FM/FSL/Contrat<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(32768)</i>",
+					"ApiName": "FM_Commentaires__c",
+					"Validation": "Text(32768)",
+					"List": ""
+				},
+				{
+					"Nom": "Contrat Id",
+					"Aide": "@Origine : BYES FM<br>@RecordType : Limite Contrat and Limite OT<br>@Master : Salesforce<br>@Description : Service Contract<br>@RG : Lookup (Service Contract)<br>@Profile : Les utilisateur ByES<br>@InterfaceExterne : N/A<br>@Domaine : FSL/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(ServiceContract)</i>",
+					"ApiName": "FM_Contract__c",
+					"_Validation": "Lookup(Contrat)",
+					"Formule": "=Contrat[ID Externe]",
+					"List": ""
+				},
+				{
+					"Nom": "Domaine",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : Limite Contrat and Limite OT<br><br>@Master : Salesforce<br><br>@Description : Domaine<br><br>@RG : Picklist<br><br>@Profile : Les utilisateur ByES<br><br>@InterfaceExterne : N/A<br><br>@Domaine : BYES FM/FSL/Contrat<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Domain__c",
+					"Validation": "Picklist(Code_Domaine)",
+					"List": "010,020,030,031,040,042,044,046,048,050,052,054,060,062,070,080,100,200,210,300,400,410,500,510,520,600,900,910"
+				},
+				{
+					"Nom": "ID Limite Prestation",
+					"Aide": "@Domaine : BYES FM<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(30) (Unique)</i>",
+					"ApiName": "FM_ID_Limite_Prestation__c",
+					"Validation": "Text(30) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Exploitation / Conduite Installation",
+					"Aide": "@Origine : BYES FM<br>@RecordType : Limite Contrat and Limite OT<br>@Master : Salesforce<br>@Description : Exploitation /Conduite Installation<br>@RG : Picklist<br>@Profile : Les utilisateur ByES<br>@InterfaceExterne : N/A<br>@Domaine : FSL/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Installation__c",
+					"Validation": "Picklist(Contractuel)",
+					"List": "Contrat,Hors Contrat,Sans Objet"
+				},
+				{
+					"Nom": "Niveau 1",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : Niveau 1<br><br>@Master : Salesforce<br><br>@Description : Commentaire supplementaire sur la limitation du contrat<br><br>@RG : Picklist<br><br>@Profile : Les utilisateur ByES<br><br>@InterfaceExterne : N/A<br><br>@Domaine : BYES FM/FSL/Contrat<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Level1__c",
+					"Validation": "Picklist(Contractuel)",
+					"List": "Contrat,Hors Contrat,Sans Objet"
+				},
+				{
+					"Nom": "Niveau 2",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : Limite Contrat and Limite OT<br><br>@Master : Salesforce<br><br>@Description : Niveau 2<br><br>@RG : Picklist<br><br>@Profile : Les utilisateur ByES<br><br>@InterfaceExterne : N/A<br><br>@Domaine : BYES FM/FSL/Contrat<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Level2__c",
+					"Validation": "Picklist(Contractuel)",
+					"_List": "Contrat,Hors Contrat,Sans Objet"
+				},
+				{
+					"Nom": "Niveau 3",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : Limite Contrat and Limite OT<br><br>@Master : Salesforce<br><br>@Description : Niveau 3<br><br>@RG : Picklist<br><br>@Profile : Les utilisateur ByES<br><br>@InterfaceExterne : N/A<br><br>@Domaine : BYES FM/FSL/Contrat<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Level3__c",
+					"Validation": "Picklist(Contractuel)",
+					"_List": "Contrat,Hors Contrat,Sans Objet"
+				},
+				{
+					"Nom": "Niveau 4",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : Limite Contrat and Limite OT<br><br>@Master : Salesforce<br><br>@Description : Niveau 4<br><br>@RG :Picklist<br><br>@Profile : Les utilisateur ByES<br><br>@InterfaceExterne : N/A<br><br>@Domaine : BYES FM/FSL/Contrat<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Level4__c",
+					"Validation": "Picklist(Contractuel)",
+					"_List": "Contrat,Hors Contrat,Sans Objet"
+				},
+				{
+					"Nom": "Niveau 5",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : Limite Contrat and Limite OT<br><br>@Master : Salesforce<br><br>@Description : Niveau 5<br><br>@RG : Piciklistl<br><br>@Profile : Les utilisateur ByES<br><br>@InterfaceExterne : N/A<br><br>@Domaine : BYES FM/FSL/Contrat<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Level5__c",
+					"Validation": "Picklist(Contractuel)",
+					"_List": "Contrat,Hors Contrat,Sans Objet"
+				},
+				{
+					"Nom": "Service Uniquement",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : Limite Contrat and Limite OT<br><br>@Master : Salesforce<br><br>@Description : Service uniquement<br><br>@RG : Checkbox<br><br>@Profile : Les utilisateur ByES<br><br>@InterfaceExterne : N/A<br><br>@Domaine : BYES FM/FSL/Contrat<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_ServiceOnly__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Sous-Domaine",
+					"Aide": "@Origine : BYES FM<br>@RecordType : Limite Contrat and Limite OT<br>@Master : Salesforce<br>@Description : Sous domaine<br>@RG : Picklist<br>@Profile : Les utilisateur ByES<br>@InterfaceExterne : N/A<br>@Domaine : FSL/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_SubDomain__c",
+					"Validation": "Picklist(Code_Sous-domaine)",
+					"List": "010.10,010.20,010.30,010.40,020.10,020.20,020.30,020.40,030.50,030.60,030.70,030.80,030.90,031.10,031.20,031.30,031.40,031.50,040.10,042.10,044.10,046.10,048.10,048.20,048.30,048.40,050.10,052.10,052.20,052.30,052.40,054.10,054.20,060.10,060.20,060.30,060.40,060.50,060.60,062.10,070.10,080.10,080.20,080.30,080.40,100.10,100.20,200.10,210.10,300.10,400.10,400.20,400.30,400.40,400.50,410.10,410.20,410.30,410.40,410.50,410.60,420.10,420.20,430.10,430.20,430.30,430.40,440.20,440.30,500.10,500.20,510.10,510.20,510.30,510.40,510.50,520.10,520.20,520.30,520.40,520.50,600.10,600.20,600.30,600.40,600.50,600.60,800.10,800.20,800.30,800.40,800.50,800.60,800.70,800.80,800.90,900.10,900.20,900.30,900.40,900.50,910.10,910.20"
+				},
+				{
+					"Nom": "Ordre de travail",
+					"Aide": "@Origine : BYES FM<br>@RecordType : Limite Contrat and Limite OT<br>@Master : Salesforce<br>@Description : Ordre de travail<br>@RG : Lookup (Work Order)<br>@Profile : Les utilisateur ByES<br>@InterfaceExterne : N/A<br>@Domaine : FSL/Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(WorkOrder)</i>",
+					"ApiName": "FM_WorkOrder__c",
+					"_Validation": "Lookup(WorkOrder)",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "SLA",
+			"Description": "Onglet SLA",
+			"ApiDBName": "SLA_FM_SLAParameter__c",
+			"Colonnes": [
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_SLA_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Nom",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80) (Unique)</i>",
+					"ApiName": "Name",
+					"Mandatory": "True",
+					"Validation": "Text(80) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Importance equipement",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description :This field define the importance of the asset linked to the case (to process the SLA duration)<br><br>@RG : Manual<br><br>@Profile : All<br><br>@InterfaceExterne : N/A<br><br>@Domaine : Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_AssetImportance__c",
+					"Validation": "Picklist(Importance_Equipement)",
+					"_List": "E0,E1,E2,E3"
+				},
+				{
+					"Nom": "Criticite demande",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Criticity__c",
+					"Validation": "Picklist(Criticite_Demande)",
+					"_List": "C0,C1,C2,C3"
+				},
+				{
+					"Nom": "Priorite espace",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description : The priority of the location linked to the case<br><br>@RG : Manually<br><br>@Profile : All users<br><br>@InterfaceExterne : N/A<br><br>@Domaine : `Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_LocationPriority__c",
+					"Validation": "Picklist(Priorite_Espace)",
+					"List": "P0,P1,P2,P3,P4,P5"
+				},
+				{
+					"Nom": "Mise en place definitive-Astreinte (min)",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description :This field define the Time to fix in a  on call  timing (in minute)<br><br>@RG : Manual<br><br>@Profile : All<br><br>@InterfaceExterne : N/A<br><br>@Domaine : Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0) (Unique)</i>",
+					"ApiName": "FM_OnCallFixingTime__c",
+					"Validation": "Number(10,0) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Delai intervention Astreinte (min)",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description :This field define the Time to Intervene in an  on-call  timing (in minute)<br><br>@RG : Manual<br><br>@Profile : All<br><br>@InterfaceExterne : N/A<br><br>@Domaine : Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0) (Unique)</i>",
+					"ApiName": "FM_OnCallInterventionTime__c",
+					"Validation": "Number(10,0) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Mise en place provisoire-Astreinte (min)",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description :This field define the Time to fix provisionally in a  on call  timing (in minute)<br><br>@RG : Manual<br><br>@Profile : All<br><br>@InterfaceExterne : N/A<br><br>@Domaine : Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0) (Unique)</i>",
+					"ApiName": "FM_OnCallProvisionalFixingTime__c",
+					"Validation": "Number(10,0) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Service Contract",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description : The contract linked to this SLA Parameter<br><br>@RG : Manually<br><br>@Profile : All users<br><br>@InterfaceExterne : N/A<br><br>@Domaine : `Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Master-Detail(ServiceContract) (Unique)</i>",
+					"ApiName": "FM_ServiceContract__c",
+					"_Validation": "Master-Detail(ServiceContract) (Unique)",
+					"Formule": "=Contrat[ID Externe]",
+					"List": ""
+				},
+				{
+					"Nom": "Mise en place definitive-Normal (min)",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description :This field define the Time to fix a case (in minute)<br><br>@RG : Manual<br><br>@Profile : All<br><br>@InterfaceExterne : N/A<br><br>@Domaine : Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0) (Unique)</i>",
+					"ApiName": "FM_StandardFixingTime__c",
+					"Validation": "Number(10,0) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Delai d'intervention Normal (min)",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description :This field define the Time to Intervene in a standard timing (in minute)<br><br>@RG : Manual<br><br>@Profile : All<br><br>@InterfaceExterne : N/A<br><br>@Domaine : Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0) (Unique)</i>",
+					"ApiName": "FM_StandardInterventionTime__c",
+					"Validation": "Number(10,0) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Mise en place provisoire-Normal (min)",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description :This field define the Time to fix provisionally in a standard timing (in minute)<br><br>@RG : Manual<br><br>@Profile : All<br><br>@InterfaceExterne : N/A<br><br>@Domaine : Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,0) (Unique)</i>",
+					"ApiName": "FM_StandardProvisionalFixingTime__c",
+					"Validation": "Number(10,0) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Symptome reference",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description : The symptom linked to this SLA Parameter<br><br>@RG : Manually<br><br>@Profile : All users<br><br>@InterfaceExterne : N/A<br><br>@Domaine : `Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(FM_SymptomReference__c)</i>",
+					"ApiName": "FM_SymptomReference__c",
+					"Validation": "Picklist(Symptome_Reference)",
+					"List": ""
+				},
+				{
+					"Nom": "VIP",
+					"Aide": "@Origine : BYES FM<br><br>@RecordType : All<br><br>@Master : Salesforce<br><br>@Description :This field define if the contact linked to the case should be treated as VIP (to process the SLA duration)<br><br>@RG : Manual<br><br>@Profile : All<br><br>@InterfaceExterne : N/A<br><br>@Domaine : Contract<br><br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_VIP__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				}
+			]
+		},
+		{
+			"Titre": "Adresse",
+			"Description": "Onglet Adresse",
+			"ApiDBName": "Address",
+			"Colonnes": [
+				{
+					"Nom": "Nom",
+					"Aide": "",
+					"Mandatory": "True",
+					"ApiName": "Name",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_ADR_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Type",
+					"Aide": "",
+					"ApiName": "LocationType",
+					"_Validation": "Id (Unique)",
+					"_Formule": "=Compte_Client[Prefix ID]&\"_ADR_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Description",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "Description",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Adresse",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "Street",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Ville",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(40)</i>",
+					"ApiName": "City",
+					"Mandatory": "True",
+					"Validation": "Text(40)",
+					"List": ""
+				},
+				{
+					"Nom": "Pays",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "Country",
+					"Mandatory": "True",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Code de pays",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "CountryCode",
+					"Mandatory": "True",
+					"_Validation": "Picklist",
+					"Formule": "FR",
+					"List": ""
+				},
+				{
+					"Nom": "Itinéraire routier",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(1000)</i>",
+					"ApiName": "DrivingDirections",
+					"Validation": "Text(1000)",
+					"List": ""
+				},
+				{
+					"Nom": "Geocode Accuracy",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "GeocodeAccuracy",
+					"_Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Code postal",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(20)</i>",
+					"ApiName": "PostalCode",
+					"Mandatory": "True",
+					"Validation": "Text(20)",
+					"List": ""
+				},
+				{
+					"Nom": "Région/Province",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "State",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Code de région/province",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "StateCode",
+					"_Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Fuseau horaire",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "TimeZone",
+					"Mandatory": "True",
+					"_Validation": "Picklist",
+					"Formule": "Europe/Paris",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Batiment",
+			"Description": "Onglet Batiment",
+			"ApiDBName": "BATIMENT_Location-AssociateLocation",
+			"Colonnes": [
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_BTM_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Site Nom",
+					"Aide": "",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Site)"
+				},
+				{
+					"Nom": "Site Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "AccountId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Site)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0));\"\";RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0))"
+				},
+				{
+					"Nom": "ID Externe Associate Location",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "AssociateLocation.FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"Formule": "=@[Site Id]&@[ID Externe]",
+					"List": ""
+				},
+				{
+					"Nom": "Nom",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / NOM<br><br>@InterfaceExterne : Planon / Etages / 7_SF_ExportEtages / ETAGE<br><br>@InterfaceExterne : Planon / Espaces / 7_SF_ExportEspaces / LIBELLE LOCAL<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "Name",
+					"Mandatory": "True",
+					"Validation": "Text(255) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Type",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "RecordTypeId",
+					"Validation": "Text(40)",
+					"Formule": "Batiment",
+					"List": ""
+				},
+				{
+					"Nom": "Date debut construction",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Date</i>",
+					"ApiName": "ConstructionStartDate",
+					"Validation": "Date",
+					"List": ""
+				},
+				{
+					"Nom": "Date fin construction",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Date</i>",
+					"ApiName": "ConstructionEndDate",
+					"Validation": "Date",
+					"List": ""
+				},
+				{
+					"Nom": "Date ouverture",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Date</i>",
+					"ApiName": "OpenDate",
+					"Validation": "Date",
+					"List": ""
+				},
+				{
+					"Nom": "Description",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "Description",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Visiteur Adresse Nom",
+					"Aide": "",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Visiteur Adresse Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Address)</i>",
+					"ApiName": "VisitorAddressId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Visiteur Adresse Nom];Adresse[Nom]:Adresse[ID Externe];COLONNE(Adresse[ID Externe])-(COLONNE(Adresse[Nom])-1);0));\"\";RECHERCHEV(@[Visiteur Adresse Nom];Adresse[Nom]:Adresse[ID Externe];COLONNE(Adresse[ID Externe])-(COLONNE(Adresse[Nom])-1);0))",
+					"List": ""
+				},
+				{
+					"Nom": "Procedure d'acces",
+					"Aide": "Procedure d'acces<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_AccessProcedure__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Astreinte active",
+					"Aide": "Astreinte active<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_ActivePenalty__c",
+					"Validation": "Checkbox (Unique)",
+					"_List": "True,False"
+				},
+				{
+					"Nom": "Secteur activite",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_ActivityArea__c",
+					"Validation": "Picklist(Activite_Batiment)",
+					"List": "AdministrationJail,Banking,Community,Defense,Education,Hotel,Industrial,Health,Tertiary"
+				},
+				{
+					"Nom": "Adresse Nom",
+					"Aide": "",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Adresse Id",
+					"Aide": "Adresse<br><br>@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / ADRESSE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Address)</i>",
+					"ApiName": "FM_Address__c",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Adresse Nom];Adresse[Nom]:Adresse[ID Externe];COLONNE(Adresse[ID Externe])-(COLONNE(Adresse[Nom])-1);0));\"\";RECHERCHEV(@[Adresse Nom];Adresse[Nom]:Adresse[ID Externe];COLONNE(Adresse[ID Externe])-(COLONNE(Adresse[Nom])-1);0))",
+					"List": ""
+				},
+				{
+					"Nom": "Telephone Astreinte Backup",
+					"Aide": "Telephone Astreinte Backup<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Phone</i>",
+					"ApiName": "FM_BackupOnCallTel__c",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "Heures ouverture Id",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / HORAIRES OUVERTURE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(BusinessHours)</i>",
+					"ApiName": "FM_BusinessHour__c",
+					"_Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0));\"\";RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0))",
+					"List": ""
+				},
+				{
+					"Nom": "Personnes a prevenir",
+					"Aide": "Personnes BYES ou Client a prevenir<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_BYESClientPersonsToNotif__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Fournisseur energie Froid",
+					"Aide": "Fournisseur energie Froid<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_ColdEnergySupplier__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Commentaire Astreinte",
+					"Aide": "Commentaire Astreinte<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_CommentPenalty__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Correspondant methodes",
+					"Aide": "Correspondant methodes<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Contact)</i>",
+					"ApiName": "FM_ContactMethod__c",
+					"_Validation": "Lookup(Contact)",
+					"List": ""
+				},
+				{
+					"Nom": "Contact Client",
+					"Aide": "Contact Client<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Contact)</i>",
+					"ApiName": "FM_CustomerContact__c",
+					"_Validation": "Lookup(Contact)",
+					"List": ""
+				},
+				{
+					"Nom": "Intervention Cellule Energie",
+					"Aide": "Intervention Cellule Energie<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_EnergyCellIntervention__c",
+					"Validation": "Checkbox (Unique)",
+					"_List": "True,False"
+				},
+				{
+					"Nom": "Engagement energetique soumis a penalite",
+					"Aide": "Engagement energetique soumis a penalites<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_EnergyCommitmentPenalty__c",
+					"Validation": "Checkbox (Unique)",
+					"_List": "True,False"
+				},
+				{
+					"Nom": "Commentaire Perf Energetique",
+					"Aide": "Commentaire Perf Energetique<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_EnergyPerfComment__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Fournisseur energie Electricite",
+					"Aide": "Fournisseur energie Electricite<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_EnergySupplierElectricity__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Suivi des energies",
+					"Aide": "Suivi des energies<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_EnergyTracking__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Outil de suivi des energies",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_EnergyTrackingTool__c",
+					"Validation": "Picklist(Outil_Energies)",
+					"_List": "None,Other,GTB,Hypervision,RemoteReading"
+				},
+				{
+					"Nom": "Certifications environnementales",
+					"Aide": "Certifications environnementales<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_EnvironmentalCertifications__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "GER",
+					"Aide": "GER<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_GER__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Site gardienne",
+					"Aide": "Site gardienne<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_GuardedSite__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Fournisseur energie Chaud",
+					"Aide": "Fournisseur energie Chaud<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_HotEnergySupplier__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Cles-badges",
+					"Aide": "Cles/badges<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_KeysBadges__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Plan pluriannuel investissement",
+					"Aide": "Plan pluriannuel investissement<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_MultiYearInvestmentPlan__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Type occupation",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_OccupationType__c",
+					"Validation": "Picklist(Code_Occupation)",
+					"List": "SingleTenant,MultiTenant"
+				},
+				{
+					"Nom": "Charge operation",
+					"Aide": "Charge d'operation<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Contact)</i>",
+					"ApiName": "FM_OperationManager__c",
+					"_Validation": "Lookup(Contact)",
+					"List": ""
+				},
+				{
+					"Nom": "Charge operation adjoint",
+					"Aide": "Charge d'operation adjoint<br><br>@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / CHARGE OPERATION<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Contact)</i>",
+					"ApiName": "FM_OperationManagerAssistant__c",
+					"_Validation": "Lookup(Contact)",
+					"List": ""
+				},
+				{
+					"Nom": "Type operation",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_OperationType__c",
+					"Validation": "Picklist(Type_Operation)",
+					"_List": "New,Renovation,Reorganization,NotApplicable"
+				},
+				{
+					"Nom": "Zone astreinte",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / ZONE ASTREINTE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_PenaltyArea__c",
+					"Validation": "Picklist(Zone_Astreinte)",
+					"_List": "Z1,Z2,Z3"
+				},
+				{
+					"Nom": "Code astreinte",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(30) (Unique)</i>",
+					"ApiName": "FM_PenaltyCode__c",
+					"Validation": "Text(30) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Performance atteinte en certification",
+					"Aide": "Performance atteinte en certification<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255)</i>",
+					"ApiName": "FM_PerformanceAchievedCertification__c",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Priorite",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Espaces / 7_SF_ExportEspaces / PRIORITE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Priority__c",
+					"Validation": "Picklist(Priorite_Espace)",
+					"_List": "P0,P1,P2,P3,P4,P5"
+				},
+				{
+					"Nom": "Telephone Astreinte Prioritaire",
+					"Aide": "Telephone Astreinte Prioritaire<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Phone</i>",
+					"ApiName": "FM_PriorityOnCallTel__c",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "Plan progres",
+					"Aide": "Plan de progres<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_ProgressPlan__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Site tele-surveille",
+					"Aide": "Site tele-surveille<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "FM_RemoteControlledSite__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Surface (SDP)",
+					"Aide": "Surface (SDP)<br><br>@Origine : FM<br><br>@InterfaceExterne : Planon / Espaces / 7_SF_ExportEspaces / SURFACE NETTE EN M2<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(16,2)</i>",
+					"ApiName": "FM_SDPArea__c",
+					"Validation": "Text(19)",
+					"List": ""
+				},
+				{
+					"Nom": "Type prestations FM",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_ServiceType__c",
+					"Validation": "Picklist(Type_Prestations_FM)",
+					"_List": "MonoTechnique,MultiTechnique,FullFM,Other"
+				},
+				{
+					"Nom": "Classification site",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_SiteClassification__c",
+					"Validation": "Picklist(Classification_Site)",
+					"_List": "LaborCode,ERP,IGH,SEVESO"
+				},
+				{
+					"Nom": "Manager de site",
+					"Aide": "Manager de site<br><br>@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / RESPONSABLE SITE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Contact)</i>",
+					"ApiName": "FM_SiteManager__c",
+					"_Validation": "Lookup(Contact)",
+					"List": ""
+				},
+				{
+					"Nom": "Etat",
+					"Aide": "",
+					"ApiName": "FM_State__c",
+					"_Validation": "",
+					"List": ""
+				},
+				{
+					"Nom": "Date exploitation",
+					"Aide": "",
+					"ApiName": "FM_OperatingDate__c",
+					"Validation": "Date",
+					"List": ""
+				}
+			]
+		}
+	]
+}
