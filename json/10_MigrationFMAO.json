@@ -7,7 +7,7 @@
 		{
 			"Titre": "ListeValeurs",
 			"Description": "Onglet des valeurs possibles",
-			"URLCSVData": "https://kalioste.com/excel2sf/csv/ListeValeurs.csv"
+			"URLCSVData": "https://byes-ideo.herokuapp.com/csv/ListeValeurs.csv"
 		},
 		{
 			"Titre": "Compte_Client",
