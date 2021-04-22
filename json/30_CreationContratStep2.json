@@ -1,0 +1,813 @@
+{
+	"Name": "Creation Nouveau Contrat Etape 2",
+	"Description": "Etape de l'intégration des inventaires des étages",
+	"Version": "0.0.1",
+	"ApiUrl": "http://.com",
+	"Onglets": [
+		{
+			"Titre": "ListeValeurs",
+			"Description": "Onglet des valeurs possibles",
+			"URLCSVData": "https://kalioste.com/excel2sf/csv/ListeValeurs.csv"
+		},
+		{
+			"Titre": "Compte_Client",
+			"Description": "Onglet Compte",
+			"ApiDBName": "COMPTE_Account",
+			"Colonnes": [
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Text(14)",
+					"Mandatory": "True",
+					"_Formule": "=Compte_Client[SIRET]",
+					"List": ""
+				},
+				{
+					"Nom": "Prefix ID",
+					"Aide": "",
+					"Validation": "Text(28)",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
+					"Nom": "SIRET",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(15)</i>",
+					"ApiName": "siret__c",
+					"Validation": "Text(14)",
+					"Mandatory": "True",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Etage",
+			"Description": "Onglet Etage",
+			"ApiDBName": "ETAGE_Location-AssociateLocation",
+			"Colonnes": [
+				{
+					"Nom": "Nom",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / NOM<br><br>@InterfaceExterne : Planon / Etages / 7_SF_ExportEtages / ETAGE<br><br>@InterfaceExterne : Planon / Espaces / 7_SF_ExportEspaces / LIBELLE LOCAL<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "Name",
+					"Mandatory": "True",
+					"Validation": "Text(255) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_ETG_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Type",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;</i>",
+					"ApiName": "RecordTypeId",
+					"Validation": "Text(40)",
+					"Formule": "Etage",
+					"List": ""
+				},
+				{
+					"Nom": "Site Nom",
+					"Aide": "",
+					"ApiName": "Site_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Site)"
+				},
+				{
+					"Nom": "Site Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "AccountId",
+					"Mandatory": "True",
+					"_Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0));\"\";RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0))"
+				},
+				{
+					"Nom": "ID Externe Associate Location",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "AssociateLocation.FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"Formule": "=@[Site Id]&@[ID Externe]",
+					"List": ""
+				},
+				{
+					"Nom": "Batiment Nom",
+					"Aide": "",
+					"ApiName": "Site_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Batiment)"
+				},
+				{
+					"Nom": "Batiment Id",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / NOM SITE<br><br>@InterfaceExterne : Planon / Etages / 7_SF_ExportEtages / CODE BATIMENT<br><br>@InterfaceExterne : Planon / Espaces / 7_SF_ExportEspaces / ETAGE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Location)</i>",
+					"ApiName": "ParentLocationId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Batiment Nom];Batiment[Nom]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[Nom])-1);0));\"\";RECHERCHEV(@[Batiment Nom];Batiment[Nom]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[Nom])-1);0))"
+				}
+			]
+		},
+		{
+			"Titre": "Local",
+			"Description": "Onglet Local",
+			"ApiDBName": "ESPACE_Location-AssociateLocation",
+			"Colonnes": [
+				{
+					"Nom": "Nom",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / NOM<br><br>@InterfaceExterne : Planon / Etages / 7_SF_ExportEtages / ETAGE<br><br>@InterfaceExterne : Planon / Espaces / 7_SF_ExportEspaces / LIBELLE LOCAL<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "Name",
+					"Mandatory": "True",
+					"Validation": "Text(255) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_ESP_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Type",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;</i>",
+					"ApiName": "RecordTypeId",
+					"Validation": "Text(40)",
+					"Formule": "Espace",
+					"List": ""
+				},
+				{
+					"Nom": "Site Nom",
+					"Aide": "",
+					"ApiName": "Site_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Site)"
+				},
+				{
+					"Nom": "Site Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "AccountId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Site)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0));\"\";RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0))"
+				},
+				{
+					"Nom": "ID Externe Associate Location",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "AssociateLocation.FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"Formule": "=@[Site Id]&@[ID Externe]",
+					"List": ""
+				},
+				{
+					"Nom": "Etage Nom",
+					"Aide": "",
+					"ApiName": "Etage_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Etage)"
+				},
+				{
+					"Nom": "Etage Id",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / NOM SITE<br><br>@InterfaceExterne : Planon / Etages / 7_SF_ExportEtages / CODE BATIMENT<br><br>@InterfaceExterne : Planon / Espaces / 7_SF_ExportEspaces / ETAGE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Location)</i>",
+					"ApiName": "ParentLocationId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Etage Nom];Etage[Nom]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[Nom])-1);0));\"\";RECHERCHEV(@[Etage Nom];Etage[Nom]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[Nom])-1);0))"
+				},
+				{
+					"Nom": "Code Exploitant",
+					"Aide": "",
+					"ApiName": "FM_OperatorCode__c",
+					"Validation": "Text(30)",
+					"List": ""
+				},
+				{
+					"Nom": "Code Client",
+					"Aide": "",
+					"ApiName": "FM_CustomerCode__c",
+					"Validation": "Text(30)",
+					"List": ""
+				},
+				{
+					"Nom": "Code barre",
+					"Aide": "",
+					"ApiName": "FM_BarCode__c",
+					"Validation": "Text(100)",
+					"List": ""
+				},
+				{
+					"Nom": "Description",
+					"Aide": "",
+					"ApiName": "Description",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Priorite",
+					"Aide": "",
+					"ApiName": "FM_Priority__c",
+					"Validation": "Picklist(Priorite_Espace)",
+					"_List": ""
+				},
+				{
+					"Nom": "Type local",
+					"Aide": "",
+					"ApiName": "FM_SpaceType__c",
+					"_Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Surface",
+					"Aide": "",
+					"ApiName": "FM_SDPArea__c",
+					"Validation": "Text(19)",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Equipement",
+			"Description": "Onglet Equipement",
+			"ApiDBName": "EQUIPEMENT_Asset",
+			"Colonnes": [
+				{
+					"Nom": "Nom",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
+					"ApiName": "Name",
+					"Mandatory": "True",
+					"Validation": "Text(255) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Mandatory": "True",
+					"Formule": "=Compte_Client[Prefix ID]&\"_EQP_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "Site Nom",
+					"Aide": "",
+					"ApiName": "Site_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Site)"
+				},
+				{
+					"Nom": "Site Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "AccountId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Site)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0));\"\";RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0))"
+				},
+				{
+					"Nom": "Niveau equipement",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(0,0)</i>",
+					"ApiName": "AssetLevel",
+					"Validation": "Number(1,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Description",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(32000)</i>",
+					"ApiName": "Description",
+					"Validation": "Text(32000)",
+					"List": ""
+				},
+				{
+					"Nom": "Date installation",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Date</i>",
+					"ApiName": "InstallDate",
+					"Validation": "Date",
+					"List": ""
+				},
+				{
+					"Nom": "Interne",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "IsInternal",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Local Nom",
+					"Aide": "",
+					"ApiName": "Local_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Local)"
+				},
+				{
+					"Nom": "Etage Nom",
+					"Aide": "",
+					"ApiName": "Etage_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Local)"
+				},
+				{
+					"Nom": "Batiment Nom",
+					"Aide": "",
+					"ApiName": "Batiment_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Local)"
+				},
+				{
+					"Nom": "Batiment",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Location)</i>",
+					"ApiName": "Batiment",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Batiment Nom];Batiment[Nom]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[Nom])-1);0));\"\";RECHERCHEV(@[Batiment Nom];Batiment[Nom]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[Nom])-1);0))"
+				},
+				{
+					"Nom": "Etage",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Location)</i>",
+					"ApiName": "Etage",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Etage Nom];Etage[Nom]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[Nom])-1);0));\"\";RECHERCHEV(@[Etage Nom];Etage[Nom]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[Nom])-1);0))"
+				},
+				{
+					"Nom": "Local",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Location)</i>",
+					"ApiName": "Location",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Local Nom];Local[Nom]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[Nom])-1);0));\"\";RECHERCHEV(@[Local Nom];Local[Nom]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[Nom])-1);0))"
+				},
+				{
+					"Nom": "Attachement",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Location)</i>",
+					"ApiName": "LocationId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ET(@[Local]=\"\";@[Etage]=\"\");@[Batiment];SI(@[Local]=\"\";@[Etage];@[Local]))"
+				},
+				{
+					"Nom": "Equipement Parent Nom",
+					"Aide": "",
+					"ApiName": "Etage_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Equipement Parent)"
+				},
+				{
+					"Nom": "Equipement Parent Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Asset)</i>",
+					"ApiName": "ParentId",
+					"_Validation": "Lookup(Asset)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Equipement Parent Nom];Equipement[Nom]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[Nom])-1);0));\"\";RECHERCHEV(@[Equipement Parent Nom];Equipement[Nom]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[Nom])-1);0))"
+				},
+				{
+					"Nom": "Prix",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Currency(18,0)</i>",
+					"ApiName": "Price",
+					"Validation": "Currency(18,0)",
+					"List": ""
+				},
+				{
+					"Nom": "Quantite",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Number(10,2)</i>",
+					"ApiName": "Quantity",
+					"Validation": "Number(10,2)",
+					"List": ""
+				},
+				{
+					"Nom": "Type",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(RecordType)</i>",
+					"ApiName": "RecordTypeId",
+					"_Validation": "Lookup(RecordType)",
+					"Mandatory": "True",
+					"Formule": "FM_MaintenanceAsset",
+					"List": ""
+				},
+				{
+					"Nom": "Numero de serie",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "SerialNumber",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Statut",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "Status",
+					"Validation": "Picklist(Statut_Equipement)",
+					"_List": "Purchased,Shipped,Installed,Registered,Obsolete"
+				},
+				{
+					"Nom": "Domaine",
+					"Aide": "@Origine : BYES FM<br>@RecordType : N/A<br>@Master : Salesforce<br>@Description : Domaine couvert par l'asset<br>@RG : Picklist<br>@Profile : Les utilisateur ByES<br>@InterfaceExterne : N/A<br>@Domaine : FSL/Asset Management.Contrat<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Domain__c",
+					"Validation": "Picklist2(Code_Domaine)",
+					"_List": "010,020,030,031,040,042,044,046,048,050,052,054,060,062,070,080,100,200,210,300,400,410,500,510,520,600,900,910"
+				},
+				{
+					"Nom": "Famille",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(FM_Family__c)</i>",
+					"ApiName": "FM_Family__c",
+					"Validation": "Picklist2(Code_Famille)",
+					"_List": "Adoucisseurs,Aérothermes,Armoires de climatisation autonomes,Armoires froides,Ascenseurs,Assécheurs d'air,Barrière levante,Blocs autonomes pour éclairage d'urgence,Boucle Haute Tension,Bouteilles de mélange,Câblages,Canalis,Cellules d'arrivée,Centrales d'air,Chambres Froides,Chargeurs,Chariots,Chaudière,Chaudière fioul,Chaudière gaz,Chaudières,Chauffage,Chauffage,Chauffage electrique,Chauffage Fuel,Clapets coupe feu, Trappes, Volets coupe feu,Compresseur d'air,Contrôle réglementaire EPI,CTA,CTA Type A,Descentes, (Colonnes),Détecteurs (type analogique, adressable, simple..),Détection de gaz,Disconnecteur,Echangeurs,Eléments dynamiques : surppresseur,Equipements de Protection Individuelle,Evacuations,Evaporateurs,Extraction,Extraction désenfumage,Filtration,Filtre magnétique,Fluides Médicaux,Fontaines,Gares,Groupe de maintien de pression,Groupes électrogènes,Groupes froids,Lave mains,Lits médicalisés,Métallerie extérieure (mains courantes…),Meuble réfrigéré,Monte-charges,Monte-malades,Niveleurs,Onduleurs,Paratonnerres,Pompes de Circulation,Portail,Portes,Portes intérieures automatiques (serv hospitalier),Préparateurs instantanés (petits ballons élec.),Relevage (pompes, stations),Réseaux,Rideaux d'air Chaud,Rondes,Séparateurs à graisse,Soufflage,Split-systèmes (Unitées intérieures + Groupe),Station Lavage,Suivi Contrat et Administratif,Supervision GTC,Supervision TAL,Système d'alarme incendie (centrale, sirènes),Tableaux /Armoires secours,Tableaux divisionnaires, armoires, coffrets,Tableaux Général de Secours (TGS),TAL Transport automatique leger,TGBT,Tortues,Transformateurs,Turbine,Vannes, Purgeurs…,VDI,Ventilo-convecteurs,WC Sanitaires"
+				},
+				{
+					"Nom": "Importance",
+					"Aide": "@Origine : BYES FM<br>@RecordType : Maintenance Asset<br>@Master : Salesforce<br>@Description : This field will define the importance of an asset in the request scope<br>@RG : Manual<br>@Profile : All ByES user in read only/ Read write for manager and admin<br>@InterfaceExterne : N/A<br>@Domaine : Correctif<br>@Obsolete : N/A<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Importance__c",
+					"Validation": "Picklist(Importance_Equipement)",
+					"_List": "E0,E1,E2,E3"
+				},
+				{
+					"Nom": "Sous domaine",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "FM_Subdomain__c",
+					"Validation": "Picklist2(Code_Sous-domaine)",
+					"_List": "010.10,010.20,010.30,010.40,020.10,020.20,020.30,020.40,030.50,030.60,030.70,030.80,030.90,031.10,031.20,031.30,031.40,031.50,040.10,042.10,044.10,046.10,048.10,048.20,048.30,048.40,050.10,052.10,052.20,052.30,052.40,054.10,054.20,060.10,060.20,060.30,060.40,060.50,060.60,062.10,070.10,080.10,080.20,080.30,080.40,100.10,100.20,200.10,210.10,300.10,400.10,400.20,400.30,400.40,400.50,410.10,410.20,410.30,410.40,410.50,410.60,420.10,420.20,430.10,430.20,430.30,430.40,440.20,440.30,500.10,500.20,510.10,510.20,510.30,510.40,510.50,520.10,520.20,520.30,520.40,520.50,600.10,600.20,600.30,600.40,600.50,600.60,800.10,800.20,800.30,800.40,800.50,800.60,800.70,800.80,800.90,900.10,900.20,900.30,900.40,900.50,910.10,910.20"
+				},
+				{
+					"Nom": "Sous famille",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(FM_Family__c)</i>",
+					"ApiName": "FM_Subfamily__c",
+					"_Validation": "Picklist(Code_Sous_Famille)",
+					"Mandatory": "True",
+					"List": "Adoucisseurs,Aérothermes,Armoires de climatisation autonomes,Armoires froides,Ascenseurs,Assécheurs d'air,Barrière levante,Blocs autonomes pour éclairage d'urgence,Boucle Haute Tension,Bouteilles de mélange,Câblages,Canalis,Cellules d'arrivée,Centrales d'air,Chambres Froides,Chargeurs,Chariots,Chaudière,Chaudière fioul,Chaudière gaz,Chaudières,Chauffage,Chauffage,Chauffage electrique,Chauffage Fuel,Clapets coupe feu, Trappes, Volets coupe feu,Compresseur d'air,Contrôle réglementaire EPI,CTA,CTA Type A,Descentes, (Colonnes),Détecteurs (type analogique, adressable, simple..),Détection de gaz,Disconnecteur,Echangeurs,Eléments dynamiques : surppresseur,Equipements de Protection Individuelle,Evacuations,Evaporateurs,Extraction,Extraction désenfumage,Filtration,Filtre magnétique,Fluides Médicaux,Fontaines,Gares,Groupe de maintien de pression,Groupes électrogènes,Groupes froids,Lave mains,Lits médicalisés,Métallerie extérieure (mains courantes…),Meuble réfrigéré,Monte-charges,Monte-malades,Niveleurs,Onduleurs,Paratonnerres,Pompes de Circulation,Portail,Portes,Portes intérieures automatiques (serv hospitalier),Préparateurs instantanés (petits ballons élec.),Relevage (pompes, stations),Réseaux,Rideaux d'air Chaud,Rondes,Séparateurs à graisse,Soufflage,Split-systèmes (Unitées intérieures + Groupe),Station Lavage,Suivi Contrat et Administratif,Supervision GTC,Supervision TAL,Système d'alarme incendie (centrale, sirènes),Tableaux /Armoires secours,Tableaux divisionnaires, armoires, coffrets,Tableaux Général de Secours (TGS),TAL Transport automatique leger,TGBT,Tortues,Transformateurs,Turbine,Vannes, Purgeurs…,VDI,Ventilo-convecteurs,WC Sanitaires"
+				},
+				{
+					"Nom": "Code Exploitant",
+					"Aide": "",
+					"ApiName": "FM_OperatorCode__c",
+					"Validation": "Text(30)",
+					"List": ""
+				},
+				{
+					"Nom": "Code Client",
+					"Aide": "",
+					"ApiName": "FM_CustomerCode__c",
+					"Validation": "Text(30)",
+					"List": ""
+				},
+				{
+					"Nom": "Etat sante",
+					"Aide": "",
+					"ApiName": "FM_Health__c",
+					"Validation": "Picklist(Etat_Sante)",
+					"_List": "0,1,2,3,4,5"
+				},
+				{
+					"Nom": "Etat fonctionnement",
+					"Aide": "",
+					"ApiName": "FM_OperatingState__c",
+					"Validation": "Picklist(Etat_Fonctionnement)",
+					"_List": "Non défini,Bon"
+				},
+				{
+					"Nom": "Date constat",
+					"Aide": "",
+					"ApiName": "FM_ObservationDate__c",
+					"Validation": "Datetime",
+					"List": ""
+				},
+				{
+					"Nom": "Date fin utilisation",
+					"Aide": "",
+					"ApiName": "UsageEndDate",
+					"Validation": "Date",
+					"List": ""
+				},
+				{
+					"Nom": "Reference",
+					"Aide": "",
+					"ApiName": "FM_Reference__c",
+					"Validation": "Text(100)",
+					"List": ""
+				},
+				{
+					"Nom": "Marque",
+					"Aide": "",
+					"ApiName": "FM_Mark__c",
+					"Validation": "Text(100)",
+					"List": ""
+				},
+				{
+					"Nom": "Inclus Preventive",
+					"Aide": "",
+					"ApiName": "FM_IsMaintained__c",
+					"Validation": "Checkbox (Unique)",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "Occupant",
+			"Description": "Onglet Occupant",
+			"ApiDBName": "OCCUPANT_Contact",
+			"Colonnes": [
+				{
+					"Nom": "Type",
+					"Aide": "",
+					"ApiName": "RecordTypeId",
+					"Mandatory": "True",
+					"Validation": "Text(40)",
+					"Formule": "FM_Occupant",
+					"List": ""
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Mandatory": "True",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_CTC_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
+					"Nom": "User Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "ContactId",
+					"Mandatory": "True",
+					"_Validation": "Id (Unique)",
+					"Formule": "=@[ID Externe]",
+					"List": ""
+				},
+				{
+					"Nom": "Site Nom",
+					"Aide": "",
+					"ApiName": "Site_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Site)"
+				},
+				{
+					"Nom": "Site Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "AccountId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Site)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0));\"\";RECHERCHEV(@[Site Nom];Site[Nom]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[Nom])-1);0))"
+				},
+				{
+					"Nom": "Nom",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80) (Unique)</i>",
+					"ApiName": "LastName",
+					"Mandatory": "True",
+					"Validation": "Text(80) (Unique)",
+					"List": ""
+				},
+				{
+					"Nom": "Prenom",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(40)</i>",
+					"ApiName": "FirstName",
+					"Mandatory": "True",
+					"Validation": "Text(40)",
+					"List": ""
+				},
+				{
+					"Nom": "E-mail",
+					"Aide": "",
+					"ApiName": "Email",
+					"Mandatory": "True",
+					"Validation": "Email()",
+					"List": ""
+				},
+				{
+					"Nom": "Alias",
+					"Aide": "",
+					"Mandatory": "True",
+					"ApiName": "Alias",
+					"Formule": "=GAUCHE(@[E-mail];40)",
+					"List": ""
+				},
+				{
+					"Nom": "Community Surnom",
+					"Aide": "",
+					"Mandatory": "True",
+					"ApiName": "CommunityNickname",
+					"Formule": "=GAUCHE(@[E-mail];40)",
+					"List": ""
+				},
+				{
+					"Nom": "Nom utilisateur",
+					"Aide": "",
+					"ApiName": "Username",
+					"Mandatory": "True",
+					"Formule": "=@[E-mail]",
+					"List": ""
+				},
+				{
+					"Nom": "Profil",
+					"Aide": "",
+					"ApiName": "ProfileId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"List": ""
+				},
+				{
+					"Nom": "Local Nom",
+					"Aide": "",
+					"ApiName": "Etage_Name",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"_Validation": "Lookup(Local)"
+				},
+				{
+					"Nom": "Local",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Location)</i>",
+					"ApiName": "LocationId",
+					"Mandatory": "True",
+					"Validation": "Text(255)",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Local Nom];Local[Nom]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[Nom])-1);0));\"\";RECHERCHEV(@[Local Nom];Local[Nom]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[Nom])-1);0))"
+				},
+				{
+					"Nom": "Nom assistant",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(40)</i>",
+					"ApiName": "AssistantName",
+					"Validation": "Text(40)",
+					"List": ""
+				},
+				{
+					"Nom": "Asstante Telephone",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Phone</i>",
+					"ApiName": "AssistantPhone",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "Date naissance",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Date</i>",
+					"ApiName": "Birthdate",
+					"Validation": "Date",
+					"List": ""
+				},
+				{
+					"Nom": "Service",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Personnes / 7_SF_ExportPersonnes / SERVICE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(80)</i>",
+					"ApiName": "Department",
+					"Validation": "Text(80)",
+					"List": ""
+				},
+				{
+					"Nom": "Description",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(32000)</i>",
+					"ApiName": "Description",
+					"Validation": "Text(32000)",
+					"List": ""
+				},
+				{
+					"Nom": "Ne pas contacter",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "DoNotCall",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Desinscription e-mail",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "HasOptedOutOfEmail",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Telephone domicile",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Phone</i>",
+					"ApiName": "HomePhone",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "ID d'individu",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Individual)</i>",
+					"ApiName": "IndividualId",
+					"_Validation": "Lookup(Individual)",
+					"List": ""
+				},
+				{
+					"Nom": "Mobile",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Personnes / 7_SF_ExportPersonnes / TEL PORTABLE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Phone</i>",
+					"ApiName": "MobilePhone",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "Autre telephone",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Phone</i>",
+					"ApiName": "OtherPhone",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "Telephone bureau",
+					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Personnes / 7_SF_ExportPersonnes / TEL FIXE<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Phone</i>",
+					"ApiName": "Phone",
+					"Validation": "Phone",
+					"List": ""
+				},
+				{
+					"Nom": "URL de la photo",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Url</i>",
+					"ApiName": "PhotoUrl",
+					"Validation": "Url",
+					"List": ""
+				},
+				{
+					"Nom": "Civilite",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "Salutation",
+					"_Validation": "Picklist",
+					"List": ""
+				},
+				{
+					"Nom": "Fonction",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(128)</i>",
+					"ApiName": "Title",
+					"Validation": "Text(128)",
+					"List": ""
+				},
+				{
+					"Nom": "Adresse identique au compte",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "AdresseIdentiqueAuCompte__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Titre",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "honorificTitle__c",
+					"Validation": "Picklist(Code_Titre)",
+					"List": "1,2,3,4,5,6,7"
+				},
+				{
+					"Nom": "Langue principale",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "Language__c",
+					"Validation": "Picklist(Langue)",
+					"List": "FR,DE,EN,ES,IT,PT,PL,RO,CZ"
+				},
+				{
+					"Nom": "VIP",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Checkbox (Unique)</i>",
+					"ApiName": "vip__c",
+					"Validation": "Checkbox (Unique)",
+					"List": "True,False"
+				},
+				{
+					"Nom": "Permission",
+					"Aide": "",
+					"Mandatory": "True",
+					"ApiName": "PermissionSetAssignment",
+					"_Validation": "",
+					"Formule": "FSL_Community_Self_Service_Permissions",
+					"List": ""
+				},
+				{
+					"Nom": "TimeZoneSidKey",
+					"Aide": "",
+					"ApiName": "TimeZoneSidKey",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "Europe/Paris",
+					"List": ""
+				},
+				{
+					"Nom": "LanguageLocaleKey",
+					"Aide": "",
+					"ApiName": "LanguageLocaleKey",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "fr",
+					"List": ""
+				},
+				{
+					"Nom": "EmailEncodingKey",
+					"Aide": "",
+					"ApiName": "EmailEncodingKey",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "UTF-8",
+					"List": ""
+				},
+				{
+					"Nom": "LocaleSidKey",
+					"Aide": "",
+					"ApiName": "LocaleSidKey",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "fr_FR",
+					"List": ""
+				}
+			]
+		}
+	]
+}

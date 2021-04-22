@@ -13,11 +13,6 @@
       "name": "Création nouveau contrat: Etape 2",
       "description": "",
       "json": "./json/30_CreationContratStep2.json"
-    },
-    {
-      "name": "Insertion liste territoire de service",
-      "description": "",
-      "json": "./json/40_CreateServiceTerritory.json"
     }
   ]
 }

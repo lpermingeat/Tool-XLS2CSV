@@ -496,7 +496,8 @@ function verifFile(sheetName){
 							var Find= false;
 							for (var j in sheets.items) {
 								AddSheet=sheets.items[j].name;
-								if (AddSheet === L1 ){Find=true};                     
+								if (AddSheet === L1 ){Find=true};
+									sheets.items[j].activate();
 								}
 							if (Find==false){ 
 								console.log(L1 + " créé");
@@ -532,7 +533,8 @@ function verifFile(sheetName){
 						table = sheet.tables.getItem(sheet.name);
 					}
 				headerTable = table.getHeaderRowRange().load("values");
-				bodyTable = table.getDataBodyRange().load("values");
+				//bodyTable = table.getDataBodyRange().load("values");
+				bodyTable = table.getDataBodyRange().load("rowCount");
 				sheets = context.workbook.worksheets;
 				sheets.load("items/name");
 				table.columns.load("items/name");
@@ -545,7 +547,8 @@ function verifFile(sheetName){
 				//localStorage.setItem(sheetName+"_tableHeader",JSON.stringify(headerTable.values));
 				//localStorage.setItem(sheetName+"_tableValue",JSON.stringify(bodyTable.values));
 				var headerTabCount = headerTable.values[0].length;
-				valueTabCount = bodyTable.values.length;
+				//valueTabCount = bodyTable.values.length;
+				valueTabCount = bodyTable.rowCount;
 				console.log("headerTabCount = "+headerTabCount);
 				console.log("valueTabCount = "+valueTabCount);
 				onglet = jsonFile.Onglets.find(Onglets => {return Onglets.Titre == sheet.name})
@@ -781,7 +784,9 @@ function verifFile(sheetName){
 					}
 				}
 				headerTable = table.getHeaderRowRange().load("values");
-				bodyTable = table.getDataBodyRange().load("text");
+				if(valueTabCount<2000){
+					bodyTable = table.getDataBodyRange().load("text");
+				}
 				if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
 					sheet.getUsedRange().format.autofitColumns();
 					sheet.getUsedRange().format.autofitRows();
@@ -789,7 +794,7 @@ function verifFile(sheetName){
 				return context.sync(table);
 			})	
 			.then(function () {
-				if(onglet.URLCSVData===undefined && !boCreateHeader){
+				if(onglet.URLCSVData===undefined && !boCreateHeader && valueTabCount<2000){
 					var head = getTraductionHeader(headerTable.values[0],onglet);
 					ArrayCSV = {fields: head,data: bodyTable.text,};
 					downloadCSV(clasName+"_"+cptOnglet+"_"+onglet.ApiDBName,sheetName,ArrayCSV);

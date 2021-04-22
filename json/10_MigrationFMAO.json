@@ -7,7 +7,7 @@
 		{
 			"Titre": "ListeValeurs",
 			"Description": "Onglet des valeurs possibles",
-			"URLCSVData": "https://byes-ideo.herokuapp.com/csv/ListeValeurs.csv"
+			"URLCSVData": "https://kalioste.com/excel2sf/csv/ListeValeurs.csv"
 		},
 		{
 			"Titre": "Compte_Client",
@@ -1817,6 +1817,13 @@
 					"ApiName": "FM_Mark__c",
 					"Validation": "Text(100)",
 					"List": ""
+				},
+				{
+					"Nom": "Inclus Preventive",
+					"Aide": "",
+					"ApiName": "FM_IsMaintained__c",
+					"Validation": "Checkbox (Unique)",
+					"List": ""
 				}
 			]
 		},
@@ -1919,7 +1926,7 @@
 					"Aide": "",
 					"Mandatory": "True",
 					"ApiName": "Alias",
-					"Formule": "=GAUCHE(@[E-mail];40)",
+					"Formule": "=GAUCHE(@[E-mail];8)",
 					"List": ""
 				},
 				{

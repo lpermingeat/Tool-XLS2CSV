@@ -1,0 +1,5 @@
+# another path:
+/*
+  # headers for that path:
+  X-Frame-Options: allowall 
+  Cache-Control: no-cache, no-store
