@@ -853,22 +853,6 @@
 					"List": ""
 				},
 				{
-					"Nom": "Nom Batiment",
-					"Aide": "",
-					"Mandatory": "True",
-					"Validation": "Text(255)",
-					"List": ""
-				},
-				{
-					"Nom": "Batiment Id",
-					"Aide": "",
-					"ApiName": "FM_PlanonId__c",
-					"Mandatory": "True",
-					"Validation": "Text(255)",
-					"Formule": "=SI(ESTNA(RECHERCHEV(@[Nom Batiment];Batiment[Nom]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[Nom])-1);0));\"\";RECHERCHEV(@[Nom Batiment];Batiment[Nom]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[Nom])-1);0))",
-					"List": ""
-				},
-				{
 					"Nom": "ID Externe",
 					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
 					"ApiName": "FM_ExternalId__c",
