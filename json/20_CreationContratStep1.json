@@ -961,6 +961,14 @@
 			"ApiDBName": "BATIMENT_Location-AssociateLocation",
 			"Colonnes": [
 				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"Validation": "Id (Unique)",
+					"Formule": "=Compte_Client[Prefix ID]&\"_BTM_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
+					"List": ""
+				},
+				{
 					"Nom": "Nom",
 					"Aide": "@Origine : FM<br><br>@InterfaceExterne : Planon / Liste des Sites / 7_SF_ExportSitesBatiments / NOM<br><br>@InterfaceExterne : Planon / Etages / 7_SF_ExportEtages / ETAGE<br><br>@InterfaceExterne : Planon / Espaces / 7_SF_ExportEspaces / LIBELLE LOCAL<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Text(255) (Unique)</i>",
 					"ApiName": "Name",
@@ -974,14 +982,6 @@
 					"ApiName": "FM_PlanonId__c",
 					"_Validation": "Id (Unique)",
 					"Formule": "=@[ID Externe]",
-					"List": ""
-				},
-				{
-					"Nom": "ID Externe",
-					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
-					"ApiName": "FM_ExternalId__c",
-					"Validation": "Id (Unique)",
-					"Formule": "=Compte_Client[Prefix ID]&\"_BTM_\"&REPT(0;4-NBCAR((LIGNE()-1)))&LIGNE()-1",
 					"List": ""
 				},
 				{
