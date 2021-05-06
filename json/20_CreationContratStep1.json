@@ -1096,7 +1096,7 @@
 					"ApiName": "FM_BusinessHour__c",
 					"_Mandatory": "True",
 					"Validation": "Text(255)",
-					"_Formule": "=SI(ESTNA(RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0));\"\";RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0))",
+					"__Formule": "=SI(ESTNA(RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0));\"\";RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0))",
 					"List": ""
 				},
 				{
