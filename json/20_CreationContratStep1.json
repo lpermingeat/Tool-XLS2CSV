@@ -1080,7 +1080,7 @@
 					"ApiName": "FM_Address__c",
 					"Mandatory": "True",
 					"Validation": "Text(255)",
-					"Formule": "=SI(ESTNA(RECHERCHEV(@[ID Externe];Adresse[Batiment Id]:Adresse[ID Externe];COLONNE(Adresse[ID Externe])-(COLONNE(Adresse[Batiment Id])-1);0));\"\";RECHERCHEV(@[ID Externe];Adresse[Batiment Id]:Adresse[ID Externe];COLONNE(Adresse[ID Externe])-(COLONNE(Adresse[Batiment Id])-1);0))",
+					"_Formule": "=SI(ESTNA(RECHERCHEV(@[ID Externe];Adresse[Batiment Id]:Adresse[ID Externe];COLONNE(Adresse[ID Externe])-(COLONNE(Adresse[Batiment Id])-1);0));\"\";RECHERCHEV(@[ID Externe];Adresse[Batiment Id]:Adresse[ID Externe];COLONNE(Adresse[ID Externe])-(COLONNE(Adresse[Batiment Id])-1);0))",
 					"List": ""
 				},
 				{
@@ -1096,7 +1096,7 @@
 					"ApiName": "FM_BusinessHour__c",
 					"_Mandatory": "True",
 					"Validation": "Text(255)",
-					"__Formule": "=SI(ESTNA(RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0));\"\";RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0))",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0));\"\";RECHERCHEV(@[Heures ouverture Id];Heure_Ouverture[ID Externe]:Heure_Ouverture[ID Externe];COLONNE(Heure_Ouverture[ID Externe])-(COLONNE(Heure_Ouverture[ID Externe])-1);0))",
 					"List": ""
 				},
 				{
