@@ -2379,6 +2379,866 @@
 					"List": ""
 				}
 			]
+		},
+		{
+			"Titre": "CorrectifArchive",
+			"Description": "CorrectifArchive",
+			"ApiDBName": "correctifArchive",
+			"Colonnes": [
+				{
+					"Nom": "PLN_ID",
+					"Aide": "",
+					"ApiName": "FM_PlanonId__c",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"Mandatory": "True",
+					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]",
+					"List": ""
+				},
+				{
+					"Nom": "RecordTypeId",
+					"Aide": "",
+					"ApiName": "RecordTypeId",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_ServiceContract__c",
+					"Aide": "",
+					"ApiName": "FM_ServiceContract__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocationBuildingLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationBuildingLevel__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocationFloorLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationFloorLevel__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocationSpaceLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationSpaceLevel__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Domain__c",
+					"Aide": "",
+					"ApiName": "FM_Domain__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_TECHCaseSymptom__c",
+					"Aide": "",
+					"ApiName": "FM_TECHCaseSymptom__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Subject__c",
+					"Aide": "",
+					"ApiName": "FM_Subject__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_CaseCriticity__c",
+					"Aide": "",
+					"ApiName": "FM_CaseCriticity__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Criticity__c",
+					"Aide": "",
+					"ApiName": "FM_Criticity__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_OnCall__c",
+					"Aide": "",
+					"ApiName": "FM_OnCall__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_DemandDate__c",
+					"Aide": "",
+					"ApiName": "FM_DemandDate__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_StartDate__c",
+					"Aide": "",
+					"ApiName": "FM_StartDate__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_EndDate__c",
+					"Aide": "",
+					"ApiName": "FM_EndDate__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Description__c",
+					"Aide": "",
+					"ApiName": "FM_Description__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_WOMinutes__c",
+					"Aide": "",
+					"ApiName": "FM_WOMinutes__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_FullHoursSpent__c",
+					"Aide": "",
+					"ApiName": "FM_FullHoursSpent__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Asset__c",
+					"Aide": "",
+					"ApiName": "FM_Asset__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_WaitingReason__c",
+					"Aide": "",
+					"ApiName": "FM_WaitingReason__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_DueDate__c",
+					"Aide": "",
+					"ApiName": "FM_DueDate__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocationPriority__c",
+					"Aide": "",
+					"ApiName": "FM_LocationPriority__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Number__c",
+					"Aide": "",
+					"ApiName": "FM_Number__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Status__c",
+					"Aide": "",
+					"ApiName": "FM_Status__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_InternMaintenance__c",
+					"Aide": "",
+					"ApiName": "FM_InternMaintenance__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Requester__c",
+					"Aide": "",
+					"ApiName": "FM_Requester__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_ContractCode__c",
+					"Aide": "",
+					"ApiName": "FM_ContractCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_BuildingCode__c",
+					"Aide": "",
+					"ApiName": "FM_BuildingCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_FloorCode__c",
+					"Aide": "",
+					"ApiName": "FM_FloorCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocalSystemCode__c",
+					"Aide": "",
+					"ApiName": "FM_LocalSystemCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocalOperatorCode__c",
+					"Aide": "",
+					"ApiName": "FM_LocalOperatorCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocalCustomerCode__c",
+					"Aide": "",
+					"ApiName": "FM_LocalCustomerCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Service__c",
+					"Aide": "",
+					"ApiName": "FM_Service__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_AffectedTeam__c",
+					"Aide": "",
+					"ApiName": "FM_AffectedTeam__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Technician__c",
+					"Aide": "",
+					"ApiName": "FM_Technician__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_UnderGuarantee__c",
+					"Aide": "",
+					"ApiName": "FM_UnderGuarantee__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_SpaceNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_SpaceNotAvailable__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_SpaceOperatorNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_SpaceOperatorNotAvailable__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_AssetNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_AssetNotAvailable__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_CreatedDate__c",
+					"Aide": "",
+					"ApiName": "FM_CreatedDate__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_AssignmentDate__c",
+					"Aide": "",
+					"ApiName": "FM_AssignmentDate__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_DateOfTakingCharge__c",
+					"Aide": "",
+					"ApiName": "FM_DateOfTakingCharge__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_DateOrderTechnicallyConcluded__c",
+					"Aide": "",
+					"ApiName": "FM_DateOrderTechnicallyConcluded__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_DateOfOrderAdministrativelyConcluded__c",
+					"Aide": "",
+					"ApiName": "FM_DateOfOrderAdministrativelyConcluded__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Comment__c",
+					"Aide": "",
+					"ApiName": "FM_Comment__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_WorkMonitoring__c",
+					"Aide": "",
+					"ApiName": "FM_WorkMonitoring__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_FreezingDuration__c",
+					"Aide": "",
+					"ApiName": "FM_FreezingDuration__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_DurationAssetNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_DurationAssetNotAvailable__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_AssetCode__c",
+					"Aide": "",
+					"ApiName": "FM_AssetCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_AssetFamily__c",
+					"Aide": "",
+					"ApiName": "FM_AssetFamily__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_AssetOperatorCode__c",
+					"Aide": "",
+					"ApiName": "FM_AssetOperatorCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_AssetImportance__c",
+					"Aide": "",
+					"ApiName": "FM_AssetImportance__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_CustomerRegion__c",
+					"Aide": "",
+					"ApiName": "FM_CustomerRegion__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_ExpectedDeadlineCode__c",
+					"Aide": "",
+					"ApiName": "FM_ExpectedDeadlineCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_SLAPriority__c",
+					"Aide": "",
+					"ApiName": "FM_SLAPriority__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_OpeningHoursDelay__c",
+					"Aide": "",
+					"ApiName": "FM_OpeningHoursDelay__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_OperatorTeam__c",
+					"Aide": "",
+					"ApiName": "FM_OperatorTeam__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_ReportGroup__c",
+					"Aide": "",
+					"ApiName": "FM_ReportGroup__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_GPANumber__c",
+					"Aide": "",
+					"ApiName": "FM_GPANumber__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_SensitiveArea__c",
+					"Aide": "",
+					"ApiName": "FM_SensitiveArea__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Barcode__c",
+					"Aide": "",
+					"ApiName": "FM_Barcode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_ChargeCode__c",
+					"Aide": "",
+					"ApiName": "FM_ChargeCode__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_CumulativeEstimatedAmountExcludingVAT__c",
+					"Aide": "",
+					"ApiName": "FM_CumulativeEstimatedAmountExcludingVAT__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_CumulativeEstimatedAmountIncludingVAT__c",
+					"Aide": "",
+					"ApiName": "FM_CumulativeEstimatedAmountIncludingVAT__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				}
+			]
+		},
+		{
+			"Titre": "CorrectifArchiveWorkOrder",
+			"Description": "CorrectifArchiveWorkOrder",
+			"ApiDBName": "correctifArchiveWorkOrder",
+			"Colonnes": [
+				{
+					"Nom": "PLN_ID",
+					"Aide": "",
+					"ApiName": "FM_PlanonId__c",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "PLN_SITE",
+					"Aide": "",
+					"ApiName": "PLN_SITE",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "PLN_BATIMENT",
+					"Aide": "",
+					"ApiName": "PLN_BATIMENT",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "PLN_ESPACE",
+					"Aide": "",
+					"ApiName": "PLN_ESPACE",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "PLN_EQUIPEMENT",
+					"Aide": "",
+					"ApiName": "PLN_EQUIPEMENT",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"Mandatory": "True",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "WorkOrderId",
+					"Aide": "",
+					"ApiName": "WorkOrderId",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "RecordTypeId",
+					"Aide": "",
+					"ApiName": "RecordTypeId",
+					"_Validation": "",
+					"Mandatory": "True",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "ServiceTerritoryId",
+					"Aide": "",
+					"ApiName": "ServiceTerritoryId",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "WorkTypeId",
+					"Aide": "",
+					"ApiName": "WorkTypeId",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "AccountId",
+					"Aide": "",
+					"ApiName": "AccountId",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "ServiceContractId",
+					"Aide": "",
+					"ApiName": "ServiceContractId",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocationBuildingLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationBuildingLevel__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocationFloorLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationFloorLevel__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_LocationSpaceLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationSpaceLevel__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Domain__c",
+					"Aide": "",
+					"ApiName": "FM_Domain__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_TECHCaseSymptom__c",
+					"Aide": "",
+					"ApiName": "FM_TECHCaseSymptom__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Subject",
+					"Aide": "",
+					"ApiName": "Subject",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_CaseCriticity__c",
+					"Aide": "",
+					"ApiName": "FM_CaseCriticity__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_Criticity__c",
+					"Aide": "",
+					"ApiName": "FM_Criticity__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_OnCall__c",
+					"Aide": "",
+					"ApiName": "FM_OnCall__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_DemandDate__c",
+					"Aide": "",
+					"ApiName": "FM_DemandDate__c",
+					"_Validation": "Date",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "StartDate",
+					"Aide": "",
+					"ApiName": "StartDate",
+					"_Validation": "Date",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "EndDate",
+					"Aide": "",
+					"ApiName": "EndDate",
+					"_Validation": "Date",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "Description",
+					"Aide": "",
+					"ApiName": "Description",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_WOMinutes__c",
+					"Aide": "",
+					"ApiName": "FM_WOMinutes__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_FullHoursSpent__c",
+					"Aide": "",
+					"ApiName": "FM_FullHoursSpent__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "AssetId",
+					"Aide": "",
+					"ApiName": "AssetId",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				},
+				{
+					"Nom": "FM_WaitingReason__c",
+					"Aide": "",
+					"ApiName": "FM_WaitingReason__c",
+					"_Validation": "",
+					"Mandatory": "",
+					"Formule": "",
+					"List": ""
+				}
+			]
 		}
 	]
 }
