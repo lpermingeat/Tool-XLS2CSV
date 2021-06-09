@@ -3037,7 +3037,7 @@
 					"ApiName": "WorkOrderId",
 					"_Validation": "",
 					"Mandatory": "True",
-					"Formule": "",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_ID];CorrectifArchive[PLN_ID]:CorrectifArchive[ID Externe];COLONNE(CorrectifArchive[ID Externe])-(COLONNE(CorrectifArchive[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ID];CorrectifArchive[PLN_ID]:CorrectifArchive[ID Externe];COLONNE(CorrectifArchive[ID Externe])-(COLONNE(CorrectifArchive[PLN_ID])-1);0)))",
 					"List": ""
 				},
 				{
