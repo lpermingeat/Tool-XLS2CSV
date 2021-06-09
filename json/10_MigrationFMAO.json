@@ -3073,7 +3073,7 @@
 					"ApiName": "AccountId",
 					"_Validation": "",
 					"Mandatory": "",
-					"Formule": "",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0))",
 					"List": ""
 				},
 				{
@@ -3091,7 +3091,7 @@
 					"ApiName": "FM_LocationBuildingLevel__c",
 					"_Validation": "",
 					"Mandatory": "",
-					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0))",
+					"Formule": "",
 					"List": ""
 				},
 				{
