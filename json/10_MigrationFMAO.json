@@ -3064,7 +3064,7 @@
 					"ApiName": "WorkTypeId",
 					"_Validation": "",
 					"Mandatory": "",
-					"Formule": "WorkTypeCorrectifDefault",
+					"Formule": "ContractWorkTypeSTD",
 					"List": ""
 				},
 				{
