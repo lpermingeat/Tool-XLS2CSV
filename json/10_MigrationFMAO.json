@@ -2409,7 +2409,7 @@
 					"ApiName": "RecordTypeId",
 					"_Validation": "",
 					"Mandatory": "True",
-					"Formule": "",
+					"Formule": "Correctif",
 					"List": ""
 				},
 				{
@@ -3046,7 +3046,7 @@
 					"ApiName": "RecordTypeId",
 					"_Validation": "",
 					"Mandatory": "True",
-					"Formule": "",
+					"Formule": "Correctif",
 					"List": ""
 				},
 				{
