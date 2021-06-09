@@ -3109,7 +3109,7 @@
 					"ApiName": "FM_LocationSpaceLevel__c",
 					"_Validation": "",
 					"Mandatory": "",
-					"Formule": "",
+					"Formule": "=SI(OU(@[PLN_ESPACE]=0;ESTVIDE(@[PLN_ESPACE]));SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));SI(ESTNA(RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0)))",
 					"List": ""
 				},
 				{
