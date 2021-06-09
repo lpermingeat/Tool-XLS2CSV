@@ -3226,7 +3226,7 @@
 					"ApiName": "AssetId",
 					"_Validation": "",
 					"Mandatory": "",
-					"Formule": "",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0))",
 					"List": ""
 				},
 				{
