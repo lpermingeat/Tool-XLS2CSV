@@ -7,6 +7,16 @@ var arrListeHeader = [];
 var arrListeValeurs = [];
 var boCreateHeader = true;
 document.addEventListener('keypress', eventKeypress);
+function valuesToGMT(vals){
+	for (var j = 0; j < vals.length; j++) {
+			var str = vals[j][0];
+			var d = new Date(vals[j][0]);
+			var n = Math.abs((d.getTimezoneOffset())/60);
+			str=str.substr(0, 19);
+			vals[j][0]=str+"-0"+n+":00";
+	}
+	return vals;
+}
 function eventKeypress(e) {
 	if(e.code ==="KeyE"){
 		createLinkCSV();
@@ -760,6 +770,10 @@ function verifFile(sheetName){
 									cellFormat[j] = col.getDataBodyRange();
 									cellFormat[j].numberFormat = getExcelColonneFormuleStr("YYYY-MM-DDThh:mm:ssZ",valueTabCount);
 									cellFormat[j].format.autofitColumns();
+									break;
+								  case 'Datetime2GMT':
+									cellFormat[j] = col.getDataBodyRange();
+									cellFormat[j].values = valuesToGMT(cellFormat[j].values);
 									break;
 								  case 'Checkbox':
 									//=OR(AND(firstCel<>"VRAI",firstCel<>"FAUX"),ISBLANK(firstCel))
