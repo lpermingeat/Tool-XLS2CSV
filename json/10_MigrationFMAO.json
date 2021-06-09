@@ -3091,7 +3091,7 @@
 					"ApiName": "FM_LocationBuildingLevel__c",
 					"_Validation": "",
 					"Mandatory": "",
-					"Formule": "",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0))",
 					"List": ""
 				},
 				{
