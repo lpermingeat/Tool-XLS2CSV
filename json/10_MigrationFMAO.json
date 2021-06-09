@@ -3082,7 +3082,7 @@
 					"ApiName": "ServiceContractId",
 					"_Validation": "",
 					"Mandatory": "",
-					"Formule": "",
+					"Formule": "=Contrat[ID Externe]",
 					"List": ""
 				},
 				{
