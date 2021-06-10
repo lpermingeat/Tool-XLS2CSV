@@ -2779,7 +2779,11 @@
 				{
 					"Nom": "ServiceTerritoryId",
 					"Aide": "",
-					"ApiName": "ServiceTerritoryId"
+					"ApiName": "ServiceTerritoryId",
+					"_Validation": "Picklist(Territoire)",
+					"Mandatory": "True",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[Territoire principal];COLONNE(Site[Territoire principal])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[Territoire principal];COLONNE(Site[Territoire principal])-(COLONNE(Site[PLN_ID])-1);0))",
+					"_List": ""
 				},
 				{
 					"Nom": "WorkTypeId",
