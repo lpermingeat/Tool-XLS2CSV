@@ -2712,191 +2712,107 @@
 				{
 					"Nom": "FM_UnderGuarantee__c",
 					"Aide": "",
-					"ApiName": "FM_UnderGuarantee__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_UnderGuarantee__c"
 				},
 				{
 					"Nom": "FM_SpaceNotAvailable__c",
 					"Aide": "",
-					"ApiName": "FM_SpaceNotAvailable__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_SpaceNotAvailable__c"
 				},
 				{
 					"Nom": "FM_SpaceOperatorNotAvailable__c",
 					"Aide": "",
-					"ApiName": "FM_SpaceOperatorNotAvailable__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_SpaceOperatorNotAvailable__c"
 				},
 				{
 					"Nom": "FM_AssetNotAvailable__c",
 					"Aide": "",
-					"ApiName": "FM_AssetNotAvailable__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_AssetNotAvailable__c"
 				},
 				{
 					"Nom": "FM_CreatedDate__c",
 					"Aide": "",
-					"ApiName": "FM_CreatedDate__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_CreatedDate__c"
 				},
 				{
 					"Nom": "FM_AssignmentDate__c",
 					"Aide": "",
-					"ApiName": "FM_AssignmentDate__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_AssignmentDate__c"
 				},
 				{
 					"Nom": "FM_DateOfTakingCharge__c",
 					"Aide": "",
-					"ApiName": "FM_DateOfTakingCharge__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_DateOfTakingCharge__c"
 				},
 				{
 					"Nom": "FM_DateOrderTechnicallyConcluded__c",
 					"Aide": "",
-					"ApiName": "FM_DateOrderTechnicallyConcluded__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_DateOrderTechnicallyConcluded__c"
 				},
 				{
 					"Nom": "FM_DateOfOrderAdministrativelyConcluded__c",
 					"Aide": "",
-					"ApiName": "FM_DateOfOrderAdministrativelyConcluded__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_DateOfOrderAdministrativelyConcluded__c"
 				},
 				{
 					"Nom": "FM_Comment__c",
 					"Aide": "",
-					"ApiName": "FM_Comment__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Comment__c"
 				},
 				{
 					"Nom": "FM_WorkMonitoring__c",
 					"Aide": "",
-					"ApiName": "FM_WorkMonitoring__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_WorkMonitoring__c"
 				},
 				{
 					"Nom": "FM_FreezingDuration__c",
 					"Aide": "",
-					"ApiName": "FM_FreezingDuration__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_FreezingDuration__c"
 				},
 				{
 					"Nom": "FM_DurationAssetNotAvailable__c",
 					"Aide": "",
-					"ApiName": "FM_DurationAssetNotAvailable__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_DurationAssetNotAvailable__c"
 				},
 				{
 					"Nom": "FM_AssetCode__c",
 					"Aide": "",
-					"ApiName": "FM_AssetCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_AssetCode__c"
 				},
 				{
 					"Nom": "FM_AssetFamily__c",
 					"Aide": "",
-					"ApiName": "FM_AssetFamily__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_AssetFamily__c"
 				},
 				{
 					"Nom": "FM_AssetOperatorCode__c",
 					"Aide": "",
-					"ApiName": "FM_AssetOperatorCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_AssetOperatorCode__c"
 				},
 				{
 					"Nom": "FM_AssetImportance__c",
 					"Aide": "",
-					"ApiName": "FM_AssetImportance__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_AssetImportance__c"
 				},
 				{
 					"Nom": "FM_CustomerRegion__c",
 					"Aide": "",
-					"ApiName": "FM_CustomerRegion__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_CustomerRegion__c"
 				},
 				{
 					"Nom": "FM_ExpectedDeadlineCode__c",
 					"Aide": "",
-					"ApiName": "FM_ExpectedDeadlineCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_ExpectedDeadlineCode__c"
 				},
 				{
 					"Nom": "FM_SLAPriority__c",
 					"Aide": "",
-					"ApiName": "FM_SLAPriority__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_SLAPriority__c"
 				},
 				{
 					"Nom": "FM_OpeningHoursDelay__c",
 					"Aide": "",
-					"ApiName": "FM_OpeningHoursDelay__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_OpeningHoursDelay__c"
 				},
 				{
 					"Nom": "FM_OperatorTeam__c",
@@ -3070,17 +2986,19 @@
 					"Nom": "FM_DemandDate__c",
 					"Aide": "",
 					"ApiName": "FM_DemandDate__c",
-					"Validation": ""
+					"_Validation": ""
 				},
 				{
 					"Nom": "StartDate",
 					"Aide": "",
-					"ApiName": "StartDate"
+					"ApiName": "StartDate",
+					"_Validation": ""
 				},
 				{
 					"Nom": "EndDate",
 					"Aide": "",
-					"ApiName": "EndDate"
+					"ApiName": "EndDate",
+					"_Validation": ""
 				},
 				{
 					"Nom": "Description",
