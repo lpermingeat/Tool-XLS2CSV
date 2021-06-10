@@ -2981,46 +2981,30 @@
 					"Nom": "PLN_ID",
 					"Aide": "",
 					"ApiName": "FM_PlanonId__c",
-					"_Validation": "",
-					"Mandatory": "True",
-					"Formule": "",
-					"List": ""
+					"Mandatory": "True"
 				},
 				{
 					"Nom": "PLN_SITE",
 					"Aide": "",
 					"ApiName": "PLN_SITE",
-					"_Validation": "",
-					"Mandatory": "True",
-					"Formule": "",
-					"List": ""
+					"Mandatory": "True"
 				},
 				{
 					"Nom": "PLN_BATIMENT",
 					"Aide": "",
 					"ApiName": "PLN_BATIMENT",
-					"_Validation": "",
-					"Mandatory": "True",
-					"Formule": "",
-					"List": ""
+					"Mandatory": "True"
 				},
 				{
 					"Nom": "PLN_ESPACE",
 					"Aide": "",
 					"ApiName": "PLN_ESPACE",
-					"_Validation": "",
-					"Mandatory": "True",
-					"Formule": "",
-					"List": ""
+					"Mandatory": "True"
 				},
 				{
 					"Nom": "PLN_EQUIPEMENT",
 					"Aide": "",
-					"ApiName": "PLN_EQUIPEMENT",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "PLN_EQUIPEMENT"
 				},
 				{
 					"Nom": "ID Externe",
@@ -3028,215 +3012,132 @@
 					"ApiName": "FM_ExternalId__c",
 					"_Validation": "Id (Unique)",
 					"Mandatory": "True",
-					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]",
-					"List": ""
+					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]"
 				},
 				{
 					"Nom": "WorkOrderId",
 					"Aide": "",
 					"ApiName": "WorkOrderId",
-					"_Validation": "",
 					"Mandatory": "True",
-					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_ID];CorrectifArchive[PLN_ID]:CorrectifArchive[ID Externe];COLONNE(CorrectifArchive[ID Externe])-(COLONNE(CorrectifArchive[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ID];CorrectifArchive[PLN_ID]:CorrectifArchive[ID Externe];COLONNE(CorrectifArchive[ID Externe])-(COLONNE(CorrectifArchive[PLN_ID])-1);0))",
-					"List": ""
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_ID];CorrectifArchive[PLN_ID]:CorrectifArchive[ID Externe];COLONNE(CorrectifArchive[ID Externe])-(COLONNE(CorrectifArchive[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ID];CorrectifArchive[PLN_ID]:CorrectifArchive[ID Externe];COLONNE(CorrectifArchive[ID Externe])-(COLONNE(CorrectifArchive[PLN_ID])-1);0))"
 				},
 				{
 					"Nom": "RecordTypeId",
 					"Aide": "",
 					"ApiName": "RecordTypeId",
-					"_Validation": "",
 					"Mandatory": "True",
-					"Formule": "Correctif",
-					"List": ""
+					"Formule": "Correctif"
 				},
 				{
 					"Nom": "ServiceTerritoryId",
 					"Aide": "",
-					"ApiName": "ServiceTerritoryId",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "ServiceTerritoryId"
 				},
 				{
 					"Nom": "WorkTypeId",
 					"Aide": "",
 					"ApiName": "WorkTypeId",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "ContractWorkTypeSTD",
-					"List": ""
+					"Formule": "ContractWorkTypeSTD"
 				},
 				{
 					"Nom": "AccountId",
 					"Aide": "",
 					"ApiName": "AccountId",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0))",
-					"List": ""
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0))"
 				},
 				{
 					"Nom": "ServiceContractId",
 					"Aide": "",
 					"ApiName": "ServiceContractId",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "=Contrat[ID Externe]",
-					"List": ""
+					"Formule": "=Contrat[ID Externe]"
 				},
 				{
 					"Nom": "FM_LocationBuildingLevel__c",
 					"Aide": "",
 					"ApiName": "FM_LocationBuildingLevel__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0))",
-					"List": ""
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0))"
 				},
 				{
 					"Nom": "FM_LocationFloorLevel__c",
 					"Aide": "",
-					"ApiName": "FM_LocationFloorLevel__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_LocationFloorLevel__c"
 				},
 				{
 					"Nom": "FM_LocationSpaceLevel__c",
 					"Aide": "",
 					"ApiName": "FM_LocationSpaceLevel__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "=SI(OU(@[PLN_ESPACE]=0;ESTVIDE(@[PLN_ESPACE]));SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));SI(ESTNA(RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0)))",
-					"List": ""
+					"Formule": "=SI(OU(@[PLN_ESPACE]=0;ESTVIDE(@[PLN_ESPACE]));SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));SI(ESTNA(RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0)))"
 				},
 				{
 					"Nom": "FM_Domain__c",
 					"Aide": "",
-					"ApiName": "FM_Domain__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Domain__c"
 				},
 				{
 					"Nom": "FM_TECHCaseSymptom__c",
 					"Aide": "",
-					"ApiName": "FM_TECHCaseSymptom__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_TECHCaseSymptom__c"
 				},
 				{
 					"Nom": "Subject",
 					"Aide": "",
-					"ApiName": "Subject",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "Subject"
 				},
 				{
 					"Nom": "FM_CaseCriticity__c",
 					"Aide": "",
-					"ApiName": "FM_CaseCriticity__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_CaseCriticity__c"
 				},
 				{
 					"Nom": "FM_Criticity__c",
 					"Aide": "",
-					"ApiName": "FM_Criticity__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Criticity__c"
 				},
 				{
 					"Nom": "FM_OnCall__c",
 					"Aide": "",
-					"ApiName": "FM_OnCall__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_OnCall__c"
 				},
 				{
 					"Nom": "FM_DemandDate__c",
 					"Aide": "",
-					"ApiName": "FM_DemandDate__c",
-					"Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_DemandDate__c"
 				},
 				{
 					"Nom": "StartDate",
 					"Aide": "",
-					"ApiName": "StartDate",
-					"Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "StartDate"
 				},
 				{
 					"Nom": "EndDate",
 					"Aide": "",
-					"ApiName": "EndDate",
-					"Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "EndDate"
 				},
 				{
 					"Nom": "Description",
 					"Aide": "",
-					"ApiName": "Description",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "Description"
 				},
 				{
 					"Nom": "FM_WOMinutes__c",
 					"Aide": "",
-					"ApiName": "FM_WOMinutes__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_WOMinutes__c"
 				},
 				{
 					"Nom": "FM_FullHoursSpent__c",
 					"Aide": "",
-					"ApiName": "FM_FullHoursSpent__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_FullHoursSpent__c"
 				},
 				{
 					"Nom": "AssetId",
 					"Aide": "",
 					"ApiName": "AssetId",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0))",
-					"List": ""
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0))"
 				},
 				{
 					"Nom": "FM_WaitingReason__c",
 					"Aide": "",
-					"ApiName": "FM_WaitingReason__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_WaitingReason__c"
 				}
 			]
 		}
