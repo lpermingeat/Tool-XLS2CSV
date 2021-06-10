@@ -2390,9 +2390,7 @@
 					"Aide": "",
 					"ApiName": "FM_PlanonId__c",
 					"_Validation": "",
-					"Mandatory": "True",
-					"Formule": "",
-					"List": ""
+					"Mandatory": "True"
 				},
 				{
 					"Nom": "ID Externe",
@@ -2400,8 +2398,7 @@
 					"ApiName": "FM_ExternalId__c",
 					"_Validation": "Id (Unique)",
 					"Mandatory": "True",
-					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]",
-					"List": ""
+					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]"
 				},
 				{
 					"Nom": "RecordTypeId",
@@ -2409,305 +2406,172 @@
 					"ApiName": "RecordTypeId",
 					"_Validation": "",
 					"Mandatory": "True",
-					"Formule": "Correctif",
-					"List": ""
+					"Formule": "Correctif"
 				},
 				{
 					"Nom": "FM_ServiceContract__c",
 					"Aide": "",
-					"ApiName": "FM_ServiceContract__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_ServiceContract__c"
 				},
 				{
 					"Nom": "FM_LocationBuildingLevel__c",
 					"Aide": "",
-					"ApiName": "FM_LocationBuildingLevel__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_LocationBuildingLevel__c"
 				},
 				{
 					"Nom": "FM_LocationFloorLevel__c",
 					"Aide": "",
-					"ApiName": "FM_LocationFloorLevel__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_LocationFloorLevel__c"
 				},
 				{
 					"Nom": "FM_LocationSpaceLevel__c",
 					"Aide": "",
-					"ApiName": "FM_LocationSpaceLevel__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_LocationSpaceLevel__c"
 				},
 				{
 					"Nom": "FM_Domain__c",
 					"Aide": "",
-					"ApiName": "FM_Domain__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Domain__c"
 				},
 				{
 					"Nom": "FM_TECHCaseSymptom__c",
 					"Aide": "",
-					"ApiName": "FM_TECHCaseSymptom__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_TECHCaseSymptom__c"
 				},
 				{
 					"Nom": "FM_Subject__c",
 					"Aide": "",
-					"ApiName": "FM_Subject__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Subject__c"
 				},
 				{
 					"Nom": "FM_CaseCriticity__c",
 					"Aide": "",
-					"ApiName": "FM_CaseCriticity__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_CaseCriticity__c"
 				},
 				{
 					"Nom": "FM_Criticity__c",
 					"Aide": "",
-					"ApiName": "FM_Criticity__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Criticity__c"
 				},
 				{
 					"Nom": "FM_OnCall__c",
 					"Aide": "",
-					"ApiName": "FM_OnCall__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_OnCall__c"
 				},
 				{
 					"Nom": "FM_DemandDate__c",
 					"Aide": "",
-					"ApiName": "FM_DemandDate__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_DemandDate__c"
 				},
 				{
 					"Nom": "FM_StartDate__c",
 					"Aide": "",
-					"ApiName": "FM_StartDate__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_StartDate__c"
 				},
 				{
 					"Nom": "FM_EndDate__c",
 					"Aide": "",
-					"ApiName": "FM_EndDate__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_EndDate__c"
 				},
 				{
 					"Nom": "FM_Description__c",
 					"Aide": "",
-					"ApiName": "FM_Description__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Description__c"
 				},
 				{
 					"Nom": "FM_WOMinutes__c",
 					"Aide": "",
-					"ApiName": "FM_WOMinutes__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_WOMinutes__c"
 				},
 				{
 					"Nom": "FM_FullHoursSpent__c",
 					"Aide": "",
-					"ApiName": "FM_FullHoursSpent__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_FullHoursSpent__c"
 				},
 				{
 					"Nom": "FM_Asset__c",
 					"Aide": "",
-					"ApiName": "FM_Asset__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Asset__c"
 				},
 				{
 					"Nom": "FM_WaitingReason__c",
 					"Aide": "",
-					"ApiName": "FM_WaitingReason__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_WaitingReason__c"
 				},
 				{
 					"Nom": "FM_DueDate__c",
 					"Aide": "",
-					"ApiName": "FM_DueDate__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_DueDate__c"
 				},
 				{
 					"Nom": "FM_LocationPriority__c",
 					"Aide": "",
-					"ApiName": "FM_LocationPriority__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_LocationPriority__c"
 				},
 				{
 					"Nom": "FM_Number__c",
 					"Aide": "",
-					"ApiName": "FM_Number__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Number__c"
 				},
 				{
 					"Nom": "FM_Status__c",
 					"Aide": "",
-					"ApiName": "FM_Status__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Status__c"
 				},
 				{
 					"Nom": "FM_InternMaintenance__c",
 					"Aide": "",
-					"ApiName": "FM_InternMaintenance__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_InternMaintenance__c"
 				},
 				{
 					"Nom": "FM_Requester__c",
 					"Aide": "",
-					"ApiName": "FM_Requester__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Requester__c"
 				},
 				{
 					"Nom": "FM_ContractCode__c",
 					"Aide": "",
-					"ApiName": "FM_ContractCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_ContractCode__c"
 				},
 				{
 					"Nom": "FM_BuildingCode__c",
 					"Aide": "",
-					"ApiName": "FM_BuildingCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_BuildingCode__c"
 				},
 				{
 					"Nom": "FM_FloorCode__c",
 					"Aide": "",
-					"ApiName": "FM_FloorCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_FloorCode__c"
 				},
 				{
 					"Nom": "FM_LocalSystemCode__c",
 					"Aide": "",
-					"ApiName": "FM_LocalSystemCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_LocalSystemCode__c"
 				},
 				{
 					"Nom": "FM_LocalOperatorCode__c",
 					"Aide": "",
-					"ApiName": "FM_LocalOperatorCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_LocalOperatorCode__c"
 				},
 				{
 					"Nom": "FM_LocalCustomerCode__c",
 					"Aide": "",
-					"ApiName": "FM_LocalCustomerCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_LocalCustomerCode__c"
 				},
 				{
 					"Nom": "FM_Service__c",
 					"Aide": "",
-					"ApiName": "FM_Service__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Service__c"
 				},
 				{
 					"Nom": "FM_AffectedTeam__c",
 					"Aide": "",
-					"ApiName": "FM_AffectedTeam__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_AffectedTeam__c"
 				},
 				{
 					"Nom": "FM_Technician__c",
 					"Aide": "",
-					"ApiName": "FM_Technician__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Technician__c"
 				},
 				{
 					"Nom": "FM_UnderGuarantee__c",
