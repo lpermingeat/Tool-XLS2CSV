@@ -2901,74 +2901,42 @@
 				{
 					"Nom": "FM_OperatorTeam__c",
 					"Aide": "",
-					"ApiName": "FM_OperatorTeam__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_OperatorTeam__c"
 				},
 				{
 					"Nom": "FM_ReportGroup__c",
 					"Aide": "",
-					"ApiName": "FM_ReportGroup__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_ReportGroup__c"
 				},
 				{
 					"Nom": "FM_GPANumber__c",
 					"Aide": "",
-					"ApiName": "FM_GPANumber__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_GPANumber__c"
 				},
 				{
 					"Nom": "FM_SensitiveArea__c",
 					"Aide": "",
-					"ApiName": "FM_SensitiveArea__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_SensitiveArea__c"
 				},
 				{
 					"Nom": "FM_Barcode__c",
 					"Aide": "",
-					"ApiName": "FM_Barcode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_Barcode__c"
 				},
 				{
 					"Nom": "FM_ChargeCode__c",
 					"Aide": "",
-					"ApiName": "FM_ChargeCode__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_ChargeCode__c"
 				},
 				{
 					"Nom": "FM_CumulativeEstimatedAmountExcludingVAT__c",
 					"Aide": "",
-					"ApiName": "FM_CumulativeEstimatedAmountExcludingVAT__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_CumulativeEstimatedAmountExcludingVAT__c"
 				},
 				{
 					"Nom": "FM_CumulativeEstimatedAmountIncludingVAT__c",
 					"Aide": "",
-					"ApiName": "FM_CumulativeEstimatedAmountIncludingVAT__c",
-					"_Validation": "",
-					"Mandatory": "",
-					"Formule": "",
-					"List": ""
+					"ApiName": "FM_CumulativeEstimatedAmountIncludingVAT__c"
 				}
 			]
 		},
