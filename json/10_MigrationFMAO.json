@@ -2796,7 +2796,7 @@
 					"Nom": "WorkTypeId",
 					"Aide": "",
 					"ApiName": "WorkTypeId",
-					"Formule": "ContractWorkTypeSTD"
+					"Formule": "ContractWorkTypeArchive"
 				},
 				{
 					"Nom": "AccountId",
