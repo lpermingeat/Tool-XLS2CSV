@@ -2413,7 +2413,7 @@
 					"ApiName": "RecordTypeId",
 					"_Validation": "",
 					"Mandatory": "True",
-					"Formule": "Correctif"
+					"Formule": "CorrectifArchive"
 				},
 				{
 					"Nom": "FM_ServiceContract__c",
