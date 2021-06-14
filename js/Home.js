@@ -661,11 +661,23 @@ function verifFile(sheetName){
 						table.getDataBodyRange().numberFormat = [["@"]];
 						table.rows.add(null,csvFile.data);
 					}
+					if(onglet.URLCSVData===undefined && !(onglet.Colonnes===undefined)){
+						for(var i = 0; i < onglet.Colonnes.length; i++){
+							if(onglet.Colonnes[i].Validation==="Datetime2GMT"){
+								var colHeader = onglet.Colonnes[i].Nom;
+								var col = table.columns.getItem(colHeader);
+								var cptInd = 0;
+								for(var j = 0; j < headerTable.values[0].length; j++){
+									if(headerTable.values[0][j]===colHeader){
+										columnsListData[j] = col.getDataBodyRange().load("text");
+										console.log("Colonne Datetime2GMT = " + colHeader);
+									}
+								}
+							}
+						}
+					}
 					for(var j = 0; j < table.columns.items.length; j++){
 						columnsList[j] = table.columns.items[j].getDataBodyRange().getCell(0.0).load("address");
-						if(onglet.URLCSVData===undefined &&!(onglet.Colonnes===undefined) && !(onglet.Colonnes[j].Validation===undefined) && onglet.Colonnes[j].Validation==="Datetime2GMT"){
-							columnsListData[j] = table.columns.items[j].getDataBodyRange().load("text");
-						}
 					}
 				headerRange = table.getHeaderRowRange().load("values");
 				return context.sync();
