@@ -820,7 +820,7 @@ function verifFile(sheetName){
 					sheet.getUsedRange().format.autofitColumns();
 					sheet.getUsedRange().format.autofitRows();
 				}
-				return context.sync(table);
+				return context.sync();
 //			}).then(function () {
 //			if(valueTabCount<2000){
 //				for(var i = 0; i < GMTList.length; i++){
@@ -838,7 +838,7 @@ function verifFile(sheetName){
 //				bodyTable = table.getDataBodyRange().load("text");
 //			}
 //			return context.sync(table);
-			}).then(function (table) {
+			}).then(function () {
 				if(onglet.URLCSVData===undefined && !boCreateHeader && valueTabCount<2000){
 					var head = getTraductionHeader(headerTable.values[0],onglet);
 					ArrayCSV = {fields: head,data: bodyTable.text,};
