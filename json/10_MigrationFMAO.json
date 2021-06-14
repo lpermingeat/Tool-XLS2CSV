@@ -2902,9 +2902,9 @@
 					"ApiName": "FM_WaitingReason__c"
 				},
 				{
-					"Nom": "FM_Archived_c",
+					"Nom": "FM_Archived__c",
 					"Aide": "",
-					"ApiName": "FM_Archived_c",
+					"ApiName": "FM_Archived__c",
 					"Mandatory": "True",
 					"Formule": "True"
 				}
