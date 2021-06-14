@@ -13,7 +13,7 @@ function valuesToGMT(dat){
 			var d = new Date(dat[i]);
 			var n = Math.abs((d.getTimezoneOffset())/60);
 			var str=datStr.substr(0, 19);
-			dat[i]=[str+"-0"+n+":00"];
+			dat[i]=[str+"+0"+n+":00"];
 	}
 	return dat;
 }
