@@ -558,10 +558,10 @@ function verifFile(sheetName){
 				sheets = context.workbook.worksheets;
 				sheets.load("items/name");
 				table.columns.load("items/name");
-				return context.sync(table);
+				return context.sync();
 			})
 			//***** Création des entête de colonne
-			.then(function (table){
+			.then(function (){
 				console.log("Création des entête de colonne");
 				var jsonFile =JSON.parse(localStorage.getItem("JsonFile"));
 				//localStorage.setItem(sheetName+"_tableHeader",JSON.stringify(headerTable.values));
@@ -650,9 +650,9 @@ function verifFile(sheetName){
 				table.columns.load("items/name");
 				table.load("address");
 				//headerRange = table.getHeaderRowRange().load("values");
-				return context.sync(table);
+				return context.sync();
 			})
-			.then(function (table){
+			.then(function (){
 				console.log("Mise en forme");
 				//*****	Chargement du CSV
 					columnsList = [];
@@ -668,9 +668,9 @@ function verifFile(sheetName){
 						}
 					}
 				headerRange = table.getHeaderRowRange().load("values");
-				return context.sync(table);
+				return context.sync();
 			})			
-			.then(function (table){
+			.then(function (){
 				//*****	Controle des données
 				console.log("Parcour des colonnes");
 				if(!boCreateHeader){
