@@ -663,7 +663,7 @@ function verifFile(sheetName){
 					}
 					for(var j = 0; j < table.columns.items.length; j++){
 						columnsList[j] = table.columns.items[j].getDataBodyRange().getCell(0.0).load("address");
-						if(onglet.Colonnes[j].Validation==="Datetime2GMT"){
+						if(!(onglet.Colonnes===undefined) && !(onglet.Colonnes[j].Validation===undefined) && onglet.Colonnes[j].Validation==="Datetime2GMT"){
 							columnsListData[j] = table.columns.items[j].getDataBodyRange().load("text");
 						}
 					}
