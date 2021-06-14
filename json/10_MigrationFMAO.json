@@ -2861,19 +2861,19 @@
 					"Nom": "FM_DemandDate__c",
 					"Aide": "",
 					"ApiName": "FM_DemandDate__c",
-					"_Validation": ""
+					"Validation": "Datetime2GMT"
 				},
 				{
 					"Nom": "StartDate",
 					"Aide": "",
 					"ApiName": "StartDate",
-					"_Validation": ""
+					"Validation": "Datetime2GMT"
 				},
 				{
 					"Nom": "EndDate",
 					"Aide": "",
 					"ApiName": "EndDate",
-					"_Validation": ""
+					"Validation": "Datetime2GMT"
 				},
 				{
 					"Nom": "Description",
@@ -2900,6 +2900,13 @@
 					"Nom": "FM_WaitingReason__c",
 					"Aide": "",
 					"ApiName": "FM_WaitingReason__c"
+				},
+				{
+					"Nom": "FM_Archived_c",
+					"Aide": "",
+					"ApiName": "FM_Archived_c",
+					"Mandatory": "True",
+					"Formule": "True"
 				}
 			]
 		}
