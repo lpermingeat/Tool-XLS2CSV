@@ -7,15 +7,15 @@ var arrListeHeader = [];
 var arrListeValeurs = [];
 var boCreateHeader = true;
 document.addEventListener('keypress', eventKeypress);
-function valuesToGMT(vals){
-	for (var j = 0; j < vals.length; j++) {
-			var str = vals[j][0];
-			var d = new Date(vals[j][0]);
+function valuesToGMT(dat){
+	for(var i = 0; i < dat.length; i++){
+			var datStr = new String(dat[i]) ;
+			var d = new Date(dat[i]);
 			var n = Math.abs((d.getTimezoneOffset())/60);
-			str=str.substr(0, 19);
-			vals[j][0]=str+"-0"+n+":00";
+			var str=datStr.substr(0, 19);
+			dat[i]=[str+"-0"+n+":00"];
 	}
-	return vals;
+	return dat;
 }
 function eventKeypress(e) {
 	if(e.code ==="KeyE"){
@@ -181,7 +181,11 @@ function addSheetCSV(name,value){
         });
 	}).catch(errorHandlerFunction)
 }
-function errorHandlerFunction(){
+function errorHandlerFunction(error){
+	console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
 	document.getElementById("gif_patenter").style.display = "none";
 	document.getElementById("lstEtape").innerHTML = document.getElementById("lstEtape").innerHTML + "==> KO";
 	//setStep();
@@ -483,14 +487,19 @@ function verifFile(sheetName){
 		var headerTable;
 		var bodyTable;
 		var columnsList =[];
+		var columnsListData =[];
 		var headerRange;
 		var systemDecimalSeparator ;
 		var valueTabCount;
 		var onglet;
 		var csvFile;
+		var GMTList=[];
+		var jsonFile =JSON.parse(localStorage.getItem("JsonFile"));
+
 		sheets.load("items/name");
 		context.workbook.load("name");
 		context.application.cultureInfo.numberFormat.load("numberDecimalSeparator");
+		context.application.suspendScreenUpdatingUntilNextSync();
 		return context.sync()
 			//***** Vérification de l'existance des onglets
 			.then( function () {
@@ -535,6 +544,7 @@ function verifFile(sheetName){
 						}
 					});
 					sheet.activate();
+					onglet = jsonFile.Onglets.find(Onglets => {return Onglets.Titre == sheet.name});
 					sheet.onChanged.add(handleChange);
 					if(!(tablesName.indexOf(sheet.name)>-1)){
 						table = sheet.tables.add(sheet.getUsedRange(), true);
@@ -646,12 +656,16 @@ function verifFile(sheetName){
 				console.log("Mise en forme");
 				//*****	Chargement du CSV
 					columnsList = [];
+					columnsListData = [];
 					if(!(csvFile===undefined)&&boCreateHeader){
 						table.getDataBodyRange().numberFormat = [["@"]];
 						table.rows.add(null,csvFile.data);
 					}
 					for(var j = 0; j < table.columns.items.length; j++){
 						columnsList[j] = table.columns.items[j].getDataBodyRange().getCell(0.0).load("address");
+						if(onglet.Colonnes[j].Validation==="Datetime2GMT"){
+							columnsListData[j] = table.columns.items[j].getDataBodyRange().load("text");
+						}
 					}
 				headerRange = table.getHeaderRowRange().load("values");
 				return context.sync(table);
@@ -662,8 +676,8 @@ function verifFile(sheetName){
 				if(!boCreateHeader){
 					console.log("Ajout des controles de formats");
 					var headerValues = headerRange.values;
-					var jsonFile =JSON.parse(localStorage.getItem("JsonFile"));
-					onglet = jsonFile.Onglets.find(Onglets => {return Onglets.Titre == sheet.name})
+					//var jsonFile =JSON.parse(localStorage.getItem("JsonFile"));
+					//onglet = jsonFile.Onglets.find(Onglets => {return Onglets.Titre == sheet.name})
 					if(onglet.URLCSVData===undefined){
 						var colLength = onglet.Colonnes.length;
 						console.log("Colonne Adresse" + columnsList[1].address);
@@ -684,6 +698,7 @@ function verifFile(sheetName){
 						// ==> A FAIRE
 						var conditionalFormat=[];
 						var cellFormat=[];
+						var cpt = 0;
 						for(var j = 0; j < colLength; j++){
 							var colHeader = onglet.Colonnes[j].Nom;
 							var col = table.columns.getItem(colHeader);
@@ -717,9 +732,6 @@ function verifFile(sheetName){
 									conditionalFormat[j] = col.getDataBodyRange().conditionalFormats.add(Excel.ConditionalFormatType.custom);
 									conditionalFormat[j].custom.rule.formula = crit;
 									conditionalFormat[j].custom.format.fill.color = "red";
-									
-									
-									
 									
 									// EXEMPLE POUR FAIRE UNE LISTE DE SELECTION... PROBLEME DE SAUVEGARDE !!
 									/*var listVal = onglet.Colonnes[j].List;
@@ -772,8 +784,11 @@ function verifFile(sheetName){
 									cellFormat[j].format.autofitColumns();
 									break;
 								  case 'Datetime2GMT':
-									cellFormat[j] = col.getDataBodyRange();
-									cellFormat[j].values = valuesToGMT(cellFormat[j].values);
+									GMTList[cpt]=j;
+									var lst = valuesToGMT(columnsListData[j].text);
+									console.log("Colonne Values =====> "+lst);
+									table.columns.items[j].getDataBodyRange().values = lst;
+									cpt++;
 									break;
 								  case 'Checkbox':
 									//=OR(AND(firstCel<>"VRAI",firstCel<>"FAUX"),ISBLANK(firstCel))
@@ -806,8 +821,24 @@ function verifFile(sheetName){
 					sheet.getUsedRange().format.autofitRows();
 				}
 				return context.sync(table);
-			})	
-			.then(function () {
+//			}).then(function () {
+//			if(valueTabCount<2000){
+//				for(var i = 0; i < GMTList.length; i++){
+//					var intCol= GMTList[i];
+//					console.log("GMTList NB COL =====> "+intCol);
+//					console.log("bodyTable.text.length =====> "+bodyTable.text.length);
+//					for(var j = 0; j < bodyTable.text.length; j++){
+//						var dat = bodyTable.text[j][intCol];
+//						dat = valuesToGMT(dat);
+//						console.log("DATE =====> "+dat);
+//						bodyTable.text[j][intCol]=dat;
+//						//table.getDataBodyRange().text[j][intCol]=dat;
+//					}
+//				}
+//				bodyTable = table.getDataBodyRange().load("text");
+//			}
+//			return context.sync(table);
+			}).then(function (table) {
 				if(onglet.URLCSVData===undefined && !boCreateHeader && valueTabCount<2000){
 					var head = getTraductionHeader(headerTable.values[0],onglet);
 					ArrayCSV = {fields: head,data: bodyTable.text,};
@@ -827,8 +858,7 @@ function verifFile(sheetName){
 					}
 				}
 				setStep();
-			})
-			;
+			});
 	}).catch(errorHandlerFunction);
 }
 function getTraductionHeader(arrHead,ongl){
