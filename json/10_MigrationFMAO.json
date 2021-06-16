@@ -2843,11 +2843,6 @@
 					"ApiName": "Subject"
 				},
 				{
-					"Nom": "FM_CaseCriticity__c",
-					"Aide": "",
-					"ApiName": "FM_CaseCriticity__c"
-				},
-				{
 					"Nom": "FM_Criticity__c",
 					"Aide": "",
 					"ApiName": "FM_Criticity__c"
