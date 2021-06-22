@@ -2516,11 +2516,6 @@
 					"ApiName": "FM_LocationPriority__c"
 				},
 				{
-					"Nom": "FM_Number__c",
-					"Aide": "",
-					"ApiName": "FM_Number__c"
-				},
-				{
 					"Nom": "FM_Status__c",
 					"Aide": "",
 					"ApiName": "FM_Status__c"
