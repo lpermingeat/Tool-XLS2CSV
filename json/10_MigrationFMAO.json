@@ -2959,9 +2959,7 @@
 				{
 					"Nom": "FM_LocationPriority__c",
 					"Aide": "",
-					"ApiName": "FM_LocationPriority__c",
-					"Mandatory": "True",
-					"Formule": "True"
+					"ApiName": "FM_LocationPriority__c"
 				}
 			]
 		}
