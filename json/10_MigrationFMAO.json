@@ -2736,11 +2736,6 @@
 					"ApiName": "FM_MatrixCode__c"
 				},
 				{
-					"Nom": "FM_CalculatedDeadlineCode__c",
-					"Aide": "",
-					"ApiName": "FM_CalculatedDeadlineCode__c"
-				},
-				{
 					"Nom": "FM_ToleranceDateSPLU__c",
 					"Aide": "",
 					"ApiName": "FM_ToleranceDateSPLU__c"
