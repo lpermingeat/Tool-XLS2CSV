@@ -2764,6 +2764,11 @@
 					"Nom": "FM_DNCValueCD45Number__c",
 					"Aide": "",
 					"ApiName": "FM_DNCValueCD45Number__c"
+				},
+				{
+					"Nom": "FM_AssetCritical__c",
+					"Aide": "",
+					"ApiName": "FM_AssetCritical__c"
 				}
 				
 			]
