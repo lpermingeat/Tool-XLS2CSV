@@ -2807,6 +2807,12 @@
 					"Mandatory": "True"
 				},
 				{
+					"Nom": "PLN_ETAGE",
+					"Aide": "",
+					"ApiName": "PLN_ETAGE",
+					"Mandatory": "True"
+				},
+				{
 					"Nom": "PLN_ESPACE",
 					"Aide": "",
 					"ApiName": "PLN_ESPACE",
@@ -2882,7 +2888,8 @@
 				{
 					"Nom": "FM_LocationFloorLevel__c",
 					"Aide": "",
-					"ApiName": "FM_LocationFloorLevel__c"
+					"ApiName": "FM_LocationFloorLevel__c",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_ETAGE];Etage[PLN_ID]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ETAGE];Etage[PLN_ID]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[PLN_ID])-1);0))"
 				},
 				{
 					"Nom": "FM_LocationSpaceLevel__c",
