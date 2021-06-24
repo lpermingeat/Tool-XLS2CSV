@@ -2769,6 +2769,16 @@
 					"Nom": "FM_AssetCritical__c",
 					"Aide": "",
 					"ApiName": "FM_AssetCritical__c"
+				},
+				{
+					"Nom": "FM_SensitivityLocal__c",
+					"Aide": "",
+					"ApiName": "FM_SensitivityLocal__c"
+				},
+				{
+					"Nom": "FM_FunctionalImportance__c",
+					"Aide": "",
+					"ApiName": "FM_FunctionalImportance__c"
 				}
 				
 			]
