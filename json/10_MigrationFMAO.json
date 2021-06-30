@@ -2779,6 +2779,26 @@
 					"Nom": "FM_FunctionalImportance__c",
 					"Aide": "",
 					"ApiName": "FM_FunctionalImportance__c"
+				},
+				{
+					"Nom": "FM_OrdreArchive__c",
+					"Aide": "",
+					"ApiName": "FM_OrdreArchive__c"
+				},
+				{
+					"Nom": "FM_SiteBatArchive__c",
+					"Aide": "",
+					"ApiName": "FM_SiteBatArchive__c"
+				},
+				{
+					"Nom": "FM_LocalArchive__c",
+					"Aide": "",
+					"ApiName": "FM_LocalArchive__c"
+				},
+				{
+					"Nom": "FM_EquipementArchive__c",
+					"Aide": "",
+					"ApiName": "FM_EquipementArchive__c"
 				}
 				
 			]
