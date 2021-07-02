@@ -628,8 +628,8 @@ function verifFile(sheetName){
 							col = table.columns.getItem(colHeader);
 						}
 						if(!(onglet.Colonnes===undefined) && !(onglet.Colonnes[j].Formule===undefined)){
-							//BUG : Si le nombre de ligne dépasse 2500 (2000 = marge) : Met l'onglet en rouge pour signalement qu'il faut remplir les formules
-							if(valueTabCount<2000){
+							//BUG : Si le nombre de ligne dépasse 2500 (1000 = marge) : Met l'onglet en rouge pour signalement qu'il faut remplir les formules
+							if(valueTabCount<1000){
 								col.getDataBodyRange().formulasLocal = getExcelColonneFormuleStr(onglet.Colonnes[j].Formule,valueTabCount);
 							}else{sheet.tabColor = "#FF0000";}
 						}
@@ -825,7 +825,7 @@ function verifFile(sheetName){
 					}
 				}
 				headerTable = table.getHeaderRowRange().load("values");
-				if(valueTabCount<2000){
+				if(valueTabCount<1000){
 					bodyTable = table.getDataBodyRange().load("text");
 				}
 				if (Office.context.requirements.isSetSupported("ExcelApi", "1.2")) {
@@ -834,7 +834,7 @@ function verifFile(sheetName){
 				}
 				return context.sync();
 //			}).then(function () {
-//			if(valueTabCount<2000){
+//			if(valueTabCount<1000){
 //				for(var i = 0; i < GMTList.length; i++){
 //					var intCol= GMTList[i];
 //					console.log("GMTList NB COL =====> "+intCol);
@@ -851,7 +851,7 @@ function verifFile(sheetName){
 //			}
 //			return context.sync(table);
 			}).then(function () {
-				if(onglet.URLCSVData===undefined && !boCreateHeader && valueTabCount<2000){
+				if(onglet.URLCSVData===undefined && !boCreateHeader && valueTabCount<1000){
 					var head = getTraductionHeader(headerTable.values[0],onglet);
 					ArrayCSV = {fields: head,data: bodyTable.text,};
 					downloadCSV(clasName+"_"+cptOnglet+"_"+onglet.ApiDBName,sheetName,ArrayCSV);
@@ -938,7 +938,7 @@ function Start(){
           Verif(Nbli,Colj);
       // }  
       console.log("This is the end"); 
-  }, 2000);
+  }, 1000);
  
 }
 
