@@ -109,6 +109,7 @@ function createLinkCSV(){
 			return context.sync(table);
 		}).then(function () {
 			//var head = headerTable.values[0];
+			var jsonFile =JSON.parse(localStorage.getItem("JsonFile"));
 			var ongl = jsonFile.Onglets.find(Onglets => {return Onglets.Titre == sheetName});
 			var head = getTraductionHeader(headerTable.values[0],ongl);
 			ArrayCSV = {fields: head,data: bodyTable.text,};
