@@ -108,7 +108,9 @@ function createLinkCSV(){
 			//console.log(`The active worksheet is "${sheet.name}"`);
 			return context.sync(table);
 		}).then(function () {
-			var head = headerTable.values[0];
+			//var head = headerTable.values[0];
+			var ongl = jsonFile.Onglets.find(Onglets => {return Onglets.Titre == sheetName});
+			var head = getTraductionHeader(headerTable.values[0],ongl);
 			ArrayCSV = {fields: head,data: bodyTable.text,};
 			downloadCSV(sheetName,sheetName,ArrayCSV);
 		});
