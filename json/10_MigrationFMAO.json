@@ -3389,7 +3389,7 @@
 					"Aide": "",
 					"ApiName": "RecordTypeId",
 					"Mandatory": "True",
-					"Formule": "Correctif"
+					"Formule": "Préventif"
 				},
 				{
 					"Nom": "ServiceTerritoryId",
