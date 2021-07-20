@@ -3033,7 +3033,7 @@
 					"ApiName": "RecordTypeId",
 					"_Validation": "",
 					"Mandatory": "True",
-					"Formule": "CorrectifArchive"
+					"Formule": "PréventifArchive"
 				},
 				{
 					"Nom": "FM_ServiceContract__c",
