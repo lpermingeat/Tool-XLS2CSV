@@ -2383,7 +2383,7 @@
 		{
 			"Titre": "CorrectifArchive",
 			"Description": "CorrectifArchive",
-			"ApiDBName": "correctifArchive",
+			"ApiDBName": "CorrectifArchive",
 			"Colonnes": [
 				{
 					"Nom": "PLN_ID",
@@ -2806,7 +2806,7 @@
 		{
 			"Titre": "CorrectifArchiveWorkOrder",
 			"Description": "CorrectifArchiveWorkOrder",
-			"ApiDBName": "correctifArchiveWorkOrder",
+			"ApiDBName": "CorrectifArchiveWorkOrder",
 			"Colonnes": [
 				{
 					"Nom": "PLN_ID",
@@ -3003,7 +3003,7 @@
 		{
 			"Titre": "PreventifArchive",
 			"Description": "PreventifArchive",
-			"ApiDBName": "preventifArchive",
+			"ApiDBName": "PreventifArchive",
 			"Colonnes": [
 				{
 					"Nom": "PLN_ID",
@@ -3325,7 +3325,7 @@
 		{
 			"Titre": "PreventifArchiveWorkOrder",
 			"Description": "PreventifArchiveWorkOrder",
-			"ApiDBName": "preventifArchiveWorkOrder",
+			"ApiDBName": "PreventifArchiveWorkOrder",
 			"Colonnes": [
 				{
 					"Nom": "PLN_ID",
