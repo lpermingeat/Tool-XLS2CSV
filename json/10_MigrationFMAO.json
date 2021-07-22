@@ -3032,8 +3032,7 @@
 					"Aide": "",
 					"ApiName": "RecordTypeId",
 					"_Validation": "",
-					"Mandatory": "True",
-					"Formule": "PréventifArchive"
+					"Mandatory": "True"
 				},
 				{
 					"Nom": "FM_ServiceContract__c",
@@ -3388,8 +3387,7 @@
 					"Nom": "RecordTypeId",
 					"Aide": "",
 					"ApiName": "RecordTypeId",
-					"Mandatory": "True",
-					"Formule": "Préventif"
+					"Mandatory": "True"
 				},
 				{
 					"Nom": "ServiceTerritoryId",
