@@ -2411,9 +2411,7 @@
 					"Nom": "RecordTypeId",
 					"Aide": "",
 					"ApiName": "RecordTypeId",
-					"_Validation": "",
-					"Mandatory": "True",
-					"Formule": "CorrectifArchive"
+					"Mandatory": "True"
 				},
 				{
 					"Nom": "FM_ServiceContract__c",
@@ -2869,8 +2867,7 @@
 					"Nom": "RecordTypeId",
 					"Aide": "",
 					"ApiName": "RecordTypeId",
-					"Mandatory": "True",
-					"Formule": "Correctif"
+					"Mandatory": "True"
 				},
 				{
 					"Nom": "ServiceTerritoryId",
@@ -3031,7 +3028,6 @@
 					"Nom": "RecordTypeId",
 					"Aide": "",
 					"ApiName": "RecordTypeId",
-					"_Validation": "",
 					"Mandatory": "True"
 				},
 				{
