@@ -874,7 +874,12 @@ function verifFile(sheetName){
 				}
 				setStep();
 			});
-	}).catch(errorHandlerFunction);
+	}).catch(function (error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+    });
 }
 function getTraductionHeader(arrHead,ongl){
 	for(var j = 0; j < ongl.Colonnes.length; j++){
