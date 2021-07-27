@@ -1,1 +1,1121 @@
-
+{
+	"Name": "Historique Correctif Préventif",
+	"Description": "Historique Correctif Préventif",
+	"Version": "0.0.1",
+	"ApiUrl": "http://.com",
+	"Onglets": [
+		{
+			"Titre": "CorrectifArchive",
+			"Description": "CorrectifArchive",
+			"ApiDBName": "CorrectifArchive",
+			"Colonnes": [
+				{
+					"Nom": "PLN_ID",
+					"Aide": "",
+					"ApiName": "FM_PlanonId__c",
+					"_Validation": "",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"Mandatory": "True",
+					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]"
+				},
+				{
+					"Nom": "WorkOrderId",
+					"Aide": "",
+					"ApiName": "WorkOrderId",
+					"Mandatory": "True",
+					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]"
+				},
+				{
+					"Nom": "RecordTypeId",
+					"Aide": "",
+					"ApiName": "RecordTypeId",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "FM_ServiceContract__c",
+					"Aide": "",
+					"ApiName": "FM_ServiceContract__c"
+				},
+				{
+					"Nom": "FM_LocationBuildingLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationBuildingLevel__c"
+				},
+				{
+					"Nom": "FM_LocationFloorLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationFloorLevel__c"
+				},
+				{
+					"Nom": "FM_LocationSpaceLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationSpaceLevel__c"
+				},
+				{
+					"Nom": "FM_Domain__c",
+					"Aide": "",
+					"ApiName": "FM_Domain__c"
+				},
+				{
+					"Nom": "FM_TECHCaseSymptom__c",
+					"Aide": "",
+					"ApiName": "FM_TECHCaseSymptom__c"
+				},
+				{
+					"Nom": "FM_Subject__c",
+					"Aide": "",
+					"ApiName": "FM_Subject__c"
+				},
+				{
+					"Nom": "FM_CaseCriticity__c",
+					"Aide": "",
+					"ApiName": "FM_CaseCriticity__c"
+				},
+				{
+					"Nom": "FM_Criticity__c",
+					"Aide": "",
+					"ApiName": "FM_Criticity__c"
+				},
+				{
+					"Nom": "FM_OnCall__c",
+					"Aide": "",
+					"ApiName": "FM_OnCall__c"
+				},
+				{
+					"Nom": "FM_DemandDate__c",
+					"Aide": "",
+					"ApiName": "FM_DemandDate__c"
+				},
+				{
+					"Nom": "FM_StartDate__c",
+					"Aide": "",
+					"ApiName": "FM_StartDate__c"
+				},
+				{
+					"Nom": "FM_EndDate__c",
+					"Aide": "",
+					"ApiName": "FM_EndDate__c"
+				},
+				{
+					"Nom": "FM_Description__c",
+					"Aide": "",
+					"ApiName": "FM_Description__c"
+				},
+				{
+					"Nom": "FM_WOMinutes__c",
+					"Aide": "",
+					"ApiName": "FM_WOMinutes__c"
+				},
+				{
+					"Nom": "FM_FullHoursSpent__c",
+					"Aide": "",
+					"ApiName": "FM_FullHoursSpent__c"
+				},
+				{
+					"Nom": "FM_Asset__c",
+					"Aide": "",
+					"ApiName": "FM_Asset__c"
+				},
+				{
+					"Nom": "FM_WaitingReason__c",
+					"Aide": "",
+					"ApiName": "FM_WaitingReason__c"
+				},
+				{
+					"Nom": "FM_DueDate__c",
+					"Aide": "",
+					"ApiName": "FM_DueDate__c"
+				},
+				{
+					"Nom": "FM_LocationPriority__c",
+					"Aide": "",
+					"ApiName": "FM_LocationPriority__c"
+				},
+				{
+					"Nom": "FM_Status__c",
+					"Aide": "",
+					"ApiName": "FM_Status__c"
+				},
+				{
+					"Nom": "FM_InternMaintenance__c",
+					"Aide": "",
+					"ApiName": "FM_InternMaintenance__c"
+				},
+				{
+					"Nom": "FM_Requester__c",
+					"Aide": "",
+					"ApiName": "FM_Requester__c"
+				},
+				{
+					"Nom": "FM_ContractCode__c",
+					"Aide": "",
+					"ApiName": "FM_ContractCode__c"
+				},
+				{
+					"Nom": "FM_BuildingCode__c",
+					"Aide": "",
+					"ApiName": "FM_BuildingCode__c"
+				},
+				{
+					"Nom": "FM_FloorCode__c",
+					"Aide": "",
+					"ApiName": "FM_FloorCode__c"
+				},
+				{
+					"Nom": "FM_LocalSystemCode__c",
+					"Aide": "",
+					"ApiName": "FM_LocalSystemCode__c"
+				},
+				{
+					"Nom": "FM_LocalOperatorCode__c",
+					"Aide": "",
+					"ApiName": "FM_LocalOperatorCode__c"
+				},
+				{
+					"Nom": "FM_LocalCustomerCode__c",
+					"Aide": "",
+					"ApiName": "FM_LocalCustomerCode__c"
+				},
+				{
+					"Nom": "FM_Service__c",
+					"Aide": "",
+					"ApiName": "FM_Service__c"
+				},
+				{
+					"Nom": "FM_AffectedTeam__c",
+					"Aide": "",
+					"ApiName": "FM_AffectedTeam__c"
+				},
+				{
+					"Nom": "FM_Technician__c",
+					"Aide": "",
+					"ApiName": "FM_Technician__c"
+				},
+				{
+					"Nom": "FM_UnderGuarantee__c",
+					"Aide": "",
+					"ApiName": "FM_UnderGuarantee__c"
+				},
+				{
+					"Nom": "FM_SpaceNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_SpaceNotAvailable__c"
+				},
+				{
+					"Nom": "FM_SpaceOperatorNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_SpaceOperatorNotAvailable__c"
+				},
+				{
+					"Nom": "FM_AssetNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_AssetNotAvailable__c"
+				},
+				{
+					"Nom": "FM_CreatedDate__c",
+					"Aide": "",
+					"ApiName": "FM_CreatedDate__c"
+				},
+				{
+					"Nom": "FM_AssignmentDate__c",
+					"Aide": "",
+					"ApiName": "FM_AssignmentDate__c"
+				},
+				{
+					"Nom": "FM_DateOfTakingCharge__c",
+					"Aide": "",
+					"ApiName": "FM_DateOfTakingCharge__c"
+				},
+				{
+					"Nom": "FM_DateOrderTechnicallyConcluded__c",
+					"Aide": "",
+					"ApiName": "FM_DateOrderTechnicallyConcluded__c"
+				},
+				{
+					"Nom": "FM_DateOfOrderAdministrativelyConcluded__c",
+					"Aide": "",
+					"ApiName": "FM_DateOfOrderAdministrativelyConcluded__c"
+				},
+				{
+					"Nom": "FM_Comment__c",
+					"Aide": "",
+					"ApiName": "FM_Comment__c"
+				},
+				{
+					"Nom": "FM_WorkMonitoring__c",
+					"Aide": "",
+					"ApiName": "FM_WorkMonitoring__c"
+				},
+				{
+					"Nom": "FM_FreezingDuration__c",
+					"Aide": "",
+					"ApiName": "FM_FreezingDuration__c"
+				},
+				{
+					"Nom": "FM_DurationAssetNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_DurationAssetNotAvailable__c"
+				},
+				{
+					"Nom": "FM_AssetCode__c",
+					"Aide": "",
+					"ApiName": "FM_AssetCode__c"
+				},
+				{
+					"Nom": "FM_AssetFamily__c",
+					"Aide": "",
+					"ApiName": "FM_AssetFamily__c"
+				},
+				{
+					"Nom": "FM_AssetOperatorCode__c",
+					"Aide": "",
+					"ApiName": "FM_AssetOperatorCode__c"
+				},
+				{
+					"Nom": "FM_AssetImportance__c",
+					"Aide": "",
+					"ApiName": "FM_AssetImportance__c"
+				},
+				{
+					"Nom": "FM_CustomerRegion__c",
+					"Aide": "",
+					"ApiName": "FM_CustomerRegion__c"
+				},
+				{
+					"Nom": "FM_ExpectedDeadlineCode__c",
+					"Aide": "",
+					"ApiName": "FM_ExpectedDeadlineCode__c"
+				},
+				{
+					"Nom": "FM_SLAPriority__c",
+					"Aide": "",
+					"ApiName": "FM_SLAPriority__c"
+				},
+				{
+					"Nom": "FM_OpeningHoursDelay__c",
+					"Aide": "",
+					"ApiName": "FM_OpeningHoursDelay__c"
+				},
+				{
+					"Nom": "FM_OperatorTeam__c",
+					"Aide": "",
+					"ApiName": "FM_OperatorTeam__c"
+				},
+				{
+					"Nom": "FM_ReportGroup__c",
+					"Aide": "",
+					"ApiName": "FM_ReportGroup__c"
+				},
+				{
+					"Nom": "FM_GPANumber__c",
+					"Aide": "",
+					"ApiName": "FM_GPANumber__c"
+				},
+				{
+					"Nom": "FM_SensitiveArea__c",
+					"Aide": "",
+					"ApiName": "FM_SensitiveArea__c"
+				},
+				{
+					"Nom": "FM_Barcode__c",
+					"Aide": "",
+					"ApiName": "FM_Barcode__c"
+				},
+				{
+					"Nom": "FM_ChargeCode__c",
+					"Aide": "",
+					"ApiName": "FM_ChargeCode__c"
+				},
+				{
+					"Nom": "FM_CumulativeEstimatedAmountExcludingVAT__c",
+					"Aide": "",
+					"ApiName": "FM_CumulativeEstimatedAmountExcludingVAT__c"
+				},
+				{
+					"Nom": "FM_CumulativeEstimatedAmountIncludingVAT__c",
+					"Aide": "",
+					"ApiName": "FM_CumulativeEstimatedAmountIncludingVAT__c"
+				},
+				{
+					"Nom": "FM_ImportantFact__c",
+					"Aide": "",
+					"ApiName": "FM_ImportantFact__c"
+				},
+				{
+					"Nom": "FM_RequesterEMail__c",
+					"Aide": "",
+					"ApiName": "FM_RequesterEMail__c"
+				},
+				{
+					"Nom": "FM_MatrixCode__c",
+					"Aide": "",
+					"ApiName": "FM_MatrixCode__c"
+				},
+				{
+					"Nom": "FM_ToleranceDateSPLU__c",
+					"Aide": "",
+					"ApiName": "FM_ToleranceDateSPLU__c"
+				},
+				{
+					"Nom": "FM_ThresholdExceededSPLU__c",
+					"Aide": "",
+					"ApiName": "FM_ThresholdExceededSPLU__c"
+				},
+				{
+					"Nom": "FM_ReductionPenaltySPLU__c",
+					"Aide": "",
+					"ApiName": "FM_ReductionPenaltySPLU__c"
+				},
+				{
+					"Nom": "FM_OutToleranceRange__c",
+					"Aide": "",
+					"ApiName": "FM_OutToleranceRange__c"
+				},
+				{
+					"Nom": "FM_ESAVNumber__c",
+					"Aide": "",
+					"ApiName": "FM_ESAVNumber__c"
+				},
+				{
+					"Nom": "FM_DNCValueCD45Number__c",
+					"Aide": "",
+					"ApiName": "FM_DNCValueCD45Number__c"
+				},
+				{
+					"Nom": "FM_AssetCritical__c",
+					"Aide": "",
+					"ApiName": "FM_AssetCritical__c"
+				},
+				{
+					"Nom": "FM_SensitivityLocal__c",
+					"Aide": "",
+					"ApiName": "FM_SensitivityLocal__c"
+				},
+				{
+					"Nom": "FM_FunctionalImportance__c",
+					"Aide": "",
+					"ApiName": "FM_FunctionalImportance__c"
+				},
+				{
+					"Nom": "FM_OrdreArchive__c",
+					"Aide": "",
+					"ApiName": "FM_OrdreArchive__c"
+				},
+				{
+					"Nom": "FM_SiteBatArchive__c",
+					"Aide": "",
+					"ApiName": "FM_SiteBatArchive__c"
+				},
+				{
+					"Nom": "FM_LocalArchive__c",
+					"Aide": "",
+					"ApiName": "FM_LocalArchive__c"
+				},
+				{
+					"Nom": "FM_EquipementArchive__c",
+					"Aide": "",
+					"ApiName": "FM_EquipementArchive__c"
+				}
+				
+			]
+		},
+		{
+			"Titre": "CorrectifArchiveWorkOrder",
+			"Description": "CorrectifArchiveWorkOrder",
+			"ApiDBName": "CorrectifArchiveWorkOrder",
+			"Colonnes": [
+				{
+					"Nom": "PLN_ID",
+					"Aide": "",
+					"ApiName": "FM_PlanonId__c",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_SITE",
+					"Aide": "",
+					"ApiName": "PLN_SITE",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_BATIMENT",
+					"Aide": "",
+					"ApiName": "PLN_BATIMENT",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_ETAGE",
+					"Aide": "",
+					"ApiName": "PLN_ETAGE",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_ESPACE",
+					"Aide": "",
+					"ApiName": "PLN_ESPACE",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_EQUIPEMENT",
+					"Aide": "",
+					"ApiName": "PLN_EQUIPEMENT"
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"Mandatory": "True",
+					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]"
+				},
+				{
+					"Nom": "Status",
+					"Aide": "",
+					"ApiName": "Status",
+					"Mandatory": "True",
+					"Formule": "Realized"
+				},
+				{
+					"Nom": "FM_UnderStatus__c",
+					"Aide": "",
+					"ApiName": "FM_UnderStatus__c",
+					"Mandatory": "True",
+					"Formule": "Validated"
+				},
+				{
+					"Nom": "RecordTypeId",
+					"Aide": "",
+					"ApiName": "RecordTypeId",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "ServiceTerritoryId",
+					"Aide": "",
+					"ApiName": "ServiceTerritoryId",
+					"_Validation": "Picklist(Territoire)",
+					"Mandatory": "True",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[Territoire principal];COLONNE(Site[Territoire principal])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[Territoire principal];COLONNE(Site[Territoire principal])-(COLONNE(Site[PLN_ID])-1);0))",
+					"_List": ""
+				},
+				{
+					"Nom": "WorkTypeId",
+					"Aide": "",
+					"ApiName": "WorkTypeId",
+					"Formule": "ContractWorkTypeArchive"
+				},
+				{
+					"Nom": "AccountId",
+					"Aide": "",
+					"ApiName": "AccountId",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0))"
+				},
+				{
+					"Nom": "ServiceContractId",
+					"Aide": "",
+					"ApiName": "ServiceContractId",
+					"Formule": "=Contrat[ID Externe]"
+				},
+				{
+					"Nom": "FM_LocationBuildingLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationBuildingLevel__c",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0))"
+				},
+				{
+					"Nom": "FM_LocationFloorLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationFloorLevel__c",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_ETAGE];Etage[PLN_ID]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ETAGE];Etage[PLN_ID]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[PLN_ID])-1);0))"
+				},
+				{
+					"Nom": "FM_LocationSpaceLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationSpaceLevel__c",
+					"Formule": "=SI(OU(@[PLN_ESPACE]=0;ESTVIDE(@[PLN_ESPACE]));SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));SI(ESTNA(RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0)))"
+				},
+				{
+					"Nom": "FM_Domain__c",
+					"Aide": "",
+					"ApiName": "FM_Domain__c"
+				},
+				{
+					"Nom": "FM_TECHCaseSymptom__c",
+					"Aide": "",
+					"ApiName": "FM_TECHCaseSymptom__c"
+				},
+				{
+					"Nom": "Subject",
+					"Aide": "",
+					"ApiName": "Subject"
+				},
+				{
+					"Nom": "FM_Criticity__c",
+					"Aide": "",
+					"ApiName": "FM_Criticity__c"
+				},
+				{
+					"Nom": "FM_OnCall__c",
+					"Aide": "",
+					"ApiName": "FM_OnCall__c"
+				},
+				{
+					"Nom": "FM_DemandDate__c",
+					"Aide": "",
+					"ApiName": "FM_DemandDate__c",
+					"Validation": "Datetime2GMT"
+				},
+				{
+					"Nom": "StartDate",
+					"Aide": "",
+					"ApiName": "StartDate",
+					"Validation": "Datetime2GMT"
+				},
+				{
+					"Nom": "EndDate",
+					"Aide": "",
+					"ApiName": "EndDate",
+					"Validation": "Datetime2GMT"
+				},
+				{
+					"Nom": "Description",
+					"Aide": "",
+					"ApiName": "Description"
+				},
+				{
+					"Nom": "FM_WOMinutes__c",
+					"Aide": "",
+					"ApiName": "FM_WOMinutes__c"
+				},
+				{
+					"Nom": "FM_FullHoursSpent__c",
+					"Aide": "",
+					"ApiName": "FM_FullHoursSpent__c"
+				},
+				{
+					"Nom": "AssetId",
+					"Aide": "",
+					"ApiName": "AssetId",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0))"
+				},
+				{
+					"Nom": "FM_WaitingReason__c",
+					"Aide": "",
+					"ApiName": "FM_WaitingReason__c"
+				},
+				{
+					"Nom": "FM_Archived__c",
+					"Aide": "",
+					"ApiName": "FM_Archived__c",
+					"Mandatory": "True",
+					"Formule": "True"
+				},
+				{
+					"Nom": "FM_LocationPriority__c",
+					"Aide": "",
+					"ApiName": "FM_LocationPriority__c"
+				}
+			]
+		},
+		{
+			"Titre": "PreventifArchive",
+			"Description": "PreventifArchive",
+			"ApiDBName": "PreventifArchive",
+			"Colonnes": [
+				{
+					"Nom": "PLN_ID",
+					"Aide": "",
+					"ApiName": "FM_PlanonId__c",
+					"_Validation": "",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"Mandatory": "True",
+					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]"
+				},
+				{
+					"Nom": "WorkOrderId",
+					"Aide": "",
+					"ApiName": "WorkOrderId",
+					"Mandatory": "True",
+					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]"
+				},
+				{
+					"Nom": "RecordTypeId",
+					"Aide": "",
+					"ApiName": "RecordTypeId",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "FM_ServiceContract__c",
+					"Aide": "",
+					"ApiName": "FM_ServiceContract__c"
+				},
+				{
+					"Nom": "FM_LocationBuildingLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationBuildingLevel__c"
+				},
+				{
+					"Nom": "FM_LocationFloorLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationFloorLevel__c"
+				},
+				{
+					"Nom": "FM_LocationSpaceLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationSpaceLevel__c"
+				},
+				{
+					"Nom": "FM_Domain__c",
+					"Aide": "",
+					"ApiName": "FM_Domain__c"
+				},
+				{
+					"Nom": "FM_TECHCaseSymptom__c",
+					"Aide": "",
+					"ApiName": "FM_TECHCaseSymptom__c"
+				},
+				{
+					"Nom": "FM_Subject__c",
+					"Aide": "",
+					"ApiName": "FM_Subject__c"
+				},
+				{
+					"Nom": "FM_DemandDate__c",
+					"Aide": "",
+					"ApiName": "FM_DemandDate__c"
+				},
+				{
+					"Nom": "FM_StartDate__c",
+					"Aide": "",
+					"ApiName": "FM_StartDate__c"
+				},
+				{
+					"Nom": "FM_EndDate__c",
+					"Aide": "",
+					"ApiName": "FM_EndDate__c"
+				},
+				{
+					"Nom": "FM_WOMinutes__c",
+					"Aide": "",
+					"ApiName": "FM_WOMinutes__c"
+				},
+				{
+					"Nom": "FM_FullHoursSpent__c",
+					"Aide": "",
+					"ApiName": "FM_FullHoursSpent__c"
+				},
+				{
+					"Nom": "FM_Asset__c",
+					"Aide": "",
+					"ApiName": "FM_Asset__c"
+				},
+				{
+					"Nom": "FM_WaitingReason__c",
+					"Aide": "",
+					"ApiName": "FM_WaitingReason__c"
+				},
+				{
+					"Nom": "FM_DueDate__c",
+					"Aide": "",
+					"ApiName": "FM_DueDate__c"
+				},
+				{
+					"Nom": "FM_Status__c",
+					"Aide": "",
+					"ApiName": "FM_Status__c"
+				},
+				{
+					"Nom": "FM_ContractCode__c",
+					"Aide": "",
+					"ApiName": "FM_ContractCode__c"
+				},
+				{
+					"Nom": "FM_BuildingCode__c",
+					"Aide": "",
+					"ApiName": "FM_BuildingCode__c"
+				},
+				{
+					"Nom": "FM_FloorCode__c",
+					"Aide": "",
+					"ApiName": "FM_FloorCode__c"
+				},
+				{
+					"Nom": "FM_LocalSystemCode__c",
+					"Aide": "",
+					"ApiName": "FM_LocalSystemCode__c"
+				},
+				{
+					"Nom": "FM_LocalOperatorCode__c",
+					"Aide": "",
+					"ApiName": "FM_LocalOperatorCode__c"
+				},
+				{
+					"Nom": "FM_LocalCustomerCode__c",
+					"Aide": "",
+					"ApiName": "FM_LocalCustomerCode__c"
+				},
+				{
+					"Nom": "FM_AffectedTeam__c",
+					"Aide": "",
+					"ApiName": "FM_AffectedTeam__c"
+				},
+				{
+					"Nom": "FM_Technician__c",
+					"Aide": "",
+					"ApiName": "FM_Technician__c"
+				},
+				{
+					"Nom": "FM_UnderGuarantee__c",
+					"Aide": "",
+					"ApiName": "FM_UnderGuarantee__c"
+				},
+				{
+					"Nom": "FM_SpaceNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_SpaceNotAvailable__c"
+				},
+				{
+					"Nom": "FM_SpaceOperatorNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_SpaceOperatorNotAvailable__c"
+				},
+				{
+					"Nom": "FM_AssetNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_AssetNotAvailable__c"
+				},
+				{
+					"Nom": "FM_CreatedDate__c",
+					"Aide": "",
+					"ApiName": "FM_CreatedDate__c"
+				},
+				{
+					"Nom": "FM_AssignmentDate__c",
+					"Aide": "",
+					"ApiName": "FM_AssignmentDate__c"
+				},
+				{
+					"Nom": "FM_DateOfTakingCharge__c",
+					"Aide": "",
+					"ApiName": "FM_DateOfTakingCharge__c"
+				},
+				{
+					"Nom": "FM_DateOrderTechnicallyConcluded__c",
+					"Aide": "",
+					"ApiName": "FM_DateOrderTechnicallyConcluded__c"
+				},
+				{
+					"Nom": "FM_DateOfOrderAdministrativelyConcluded__c",
+					"Aide": "",
+					"ApiName": "FM_DateOfOrderAdministrativelyConcluded__c"
+				},
+				{
+					"Nom": "FM_Comment__c",
+					"Aide": "",
+					"ApiName": "FM_Comment__c"
+				},
+				{
+					"Nom": "FM_WorkMonitoring__c",
+					"Aide": "",
+					"ApiName": "FM_WorkMonitoring__c"
+				},
+				{
+					"Nom": "FM_FreezingDuration__c",
+					"Aide": "",
+					"ApiName": "FM_FreezingDuration__c"
+				},
+				{
+					"Nom": "FM_DurationAssetNotAvailable__c",
+					"Aide": "",
+					"ApiName": "FM_DurationAssetNotAvailable__c"
+				},
+				{
+					"Nom": "FM_AssetCode__c",
+					"Aide": "",
+					"ApiName": "FM_AssetCode__c"
+				},
+				{
+					"Nom": "FM_AssetFamily__c",
+					"Aide": "",
+					"ApiName": "FM_AssetFamily__c"
+				},
+				{
+					"Nom": "FM_AssetOperatorCode__c",
+					"Aide": "",
+					"ApiName": "FM_AssetOperatorCode__c"
+				},
+				{
+					"Nom": "FM_AssetImportance__c",
+					"Aide": "",
+					"ApiName": "FM_AssetImportance__c"
+				},
+				{
+					"Nom": "FM_CustomerRegion__c",
+					"Aide": "",
+					"ApiName": "FM_CustomerRegion__c"
+				},
+				{
+					"Nom": "FM_OpeningHoursDelay__c",
+					"Aide": "",
+					"ApiName": "FM_OpeningHoursDelay__c"
+				},
+				{
+					"Nom": "FM_OperatorTeam__c",
+					"Aide": "",
+					"ApiName": "FM_OperatorTeam__c"
+				},
+				{
+					"Nom": "FM_ReportGroup__c",
+					"Aide": "",
+					"ApiName": "FM_ReportGroup__c"
+				},
+				{
+					"Nom": "FM_GPANumber__c",
+					"Aide": "",
+					"ApiName": "FM_GPANumber__c"
+				},
+				{
+					"Nom": "FM_SensitiveArea__c",
+					"Aide": "",
+					"ApiName": "FM_SensitiveArea__c"
+				},
+				{
+					"Nom": "FM_Barcode__c",
+					"Aide": "",
+					"ApiName": "FM_Barcode__c"
+				},
+				{
+					"Nom": "FM_ImportantFact__c",
+					"Aide": "",
+					"ApiName": "FM_ImportantFact__c"
+				},
+				{
+					"Nom": "FM_AssetCritical__c",
+					"Aide": "",
+					"ApiName": "FM_AssetCritical__c"
+				},
+				{
+					"Nom": "FM_SensitivityLocal__c",
+					"Aide": "",
+					"ApiName": "FM_SensitivityLocal__c"
+				},
+				{
+					"Nom": "FM_FunctionalImportance__c",
+					"Aide": "",
+					"ApiName": "FM_FunctionalImportance__c"
+				},
+				{
+					"Nom": "FM_ESAVNumber__c",
+					"Aide": "",
+					"ApiName": "FM_ESAVNumber__c"
+				},
+				{
+					"Nom": "FM_OrdreArchive__c",
+					"Aide": "",
+					"ApiName": "FM_OrdreArchive__c"
+				},
+				{
+					"Nom": "FM_SiteBatArchive__c",
+					"Aide": "",
+					"ApiName": "FM_SiteBatArchive__c"
+				},
+				{
+					"Nom": "FM_LocalArchive__c",
+					"Aide": "",
+					"ApiName": "FM_LocalArchive__c"
+				},
+				{
+					"Nom": "FM_EquipementArchive__c",
+					"Aide": "",
+					"ApiName": "FM_EquipementArchive__c"
+				}
+			]
+		},
+		{
+			"Titre": "PreventifArchiveWorkOrder",
+			"Description": "PreventifArchiveWorkOrder",
+			"ApiDBName": "PreventifArchiveWorkOrder",
+			"Colonnes": [
+				{
+					"Nom": "PLN_ID",
+					"Aide": "",
+					"ApiName": "FM_PlanonId__c",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_SITE",
+					"Aide": "",
+					"ApiName": "PLN_SITE",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_BATIMENT",
+					"Aide": "",
+					"ApiName": "PLN_BATIMENT",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_ETAGE",
+					"Aide": "",
+					"ApiName": "PLN_ETAGE",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_ESPACE",
+					"Aide": "",
+					"ApiName": "PLN_ESPACE",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "PLN_EQUIPEMENT",
+					"Aide": "",
+					"ApiName": "PLN_EQUIPEMENT"
+				},
+				{
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
+					"Mandatory": "True",
+					"Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]"
+				},
+				{
+					"Nom": "Status",
+					"Aide": "",
+					"ApiName": "Status",
+					"Mandatory": "True",
+					"Formule": "Realized"
+				},
+				{
+					"Nom": "FM_UnderStatus__c",
+					"Aide": "",
+					"ApiName": "FM_UnderStatus__c",
+					"Mandatory": "True",
+					"Formule": "Validated"
+				},
+				{
+					"Nom": "RecordTypeId",
+					"Aide": "",
+					"ApiName": "RecordTypeId",
+					"Mandatory": "True"
+				},
+				{
+					"Nom": "ServiceTerritoryId",
+					"Aide": "",
+					"ApiName": "ServiceTerritoryId",
+					"_Validation": "Picklist(Territoire)",
+					"Mandatory": "True",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[Territoire principal];COLONNE(Site[Territoire principal])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[Territoire principal];COLONNE(Site[Territoire principal])-(COLONNE(Site[PLN_ID])-1);0))",
+					"_List": ""
+				},
+				{
+					"Nom": "WorkTypeId",
+					"Aide": "",
+					"ApiName": "WorkTypeId",
+					"Formule": "ContractWorkTypeArchive"
+				},
+				{
+					"Nom": "AccountId",
+					"Aide": "",
+					"ApiName": "AccountId",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0))"
+				},
+				{
+					"Nom": "ServiceContractId",
+					"Aide": "",
+					"ApiName": "ServiceContractId",
+					"Formule": "=Contrat[ID Externe]"
+				},
+				{
+					"Nom": "FM_LocationBuildingLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationBuildingLevel__c",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0))"
+				},
+				{
+					"Nom": "FM_LocationFloorLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationFloorLevel__c",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_ETAGE];Etage[PLN_ID]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ETAGE];Etage[PLN_ID]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[PLN_ID])-1);0))"
+				},
+				{
+					"Nom": "FM_LocationSpaceLevel__c",
+					"Aide": "",
+					"ApiName": "FM_LocationSpaceLevel__c",
+					"Formule": "=SI(OU(@[PLN_ESPACE]=0;ESTVIDE(@[PLN_ESPACE]));SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));SI(ESTNA(RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0)))"
+				},
+				{
+					"Nom": "FM_Domain__c",
+					"Aide": "",
+					"ApiName": "FM_Domain__c"
+				},
+				{
+					"Nom": "Subject",
+					"Aide": "",
+					"ApiName": "Subject"
+				},
+				{
+					"Nom": "FM_DemandDate__c",
+					"Aide": "",
+					"ApiName": "FM_DemandDate__c",
+					"Validation": "Datetime2GMT"
+				},
+				{
+					"Nom": "StartDate",
+					"Aide": "",
+					"ApiName": "StartDate",
+					"Validation": "Datetime2GMT"
+				},
+				{
+					"Nom": "EndDate",
+					"Aide": "",
+					"ApiName": "EndDate",
+					"Validation": "Datetime2GMT"
+				},
+				{
+					"Nom": "FM_WOMinutes__c",
+					"Aide": "",
+					"ApiName": "FM_WOMinutes__c"
+				},
+				{
+					"Nom": "FM_FullHoursSpent__c",
+					"Aide": "",
+					"ApiName": "FM_FullHoursSpent__c"
+				},
+				{
+					"Nom": "AssetId",
+					"Aide": "",
+					"ApiName": "AssetId",
+					"Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0))"
+				},
+				{
+					"Nom": "FM_WaitingReason__c",
+					"Aide": "",
+					"ApiName": "FM_WaitingReason__c"
+				},
+				{
+					"Nom": "FM_Archived__c",
+					"Aide": "",
+					"ApiName": "FM_Archived__c",
+					"Mandatory": "True",
+					"Formule": "True"
+				},
+				{
+					"Nom": "FM_LocationPriority__c",
+					"Aide": "",
+					"ApiName": "FM_LocationPriority__c"
+				}
+			]
+		}
+	]
+}
