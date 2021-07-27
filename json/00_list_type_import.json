@@ -13,6 +13,11 @@
       "name": "Création nouveau contrat: Etape 2",
       "description": "",
       "json": "./json/30_CreationContratStep2.json"
+    },
+    {
+      "name": "Historique Correctif Préventif",
+      "description": "",
+      "json": "./json/70_HistoriqueCorrectifPreventif.json"
     }
   ]
 }
