@@ -303,14 +303,14 @@
 					"Nom": "Local Nom",
 					"Aide": "",
 					"ApiName": "Local_Name",
-					"Validation": "Text(255)",
+					"_Validation": "Text(255)",
 					"_Validation": "Lookup(Local)"
 				},
 				{
 					"Nom": "Etage Nom",
 					"Aide": "",
 					"ApiName": "Etage_Name",
-					"Validation": "Text(255)",
+					"_Validation": "Text(255)",
 					"_Validation": "Lookup(Local)"
 				},
 				{
@@ -333,14 +333,14 @@
 					"Nom": "Etage",
 					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Location)</i>",
 					"ApiName": "Etage",
-					"Validation": "Text(255)",
+					"_Validation": "Text(255)",
 					"Formule": "=SI(ESTNA(RECHERCHEV(@[Etage Nom];Etage[Nom]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[Nom])-1);0));\"\";RECHERCHEV(@[Etage Nom];Etage[Nom]:Etage[ID Externe];COLONNE(Etage[ID Externe])-(COLONNE(Etage[Nom])-1);0))"
 				},
 				{
 					"Nom": "Local",
 					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Location)</i>",
 					"ApiName": "Location",
-					"Validation": "Text(255)",
+					"_Validation": "Text(255)",
 					"Formule": "=SI(ESTNA(RECHERCHEV(@[Local Nom];Local[Nom]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[Nom])-1);0));\"\";RECHERCHEV(@[Local Nom];Local[Nom]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[Nom])-1);0))"
 				},
 				{
