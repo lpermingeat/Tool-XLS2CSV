@@ -861,6 +861,13 @@
 					"List": ""
 				},
 				{
+					"Nom": "ID Externe du Bâtiment",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;ID Externe du Bâtiment</i>",
+					"ApiName": "FM_PlanonId__c",
+					"Mandatory": "True",
+					"List": ""
+				},
+				{
 					"Nom": "Type",
 					"Aide": "",
 					"ApiName": "LocationType",
