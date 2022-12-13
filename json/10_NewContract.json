@@ -7,7 +7,7 @@
 		{
 			"Titre": "ListeValeurs",
 			"Description": "Onglet des valeurs possibles",
-			"URLCSVData": "https://kalioste.com/excel2sf/csv/ListeValeurs.csv"
+			"URLCSVData": "https://lpermingeat.github.io/Tool-XLS2CSV/csv/ListeValeurs.csv"
 		},
 		{
 			"Titre": "Compte_Client",
