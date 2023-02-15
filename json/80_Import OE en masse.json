@@ -10,427 +10,134 @@
 			"URLCSVData": "https://lpermingeat.github.io/Tool-XLS2CSV/csv/ListeValeurs.csv"
 		},
 		{
-			"Titre": "Ordre_Execution",
+			"Titre": "Ordre d'Execution",
 			"Description": "Onglet Ordre d'Execution",
 			"ApiDBName": "WorkOrder",
 			"Colonnes": [
 				{
-					"Nom": "Record Type ID",
-					"Aide": "",
-					"ApiName": "RecordTypeId",
-					"Validation": "Text(18)",
+					"Nom": "ID Externe",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Id (Unique)</i>",
+					"ApiName": "FM_ExternalId__c",
+					"_Validation": "Id (Unique)",
 					"Mandatory": "True",
+					"_Formule": "=Compte_Client[Prefix ID]&\"_OE_PL\"&@[PLN_ID]",
 					"List": ""
 				},
 				{
-					"Nom": "Account ID",
-					"Aide": "",
-					"ApiName": "AccountId",
-					"Validation": "Text(18)",
-					"Mandatory": "True",
-					"List": ""
-				},
-				{
-					"Nom": "Case ID",
-					"Aide": "",
-					"ApiName": "CaseId",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Service Contract ID",
-					"Aide": "",
+					"Nom": "Contrat Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
 					"ApiName": "ServiceContractId",
-					"Validation": "Text(18)",
 					"Mandatory": "True",
+					"Validation": "Text(18)",
+					"_Formule": "=Contrat[ID Externe]",
 					"List": ""
 				},
 				{
-					"Nom": "Asset ID",
+					"Nom": "Site Id",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Lookup(Account)</i>",
+					"ApiName": "AccountId",
+					"Mandatory": "True",
+					"Validation": "Text(18)",
+					"_Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[ID Externe];COLONNE(Site[ID Externe])-(COLONNE(Site[PLN_ID])-1);0))",
+					"List": ""
+				},
+				{
+					"Nom": "Type",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "RecordTypeId",
+					"Mandatory": "True",
+					"Validation": "Text(18)",
+					"List": ""
+				},
+				{
+					"Nom": "Location Id",
+					"Aide": "",
+					"ApiName": "LocationId",
+					"Mandatory": "True",
+					"Validation": "Text(18)",
+					"_Formule": "=SI(OU(@[PLN_ESPACE]=0;ESTVIDE(@[PLN_ESPACE]));SI(ESTNA(RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_BATIMENT];Batiment[PLN_ID]:Batiment[ID Externe];COLONNE(Batiment[ID Externe])-(COLONNE(Batiment[PLN_ID])-1);0));SI(ESTNA(RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_ESPACE];Local[PLN_ID]:Local[ID Externe];COLONNE(Local[ID Externe])-(COLONNE(Local[PLN_ID])-1);0)))",
+					"List": ""
+				},
+				{
+					"Nom": "Equipement Id",
 					"Aide": "",
 					"ApiName": "AssetId",
 					"Validation": "Text(18)",
+					"_Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_EQUIPEMENT];Equipement[PLN_ID]:Equipement[ID Externe];COLONNE(Equipement[ID Externe])-(COLONNE(Equipement[PLN_ID])-1);0))",
 					"List": ""
 				},
 				{
-					"Nom": "Street",
-					"Aide": "",
-					"ApiName": "Street",
-					"Validation": "Text(255)",
-					"List": ""
-				},
-				{
-					"Nom": "City",
-					"Aide": "",
-					"ApiName": "City",
-					"Validation": "Text(255)",
-					"List": ""
-				},
-				{
-					"Nom": "State/Province",
-					"Aide": "",
-					"ApiName": "State",
-					"Validation": "Text(255)",
-					"List": ""
-				},
-				{
-					"Nom": "Zip/Postal Code",
-					"Aide": "",
-					"ApiName": "PostalCode",
-					"Validation": "Text(255)",
-					"List": ""
-				},
-				{
-					"Nom": "Country",
-					"Aide": "",
-					"ApiName": "Country",
-					"Validation": "Text(255)",
-					"List": ""
-				},
-				{
-					"Nom": "State/Province Code",
-					"Aide": "",
-					"ApiName": "StateCode",
-					"_Validation": "Picklist(WOState)",
-					"List": ""
-				},
-				{
-					"Nom": "Latitude",
-					"Aide": "",
-					"ApiName": "Latitude",
-					"Validation": "Number(3,15)",
-					"List": ""
-				},
-				{
-					"Nom": "Longitude",
-					"Aide": "",
-					"ApiName": "Longitude",
-					"Validation": "Number(3,15)",
-					"List": ""
-				},
-				{
-					"Nom": "Description",
-					"Aide": "",
-					"ApiName": "Description",
-					"Validation": "Text(32000)",
-					"Mandatory": "True",
-					"List": ""
-				},
-				{
-					"Nom": "Start Date",
-					"Aide": "",
-					"ApiName": "StartDate",
-					"Validation": "Date",
-					"List": ""
-				},
-				{
-					"Nom": "End Date",
-					"Aide": "",
-					"ApiName": "EndDate",
-					"Validation": "Date",
-					"List": ""
-				},
-				{
-					"Nom": "Subject",
+					"Nom": "Objet",
 					"Aide": "",
 					"ApiName": "Subject",
-					"Validation": "Text(255)",
-					"Mandatory": "True",
+					"_Validation": "",
+					"_Formule": "",
 					"List": ""
 				},
 				{
-					"Nom": "Root Work Order ID",
-					"Aide": "",
-					"ApiName": "RootWorkOrderId",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Parent Work Order ID",
-					"Aide": "",
-					"ApiName": "ParentWorkOrderId",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Is Closed",
-					"Aide": "",
-					"ApiName": "IsClosed",
-					"Validation": "Checkbox (Unique)",
-					"List": ""
-				},
-				{
-					"Nom": "Stopped",
-					"Aide": "",
-					"ApiName": "IsStopped",
-					"Validation": "Checkbox (Unique)",
-					"List": ""
-				},
-				{
-					"Nom": "Stopped Since",
-					"Aide": "",
-					"ApiName": "StopStartDate",
-					"Validation": "Date",
-					"List": ""
-				},
-				{
-					"Nom": "Duration",
+					"Nom": "Duree",
 					"Aide": "",
 					"ApiName": "Duration",
-					"Validation": "Number(16,2)",
+					"_Validation": "",
+					"_Formule": "",
 					"List": ""
 				},
 				{
-					"Nom": "Duration in Minutes",
+					"Nom": "Periodicite",
 					"Aide": "",
-					"ApiName": "DurationInMinutes",
-					"Validation": "Number(16,2)",
+					"ApiName": "FM_Periodicity__c",
+					"_Validation": "",
+					"_Formule": "",
 					"List": ""
 				},
 				{
-					"Nom": "Work Type ID",
+					"Nom": "Maintenance type",
 					"Aide": "",
-					"ApiName": "WorkTypeId",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Territory ID",
-					"Aide": "",
-					"ApiName": "ServiceTerritoryId",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Location ID",
-					"Aide": "",
-					"ApiName": "LocationId",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Suggested Maintenance Date",
-					"Aide": "",
-					"ApiName": "SuggestedMaintenanceDate",
-					"Validation": "Date",
-					"List": ""
-				},
-				{
-					"Nom": "Date de remise état prov/attente",
-					"Aide": "",
-					"ApiName": "FM_DateHourProvisionalStatus__c",
-					"Validation": "Date",
-					"List": ""
-				},
-				{
-					"Nom": "Date du constat",
-					"Aide": "",
-					"ApiName": "FM_DemandDate__c",
-					"Validation": "Date",
-					"List": ""
-				},
-				{
-					"Nom": "Domaine",
-					"Aide": "",
-					"ApiName": "FM_Domain__c",
-					"Validation": "Picklist(Code_Domaine)",
-					"List": ""
-				},
-				{
-					"Nom": "Hors Contrat",
-					"Aide": "",
-					"ApiName": "FM_ExcludedfromContract__c",
-					"Validation": "Checkbox (Unique)",
-					"List": ""
-				},
-				{
-					"Nom": "External Id",
-					"Aide": "",
-					"ApiName": "FM_ExternalId__c",
-					"Validation": "Text(255)",
-					"List": ""
-				},
-				{
-					"Nom": "Heures Hommes",
-					"Aide": "",
-					"ApiName": "FM_FullHoursSpent__c",
-					"Validation": "Number(5,2)",
-					"List": ""
-				},
-				{
-					"Nom": "Bâtiment",
-					"Aide": "",
-					"ApiName": "FM_LocationBuildingLevel__c",
-					"Validation": "Text(18)",
+					"ApiName": "FM_MaintenanceType__c",
+					"Validation": "Picklist(Maintenance_Type)",
 					"Mandatory": "True",
 					"List": ""
 				},
 				{
-					"Nom": "Etage",
+					"Nom": "Origine",
 					"Aide": "",
-					"ApiName": "FM_LocationFloorLevel__c",
-					"Validation": "Text(18)",
+					"ApiName": "FM_MaintenanceOrigin__c",
+					"Validation": "Picklist(Origine)",
+					"_Formule": "",
 					"List": ""
 				},
 				{
-					"Nom": "Local",
-					"Aide": "",
-					"ApiName": "FM_LocationSpaceLevel__c",
-					"Validation": "Text(18)",
+					"Nom": "Territoire Service",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "ServiceTerritoryId",
+					"_Validation": "Picklist(Territoire)",
+					"Mandatory": "True",
+					"_Formule": "=SI(ESTNA(RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[Territoire principal];COLONNE(Site[Territoire principal])-(COLONNE(Site[PLN_ID])-1);0));\"\";RECHERCHEV(@[PLN_SITE];Site[PLN_ID]:Site[Territoire principal];COLONNE(Site[Territoire principal])-(COLONNE(Site[PLN_ID])-1);0))",
+					"_List": ""
+				},
+				{
+					"Nom": "Type de travail",
+					"Aide": "<br><i>&nbsp; &nbsp;&nbsp; &nbsp;Picklist</i>",
+					"ApiName": "WorkTypeId",
+					"_Validation": "Text(18)",
+					"Mandatory": "True",
+					"Formule": "WorkTypePreventifDefault",
 					"List": ""
 				},
 				{
-					"Nom": "Manager BYes",
-					"Aide": "",
-					"ApiName": "FM_ManagerBYes__c",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Manager Client",
-					"Aide": "",
-					"ApiName": "FM_ManagerClient__c",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Astreinte",
-					"Aide": "",
-					"ApiName": "FM_OnCall__c",
-					"Validation": "Checkbox (Unique)",
-					"List": ""
-				},
-				{
-					"Nom": "Date d'échéance préventive",
-					"Aide": "",
-					"ApiName": "FM_PreventiveDueDate__c",
-					"Validation": "Date",
-					"List": ""
-				},
-				{
-					"Nom": "Début le plus tôt permis préventive",
+					"Nom": "Date debut",
 					"Aide": "",
 					"ApiName": "FM_PreventiveEarliestStartTime__c",
 					"Validation": "Date",
+					"_Formule": "",
 					"List": ""
 				},
 				{
-					"Nom": "Préventif Planifié",
+					"Nom": "Date fin",
 					"Aide": "",
-					"ApiName": "FM_PreventivePlanned__c",
-					"_Validation": "Picklist(FM_PreventivePlanned__c)",
-					"List": ""
-				},
-				{
-					"Nom": "Sous-Domaine",
-					"Aide": "",
-					"ApiName": "FM_SubDomain__c",
-					"Validation": "Picklist(Code_Sous-domaine)",
-					"List": ""
-				},
-				{
-					"Nom": "Symptôme de référence",
-					"Aide": "",
-					"ApiName": "FM_TECHCaseReferenceSymptom__c",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Symptome",
-					"Aide": "",
-					"ApiName": "FM_TECHCaseSymptom__c",
-					"Validation": "Text(18)",
-					"List": ""
-				},
-				{
-					"Nom": "Service Note",
-					"Aide": "",
-					"ApiName": "FM_TECH_ServiceNote__c",
-					"Validation": "Text(32000)",
-					"List": ""
-				},
-				{
-					"Nom": "One Shot Closure",
-					"Aide": "",
-					"ApiName": "FM_TechOneShotClosure__c",
-					"Validation": "Checkbox (Unique)",
-					"List": ""
-				},
-				{
-					"Nom": "Tech Etat MobileFlow",
-					"Aide": "",
-					"ApiName": "FM_Tech_Etat_MobileFlow__c",
-					"_Validation": "Picklist(FM_Tech_Etat_MobileFlow__c)",
-					"List": ""
-				},
-				{
-					"Nom": "Sous-statut",
-					"Aide": "",
-					"ApiName": "FM_UnderStatus__c",
-					"_Validation": "Picklist(FM_UnderStatus__c)",
-					"List": ""
-				},
-				{
-					"Nom": "Visible par le client ?",
-					"Aide": "",
-					"ApiName": "FM_IsVisiblebyCustomer__c",
-					"Validation": "Checkbox (Unique)",
-					"List": ""
-				},
-				{
-					"Nom": "Replanification Technicien",
-					"Aide": "",
-					"ApiName": "FM_Replanification_Technicien__c",
-					"Validation": "Checkbox (Unique)",
-					"List": ""
-				},
-				{
-					"Nom": "Destinataire Rapport de Service",
-					"Aide": "",
-					"ApiName": "FM_receiverServiceReport__c",
-					"Validation": "Email",
-					"List": ""
-				},
-				{
-					"Nom": "Commentaire d'affectation client",
-					"Aide": "",
-					"ApiName": "FM_CommentOfSTChange__c",
-					"Validation": "Text(32000)",
-					"List": ""
-				},
-				{
-					"Nom": "Type de correctif",
-					"Aide": "",
-					"ApiName": "FM_CorrectiveType__c",
-					"_Validation": "Picklist(FM_CorrectiveType__c)",
-					"List": ""
-				},
-				{
-					"Nom": "Nom du prestataire",
-					"Aide": "",
-					"ApiName": "FM_NameOfServiceProvider__c",
-					"Validation": "Text(32000)",
-					"List": ""
-				},
-				{
-					"Nom": "Date d'échéance corrective",
-					"Aide": "",
-					"ApiName": "FM_CorrectiveDueDate__c",
-					"Validation": "DateT",
-					"List": ""
-				},
-				{
-					"Nom": "Date de fin de planification",
-					"Aide": "",
-					"ApiName": "FM_SchedulingEndDate__c",
+					"ApiName": "FM_PreventiveDueDate__c",
 					"Validation": "Date",
-					"List": ""
-				},
-				{
-					"Nom": "Date de début de planification",
-					"Aide": "",
-					"ApiName": "FM_SchedulingStartDate__c",
-					"Validation": "Date",
+					"_Formule": "",
 					"List": ""
 				}
 			]
