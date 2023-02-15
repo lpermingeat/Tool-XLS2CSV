@@ -10,8 +10,8 @@
 			"URLCSVData": "https://lpermingeat.github.io/Tool-XLS2CSV/csv/ListeValeurs.csv"
 		},
 		{
-			"Titre": "Ordre d'Execution",
-			"Description": "Onglet Ordre d'Execution",
+			"Titre": "Ordre Execution",
+			"Description": "Onglet Ordre Execution",
 			"ApiDBName": "WorkOrder",
 			"Colonnes": [
 				{
