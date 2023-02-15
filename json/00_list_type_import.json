@@ -18,6 +18,11 @@
       "name": "Historique Correctif Préventif",
       "description": "",
       "json": "./json/70_HistoriqueCorrectifPreventif.json"
+    },
+    {
+      "name": "Import Ordre Excécution",
+      "description": "",
+      "json": "./json/80_Import OE en masse.json"
     }
   ]
 }
