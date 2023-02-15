@@ -91,7 +91,7 @@
 					"Nom": "State/Province Code",
 					"Aide": "",
 					"ApiName": "StateCode",
-					"Validation": "Picklist(WOState)",
+					"_Validation": "Picklist(WOState)",
 					"List": ""
 				},
 				{
@@ -233,7 +233,7 @@
 					"Nom": "Domaine",
 					"Aide": "",
 					"ApiName": "FM_Domain__c",
-					"Validation": "Picklist(Domaine)",
+					"Validation": "Picklist(Code_Domaine)",
 					"List": ""
 				},
 				{
@@ -318,14 +318,14 @@
 					"Nom": "Préventif Planifié",
 					"Aide": "",
 					"ApiName": "FM_PreventivePlanned__c",
-					"Validation": "Picklist(FM_PreventivePlanned__c)",
+					"_Validation": "Picklist(FM_PreventivePlanned__c)",
 					"List": ""
 				},
 				{
 					"Nom": "Sous-Domaine",
 					"Aide": "",
 					"ApiName": "FM_SubDomain__c",
-					"Validation": "Picklist(FM_SubDomain__c)",
+					"Validation": "Picklist(Code_Sous-domaine)",
 					"List": ""
 				},
 				{
@@ -360,14 +360,14 @@
 					"Nom": "Tech Etat MobileFlow",
 					"Aide": "",
 					"ApiName": "FM_Tech_Etat_MobileFlow__c",
-					"Validation": "Picklist(FM_Tech_Etat_MobileFlow__c)",
+					"_Validation": "Picklist(FM_Tech_Etat_MobileFlow__c)",
 					"List": ""
 				},
 				{
 					"Nom": "Sous-statut",
 					"Aide": "",
 					"ApiName": "FM_UnderStatus__c",
-					"Validation": "Picklist(FM_UnderStatus__c)",
+					"_Validation": "Picklist(FM_UnderStatus__c)",
 					"List": ""
 				},
 				{
@@ -402,7 +402,7 @@
 					"Nom": "Type de correctif",
 					"Aide": "",
 					"ApiName": "FM_CorrectiveType__c",
-					"Validation": "Picklist(FM_CorrectiveType__c)",
+					"_Validation": "Picklist(FM_CorrectiveType__c)",
 					"List": ""
 				},
 				{
