@@ -120,14 +120,14 @@
 					"Nom": "Start Date",
 					"Aide": "",
 					"ApiName": "StartDate",
-					"Validation": "Datetime2GMT",
+					"Validation": "Date",
 					"List": ""
 				},
 				{
 					"Nom": "End Date",
 					"Aide": "",
 					"ApiName": "EndDate",
-					"Validation": "Datetime2GMT",
+					"Validation": "Date",
 					"List": ""
 				},
 				{
@@ -170,7 +170,7 @@
 					"Nom": "Stopped Since",
 					"Aide": "",
 					"ApiName": "StopStartDate",
-					"Validation": "Datetime2GMT",
+					"Validation": "Date",
 					"List": ""
 				},
 				{
@@ -219,14 +219,14 @@
 					"Nom": "Date de remise état prov/attente",
 					"Aide": "",
 					"ApiName": "FM_DateHourProvisionalStatus__c",
-					"Validation": "Datetime2GMT",
+					"Validation": "Date",
 					"List": ""
 				},
 				{
 					"Nom": "Date du constat",
 					"Aide": "",
 					"ApiName": "FM_DemandDate__c",
-					"Validation": "Datetime2GMT",
+					"Validation": "Date",
 					"List": ""
 				},
 				{
@@ -304,14 +304,14 @@
 					"Nom": "Date d'échéance préventive",
 					"Aide": "",
 					"ApiName": "FM_PreventiveDueDate__c",
-					"Validation": "Datetime2GMT",
+					"Validation": "Date",
 					"List": ""
 				},
 				{
 					"Nom": "Début le plus tôt permis préventive",
 					"Aide": "",
 					"ApiName": "FM_PreventiveEarliestStartTime__c",
-					"Validation": "Datetime2GMT",
+					"Validation": "Date",
 					"List": ""
 				},
 				{
@@ -416,21 +416,21 @@
 					"Nom": "Date d'échéance corrective",
 					"Aide": "",
 					"ApiName": "FM_CorrectiveDueDate__c",
-					"Validation": "Datetime2GMT",
+					"Validation": "DateT",
 					"List": ""
 				},
 				{
 					"Nom": "Date de fin de planification",
 					"Aide": "",
 					"ApiName": "FM_SchedulingEndDate__c",
-					"Validation": "Datetime2GMT",
+					"Validation": "Date",
 					"List": ""
 				},
 				{
 					"Nom": "Date de début de planification",
 					"Aide": "",
 					"ApiName": "FM_SchedulingStartDate__c",
-					"Validation": "Datetime2GMT",
+					"Validation": "Date",
 					"List": ""
 				}
 			]
